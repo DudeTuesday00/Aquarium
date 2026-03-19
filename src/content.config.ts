@@ -1,18 +1,14 @@
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
 
 const guides = defineCollection({
-  loader: glob({
-    pattern: '**/*.md',
-    base: './src/content/guides'
-  }),
+  type: 'content',
   schema: z.object({
     title: z.string(),
     description: z.string(),
     category: z.enum(['Freshwater Fish', 'Saltwater Fish', 'Equipment', 'Health & Care', 'Setup & Maintenance', 'Advanced Topics']),
-    publishDate: z.string(),           // kept as string to avoid YAML date quirks
-    featured: z.boolean().optional().default(false)
-  })
+    publishDate: z.coerce.date(),
+    featured: z.boolean().optional().default(false),
+  }),
 });
 
 export const collections = { guides };
