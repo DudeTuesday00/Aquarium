@@ -10,7 +10,7 @@ const guides = defineCollection({
     title: z.string(),
     description: z.string(),
     category: z.enum(['Freshwater Fish', 'Saltwater Fish', 'Equipment', 'Health & Care', 'Setup & Maintenance', 'Advanced Topics']),
-    publishDate: z.coerce.date(),
+    publishDate: z.string(),           // kept as string to avoid YAML date quirks
     featured: z.boolean().optional().default(false)
   })
 });
