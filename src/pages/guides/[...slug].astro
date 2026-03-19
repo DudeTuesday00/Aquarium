@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map(guide => ({
+    params: { slug: guide.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const guide = await getEntry('guides', slug);
+---
+
+<Layout>
+  <main class="max-w-3xl mx-auto px-6 py-12 prose dark:prose-invert">
+    <div class="text-accent-1 mb-2">{guide.data.category} • {guide.data.publishDate.toLocaleDateString()}</div>
+    <h1 class="text-5xl font-bold text-primary">{guide.data.title}</h1>
+    <p class="text-2xl text-warm-neutral mt-4">{guide.data.description}</p>
+
+    <div class="mt-12">
+      <Content content={guide} />
+    </div>
+
+    <!-- Placeholder for AdSense & more affiliates later -->
+    <div class="my-12 border-t border-b border-dashed border-primary py-8 text-center text-sm text-accent-2">
+      AdSense spot here (we’ll add this in a future step)
+    </div>
+  </main>
+</Layout>
