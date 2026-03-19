@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="text-5xl font-bold text-primary mb-2">Aquarium Wizard</h1>
+    <p class="text-xl text-accent-2 mb-10">Answer 5 quick questions and get your personalized recommendation</p>
+
+    <div id="wizard" class="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-8">
+      <!-- Step 1 -->
+      <div id="step-1" class="step">
+        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 1: Tank Size</h3>
+        <div class="space-y-4">
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="tank-size" value="small" class="accent-primary"> Small (5-20 gallons) – Apartment / Desk
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="tank-size" value="medium" class="accent-primary"> Medium (20-55 gallons) – Living Room
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="tank-size" value="large" class="accent-primary"> Large (55+ gallons) – Dedicated Setup
+          </label>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div id="step-2" class="step hidden">
+        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 2: Water Type</h3>
+        <div class="space-y-4">
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="water-type" value="fresh" class="accent-primary"> Freshwater (easier for beginners)
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="water-type" value="salt" class="accent-primary"> Saltwater (more colorful fish)
+          </label>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div id="step-3" class="step hidden">
+        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 3: Fish Preference</h3>
+        <div class="space-y-4">
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="fish-pref" value="community" class="accent-primary"> Community fish (peaceful, colorful)
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="fish-pref" value="betta" class="accent-primary"> Betta or single fish
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="fish-pref" value="cichlid" class="accent-primary"> Cichlids or more active fish
+          </label>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div id="step-4" class="step hidden">
+        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 4: Maintenance Level</h3>
+        <div class="space-y-4">
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="maintenance" value="low" class="accent-primary"> Low (under 2 hours/week)
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="maintenance" value="medium" class="accent-primary"> Medium (2-4 hours/week)
+          </label>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div id="step-5" class="step hidden">
+        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 5: Budget for Accessories</h3>
+        <div class="space-y-4">
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="budget" value="low" class="accent-primary"> Under $150
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="budget" value="medium" class="accent-primary"> $150–$350
+          </label>
+          <label class="flex items-center gap-3 text-lg cursor-pointer">
+            <input type="radio" name="budget" value="high" class="accent-primary"> $350+
+          </label>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="results" class="hidden">
+        <h3 class="text-4xl font-bold text-primary mb-6">Your Perfect Setup Recommendation</h3>
+        <div id="recommendation" class="prose dark:prose-invert text-lg"></div>
+        <div class="mt-8 flex gap-4">
+          <a href="/shop" class="bg-primary text-white px-8 py-4 rounded-2xl font-medium hover:bg-accent-1">Shop My 3D-Printed Accessories</a>
+          <a href="/guides" class="border-2 border-primary text-primary px-8 py-4 rounded-2xl font-medium hover:bg-accent-1 hover:text-white">Read Matching Guides</a>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="flex justify-between mt-10">
+        <button id="prev-btn" class="px-8 py-3 border-2 border-primary text-primary rounded-2xl font-medium hover:bg-primary hover:text-white hidden">← Previous</button>
+        <button id="next-btn" class="px-8 py-3 bg-primary text-white rounded-2xl font-medium hover:bg-accent-1">Next →</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 5;
+    const steps = document.querySelectorAll('.step');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const results = document.getElementById('results');
+    const recommendation = document.getElementById('recommendation');
+
+    function showStep(n) {
+      steps.forEach(s => s.classList.add('hidden'));
+      document.getElementById(`step-${n}`).classList.remove('hidden');
+      prevBtn.classList.toggle('hidden', n === 1);
+      nextBtn.textContent = n === totalSteps ? 'Get My Recommendation' : 'Next →';
+    }
+
+    function getAnswers() {
+      return {
+        tank: document.querySelector('input[name="tank-size"]:checked')?.value || '',
+        water: document.querySelector('input[name="water-type"]:checked')?.value || '',
+        fish: document.querySelector('input[name="fish-pref"]:checked')?.value || '',
+        maint: document.querySelector('input[name="maintenance"]:checked')?.value || '',
+        budget: document.querySelector('input[name="budget"]:checked')?.value || ''
+      };
+    }
+
+    function generateRecommendation(answers) {
+      return `
+        <p class="text-2xl mb-4">Based on your choices, we recommend a <strong>${answers.tank === 'small' ? '10-gallon' : answers.tank === 'medium' ? '30-gallon' : '55-gallon'} ${answers.water === 'fresh' ? 'freshwater' : 'saltwater'} tank</strong>.</p>
+        <p>You’ll love a community of ${answers.fish === 'community' ? 'tetras, rasboras & guppies' : answers.fish === 'betta' ? 'a beautiful Betta' : 'peaceful cichlids'}.</p>
+        <p>Maintenance: ${answers.maint === 'low' ? 'Super easy with a simple sponge filter' : 'Standard canister filter'}.</p>
+        <p>Budget accessories: Start with my 3D-printed ${answers.budget === 'low' ? 'basic' : 'premium'} set (filter guards, feeding rings, decor).</p>
+        <p class="mt-6 text-accent-2">Total estimated startup: $${answers.budget === 'low' ? '120' : answers.budget === 'medium' ? '280' : '450'}.</p>
+      `;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        const answers = getAnswers();
+        recommendation.innerHTML = generateRecommendation(answers);
+        document.getElementById('wizard').querySelectorAll('.step').forEach(s => s.classList.add('hidden'));
+        results.classList.remove('hidden');
+        nextBtn.classList.add('hidden');
+        prevBtn.classList.add('hidden');
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    // Start at step 1
+    showStep(1);
+  </script>
+</Layout>
