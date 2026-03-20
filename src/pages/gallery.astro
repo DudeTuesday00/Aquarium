@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <h1 class="text-5xl font-bold text-primary mb-4">Photo Gallery</h1>
+    <p class="text-xl text-accent-2 mb-10">Real home aquariums + my 3D-printed accessories in action</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Photo 1 -->
+      <div class="group relative overflow-hidden rounded-3xl shadow-xl aspect-video bg-gradient-to-br from-primary to-accent-1 flex items-center justify-center text-white text-8xl cursor-pointer">
+        🐟
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
+          <p class="text-white text-center px-6">Freshwater community tank with my filter guard</p>
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="group relative overflow-hidden rounded-3xl shadow-xl aspect-video bg-gradient-to-br from-accent-1 to-accent-2 flex items-center justify-center text-white text-8xl cursor-pointer">
+        🌿
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
+          <p class="text-white text-center px-6">Planted tank using my plant weight clips</p>
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="group relative overflow-hidden rounded-3xl shadow-xl aspect-video bg-gradient-to-br from-accent-2 to-primary flex items-center justify-center text-white text-8xl cursor-pointer">
+        🐠
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
+          <p class="text-white text-center px-6">Saltwater nano tank with feeding ring</p>
+        </div>
+      </div>
+
+      <!-- Add more placeholders here later (just copy one block) -->
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-lg text-warm-neutral">Want your tank featured? Submit your photo via the <a href="/contact" class="text-primary underline">Contact form</a>!</p>
+    </div>
+  </main>
+</Layout>
