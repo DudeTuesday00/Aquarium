@@ -1,11 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { recommendationData, wizardQuestions } from '../data/wizard';
-
-const wizardRuntimeData = {
-  questions: wizardQuestions,
-  recommendations: recommendationData
-};
+import { wizardQuestions } from '../data/wizard';
 ---
 
 <Layout
@@ -30,17 +25,11 @@ const wizardRuntimeData = {
         </div>
       ))}
 
-      <!-- Results -->
       <div id="results" class="hidden">
         <h3 class="text-4xl font-bold text-primary mb-6">Your Perfect Setup Recommendation</h3>
         <div id="recommendation" class="prose dark:prose-invert text-lg"></div>
-        <div class="mt-8 flex gap-4">
-          <a href="/shop" class="bg-primary text-white px-8 py-4 rounded-2xl font-medium hover:bg-accent-1">Shop My 3D-Printed Accessories</a>
-          <a href="/guides" class="border-2 border-primary text-primary px-8 py-4 rounded-2xl font-medium hover:bg-accent-1 hover:text-white">Read Matching Guides</a>
-        </div>
       </div>
 
-      <!-- Navigation Buttons -->
       <div class="flex justify-between mt-10">
         <button id="prev-btn" class="px-8 py-3 border-2 border-primary text-primary rounded-2xl font-medium hover:bg-primary hover:text-white hidden">← Previous</button>
         <button id="next-btn" class="px-8 py-3 bg-primary text-white rounded-2xl font-medium hover:bg-accent-1">Next →</button>
@@ -49,12 +38,11 @@ const wizardRuntimeData = {
     </div>
   </main>
 
-  <script type="application/json" id="wizard-config">{JSON.stringify(wizardRuntimeData)}</script>
   <script>
-    const wizardConfigEl = document.getElementById('wizard-config');
-    const wizardConfig = JSON.parse(wizardConfigEl.textContent);
+    import { buildWizardRecommendation, isCompleteWizardAnswers, wizardQuestions } from '../data/wizard';
+
     let currentStep = 1;
-    const totalSteps = wizardConfig.questions.length;
+    const totalSteps = wizardQuestions.length;
     const steps = document.querySelectorAll('.step');
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
@@ -62,11 +50,11 @@ const wizardRuntimeData = {
     const recommendation = document.getElementById('recommendation');
     const errorMessage = document.getElementById('wizard-error');
     const stepFields = Object.fromEntries(
-      wizardConfig.questions.map((question) => [question.step, question.fieldName])
+      wizardQuestions.map((question) => [question.step, question.fieldName])
     );
 
     function showStep(n) {
-      steps.forEach(s => s.classList.add('hidden'));
+      steps.forEach((step) => step.classList.add('hidden'));
       document.getElementById(`step-${n}`).classList.remove('hidden');
       prevBtn.classList.toggle('hidden', n === 1);
       nextBtn.textContent = n === totalSteps ? 'Get My Recommendation' : 'Next →';
@@ -89,43 +77,44 @@ const wizardRuntimeData = {
     }
 
     function getAnswers() {
-      return wizardConfig.questions.reduce((answers, question) => {
+      return wizardQuestions.reduce((answers, question) => {
         const selectedValue = document.querySelector(`input[name="${question.fieldName}"]:checked`)?.value || '';
         answers[question.key] = selectedValue;
         return answers;
       }, {});
     }
 
-    function generateRecommendation(answers) {
-      if (!answers.tank || !answers.water || !answers.fish || !answers.maint || !answers.budget) {
-        return '';
-      }
-
-      const tankProfile = wizardConfig.recommendations.tank[answers.tank];
-      const waterProfile = wizardConfig.recommendations.water[answers.water];
-      const fishProfile = wizardConfig.recommendations.fish[answers.fish];
-      const maintenanceProfile = wizardConfig.recommendations.maint[answers.maint];
-      const budgetProfile = wizardConfig.recommendations.budget[answers.budget];
-
-      if (!tankProfile || !waterProfile || !fishProfile || !maintenanceProfile || !budgetProfile) {
+    function renderRecommendation(result) {
+      if (!result) {
         return '';
       }
 
       return `
-        <p class="text-2xl mb-4">Based on your choices, we recommend a <strong>${tankProfile.headline} ${waterProfile.label} aquarium</strong>.</p>
-        <p>This setup is ${tankProfile.environment} and follows ${waterProfile.experience}.</p>
-        <p>Your stocking direction is a <strong>${fishProfile.label}</strong> with species such as ${fishProfile.stocking}.</p>
-        <p>For equipment, start with ${tankProfile.equipment.join(', ')} and pair it with a ${maintenanceProfile.filter}.</p>
-        <p>Your maintenance target is a <strong>${maintenanceProfile.label}</strong>: ${maintenanceProfile.routine}.</p>
-        <p>Accessory plan: begin with a <strong>${budgetProfile.accessorySet}</strong> focused on ${budgetProfile.accessoryFocus.join(', ')}.</p>
-        <p class="mt-6 text-accent-2">Estimated startup range: ${budgetProfile.startupCost}.</p>
+        <p class="text-2xl mb-4">Based on your choices, we recommend a <strong>${result.headline}</strong>.</p>
+        <p>${result.setupSummary}</p>
+        <p>${result.stockingSummary}</p>
+        <p>${result.maintenanceSummary}</p>
+        <h4 class="mt-8 text-primary">Suggested Equipment Bundle</h4>
+        <p><strong>${result.equipmentBundle.name}</strong>: ${result.equipmentBundle.summary}</p>
         <ul>
-          <li>${tankProfile.note}</li>
-          <li>${waterProfile.equipmentNote}</li>
-          <li>${fishProfile.temperament}</li>
-          <li>${maintenanceProfile.note}</li>
+          ${result.equipmentBundle.items.map((item) => `<li>${item}</li>`).join('')}
         </ul>
-        <p>Next reading: <a href="${fishProfile.guidePath}">browse matching aquarium guides</a>.</p>
+        <h4 class="mt-8 text-primary">Recommended Accessories</h4>
+        <ul>
+          ${result.accessoryProducts.map((product) => `<li><a href="${product.href}">${product.name}</a> (${product.price}) — ${product.summary}</li>`).join('')}
+        </ul>
+        <h4 class="mt-8 text-primary">Guides to Read Next</h4>
+        <ul>
+          ${result.matchedGuides.map((guide) => `<li><a href="/guides/${guide.slug}">${guide.title}</a> — ${guide.reason}</li>`).join('')}
+        </ul>
+        <p class="mt-6 text-accent-2">Estimated startup range: ${result.startupRange}.</p>
+        <ul>
+          ${result.notes.map((note) => `<li>${note}</li>`).join('')}
+        </ul>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/shop" class="inline-block rounded-2xl bg-primary px-8 py-4 font-medium text-white hover:bg-accent-1">Shop Matching Accessories</a>
+          <a href="/guides" class="inline-block rounded-2xl border-2 border-primary px-8 py-4 font-medium text-primary hover:bg-accent-1 hover:text-white">Browse All Guides</a>
+        </div>
       `;
     }
 
@@ -140,7 +129,13 @@ const wizardRuntimeData = {
         showStep(currentStep);
       } else {
         const answers = getAnswers();
-        const html = generateRecommendation(answers);
+
+        if (!isCompleteWizardAnswers(answers)) {
+          showError('Complete every step before generating your recommendation.');
+          return;
+        }
+
+        const html = renderRecommendation(buildWizardRecommendation(answers));
 
         if (!html) {
           showError('Complete every step before generating your recommendation.');
@@ -148,7 +143,7 @@ const wizardRuntimeData = {
         }
 
         recommendation.innerHTML = html;
-        document.getElementById('wizard').querySelectorAll('.step').forEach(s => s.classList.add('hidden'));
+        document.getElementById('wizard').querySelectorAll('.step').forEach((step) => step.classList.add('hidden'));
         results.classList.remove('hidden');
         nextBtn.classList.add('hidden');
         prevBtn.classList.add('hidden');
@@ -169,7 +164,6 @@ const wizardRuntimeData = {
       });
     });
 
-    // Start at step 1
     showStep(1);
   </script>
 </Layout>

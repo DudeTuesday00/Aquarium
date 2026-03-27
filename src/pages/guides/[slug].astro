@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: { guide }
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const allGuides = await getCollection('guides');
+const relatedGuides = allGuides
+  .filter((entry) => entry.id !== guide.id)
+  .filter(
+    (entry) =>
+      entry.data.category === guide.data.category ||
+      entry.data.tags.some((tag) => guide.data.tags.includes(tag))
+  )
+  .slice(0, 3);
+---
+
+<Layout title={`${guide.data.title} • Aquarium Wizard`} description={guide.data.description}>
+  <main class="max-w-3xl mx-auto px-6 py-12 prose dark:prose-invert">
+    <div class="text-accent-1 mb-2">
+      {guide.data.category} • {guide.data.publishDate.toLocaleDateString()}
+      {guide.data.updatedDate && ` • Updated ${guide.data.updatedDate.toLocaleDateString()}`}
+    </div>
+    <h1 class="text-5xl font-bold text-primary">{guide.data.title}</h1>
+    <p class="text-2xl text-warm-neutral mt-4">{guide.data.description}</p>
+
+    <div class="mt-12">
+      <Content />
+    </div>
+
+    {relatedGuides.length > 0 && (
+      <section class="not-prose mt-16">
+        <h2 class="text-3xl font-semibold text-primary mb-6">Related Guides</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          {relatedGuides.map((entry) => (
+            <a href={`/guides/${entry.id}`} class="rounded-3xl bg-white dark:bg-slate-900 p-6 shadow-xl transition-all hover:shadow-2xl">
+              <div class="text-xs uppercase tracking-widest text-accent-1 mb-2">{entry.data.category}</div>
+              <h3 class="text-xl font-semibold text-primary">{entry.data.title}</h3>
+              <p class="mt-3 text-sm text-warm-neutral">{entry.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="my-12 border-t border-b border-dashed border-primary py-8 text-center text-sm text-accent-2">
+      AdSense spot here (we’ll add real ads in a future step)
+    </div>
+  </main>
+</Layout>
