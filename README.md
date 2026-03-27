@@ -1,12 +1,62 @@
 # Aquarium Wizard
 
-Aquarium Wizard is an Astro site for home aquarium hobbyists. The current project includes:
+Aquarium Wizard is a content and recommendation website for people in the United States who want an aquarium for their home or small office. The site is not intended for commercial aquarium installations. Its two core pillars are:
 
-- A landing page for the Aquarium Wizard brand
-- A five-step aquarium recommendation wizard
-- A guides section with a starter beginner setup article
-- A shop page for 3D-printed aquarium accessories
+- An aquarium setup wizard that helps visitors choose the right tank, fish, equipment, and accessories based on their needs
+- A large knowledge library covering aquarium topics such as fish types, diseases, food, filtration, substrate, lighting, and maintenance
+
+The business model includes:
+
+- Google AdSense placements
+- Affiliate links inside guides and recommendation flows
+- Direct sales of 3D-printed aquarium accessories
+- Newsletter signup for repeat traffic and promotions
+
+## Current Scope
+
+The current project includes:
+
+- A landing page
+- A basic five-step aquarium wizard
+- A guides hub with one starter guide
+- A shop page for 3D-printed accessories
 - Gallery, About, and Contact pages
+- Mobile navigation and light/dark mode support
+
+## Product Direction
+
+The long-term site structure is:
+
+- `Wizard`: recommendation flow for tank size, fish style, equipment, accessories, and beginner fit
+- `Guides`: educational content library organized by topic and skill level
+- `Shop`: 3D-printed aquarium accessories made by the site owner
+- `Gallery`: real tanks, accessories, and customer submissions
+- `Newsletter`: aquarium tips, new products, and affiliate/promotional content
+- `About` and `Contact`: trust-building pages for the brand
+
+## Audience
+
+- Home aquarium beginners
+- Small-office aquarium buyers
+- Hobbyists researching upgrades, equipment, fish compatibility, and maintenance
+- Primarily USA-focused users for the first release
+
+Excluded audience:
+
+- Commercial tank installers
+- Large-scale office, hospitality, or retail aquarium projects
+
+## Brand Notes
+
+Current project palette:
+
+- `#0185AE`
+- `#0DAFBC`
+- `#8AC9AB`
+- `#F3EFEE`
+- `#E8D9BF`
+
+Note: the original brief included `#F3WFEE`, which is not a valid hex code. This repo currently uses `#F3EFEE`.
 
 ## Stack
 
@@ -69,20 +119,21 @@ npm run preview
 │   │   └── contact.astro
 │   └── styles/
 │       └── global.css
+├── docs/
+│   └── site-architecture.md
 ├── astro.config.mjs
 ├── package.json
 └── tsconfig.json
 ```
 
-## Notes
+## Current Gaps
 
-- The wizard is currently client-side and returns a recommendation based on five required answers.
-- Guides are currently implemented as static `.astro` pages, not Astro content collections.
-- Several business details are still placeholders, including product purchase links, gallery media, and some About page content.
+- The wizard is still a placeholder flow and does not yet use a real recommendation ruleset
+- The guides library is not yet implemented as a scalable content system
+- Product links, affiliate links, and gallery media still need real assets and destinations
+- AdSense, newsletter tooling, and analytics are not integrated yet
+- Open Graph and richer social/SEO metadata still need to be added
 
-## Next Priorities
+## Planning Docs
 
-- Replace placeholder product and affiliate links with real destinations
-- Add real gallery assets and richer guide content
-- Expand SEO with Open Graph and social metadata
-- Verify the site in a supported Node 22 or 24 environment before deployment
+Implementation planning lives in [docs/site-architecture.md](D:\Aquarium\Aquarium\docs\site-architecture.md).

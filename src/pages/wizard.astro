@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { recommendationData, wizardQuestions } from '../data/wizard';
+
+const wizardRuntimeData = {
+  questions: wizardQuestions,
+  recommendations: recommendationData
+};
 ---
 
 <Layout
@@ -11,79 +17,18 @@ import Layout from '../layouts/Layout.astro';
     <p class="text-xl text-accent-2 mb-10">Answer 5 quick questions and get your personalized recommendation</p>
 
     <div id="wizard" class="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-8">
-      <!-- Step 1 -->
-      <div id="step-1" class="step">
-        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 1: Tank Size</h3>
-        <div class="space-y-4">
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="tank-size" value="small" class="accent-primary"> Small (5-20 gallons) – Apartment / Desk
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="tank-size" value="medium" class="accent-primary"> Medium (20-55 gallons) – Living Room
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="tank-size" value="large" class="accent-primary"> Large (55+ gallons) – Dedicated Setup
-          </label>
+      {wizardQuestions.map((question, index) => (
+        <div id={`step-${question.step}`} class={`step${index === 0 ? '' : ' hidden'}`}>
+          <h3 class="text-3xl font-semibold text-accent-1 mb-6">{question.title}</h3>
+          <div class="space-y-4">
+            {question.options.map((option) => (
+              <label class="flex items-center gap-3 text-lg cursor-pointer">
+                <input type="radio" name={question.fieldName} value={option.value} class="accent-primary" /> {option.label}
+              </label>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div id="step-2" class="step hidden">
-        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 2: Water Type</h3>
-        <div class="space-y-4">
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="water-type" value="fresh" class="accent-primary"> Freshwater (easier for beginners)
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="water-type" value="salt" class="accent-primary"> Saltwater (more colorful fish)
-          </label>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div id="step-3" class="step hidden">
-        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 3: Fish Preference</h3>
-        <div class="space-y-4">
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="fish-pref" value="community" class="accent-primary"> Community fish (peaceful, colorful)
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="fish-pref" value="betta" class="accent-primary"> Betta or single fish
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="fish-pref" value="cichlid" class="accent-primary"> Cichlids or more active fish
-          </label>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div id="step-4" class="step hidden">
-        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 4: Maintenance Level</h3>
-        <div class="space-y-4">
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="maintenance" value="low" class="accent-primary"> Low (under 2 hours/week)
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="maintenance" value="medium" class="accent-primary"> Medium (2-4 hours/week)
-          </label>
-        </div>
-      </div>
-
-      <!-- Step 5 -->
-      <div id="step-5" class="step hidden">
-        <h3 class="text-3xl font-semibold text-accent-1 mb-6">Step 5: Budget for Accessories</h3>
-        <div class="space-y-4">
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="budget" value="low" class="accent-primary"> Under $150
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="budget" value="medium" class="accent-primary"> $150–$350
-          </label>
-          <label class="flex items-center gap-3 text-lg cursor-pointer">
-            <input type="radio" name="budget" value="high" class="accent-primary"> $350+
-          </label>
-        </div>
-      </div>
+      ))}
 
       <!-- Results -->
       <div id="results" class="hidden">
@@ -104,22 +49,21 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </main>
 
+  <script type="application/json" id="wizard-config">{JSON.stringify(wizardRuntimeData)}</script>
   <script>
+    const wizardConfigEl = document.getElementById('wizard-config');
+    const wizardConfig = JSON.parse(wizardConfigEl.textContent);
     let currentStep = 1;
-    const totalSteps = 5;
+    const totalSteps = wizardConfig.questions.length;
     const steps = document.querySelectorAll('.step');
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
     const results = document.getElementById('results');
     const recommendation = document.getElementById('recommendation');
     const errorMessage = document.getElementById('wizard-error');
-    const stepFields = {
-      1: 'tank-size',
-      2: 'water-type',
-      3: 'fish-pref',
-      4: 'maintenance',
-      5: 'budget'
-    };
+    const stepFields = Object.fromEntries(
+      wizardConfig.questions.map((question) => [question.step, question.fieldName])
+    );
 
     function showStep(n) {
       steps.forEach(s => s.classList.add('hidden'));
@@ -145,13 +89,11 @@ import Layout from '../layouts/Layout.astro';
     }
 
     function getAnswers() {
-      return {
-        tank: document.querySelector('input[name="tank-size"]:checked')?.value || '',
-        water: document.querySelector('input[name="water-type"]:checked')?.value || '',
-        fish: document.querySelector('input[name="fish-pref"]:checked')?.value || '',
-        maint: document.querySelector('input[name="maintenance"]:checked')?.value || '',
-        budget: document.querySelector('input[name="budget"]:checked')?.value || ''
-      };
+      return wizardConfig.questions.reduce((answers, question) => {
+        const selectedValue = document.querySelector(`input[name="${question.fieldName}"]:checked`)?.value || '';
+        answers[question.key] = selectedValue;
+        return answers;
+      }, {});
     }
 
     function generateRecommendation(answers) {
@@ -159,12 +101,31 @@ import Layout from '../layouts/Layout.astro';
         return '';
       }
 
+      const tankProfile = wizardConfig.recommendations.tank[answers.tank];
+      const waterProfile = wizardConfig.recommendations.water[answers.water];
+      const fishProfile = wizardConfig.recommendations.fish[answers.fish];
+      const maintenanceProfile = wizardConfig.recommendations.maint[answers.maint];
+      const budgetProfile = wizardConfig.recommendations.budget[answers.budget];
+
+      if (!tankProfile || !waterProfile || !fishProfile || !maintenanceProfile || !budgetProfile) {
+        return '';
+      }
+
       return `
-        <p class="text-2xl mb-4">Based on your choices, we recommend a <strong>${answers.tank === 'small' ? '10-gallon' : answers.tank === 'medium' ? '30-gallon' : '55-gallon'} ${answers.water === 'fresh' ? 'freshwater' : 'saltwater'} tank</strong>.</p>
-        <p>You’ll love a community of ${answers.fish === 'community' ? 'tetras, rasboras & guppies' : answers.fish === 'betta' ? 'a beautiful Betta' : 'peaceful cichlids'}.</p>
-        <p>Maintenance: ${answers.maint === 'low' ? 'Super easy with a simple sponge filter' : 'Standard canister filter'}.</p>
-        <p>Budget accessories: Start with my 3D-printed ${answers.budget === 'low' ? 'basic' : 'premium'} set (filter guards, feeding rings, decor).</p>
-        <p class="mt-6 text-accent-2">Total estimated startup: $${answers.budget === 'low' ? '120' : answers.budget === 'medium' ? '280' : '450'}.</p>
+        <p class="text-2xl mb-4">Based on your choices, we recommend a <strong>${tankProfile.headline} ${waterProfile.label} aquarium</strong>.</p>
+        <p>This setup is ${tankProfile.environment} and follows ${waterProfile.experience}.</p>
+        <p>Your stocking direction is a <strong>${fishProfile.label}</strong> with species such as ${fishProfile.stocking}.</p>
+        <p>For equipment, start with ${tankProfile.equipment.join(', ')} and pair it with a ${maintenanceProfile.filter}.</p>
+        <p>Your maintenance target is a <strong>${maintenanceProfile.label}</strong>: ${maintenanceProfile.routine}.</p>
+        <p>Accessory plan: begin with a <strong>${budgetProfile.accessorySet}</strong> focused on ${budgetProfile.accessoryFocus.join(', ')}.</p>
+        <p class="mt-6 text-accent-2">Estimated startup range: ${budgetProfile.startupCost}.</p>
+        <ul>
+          <li>${tankProfile.note}</li>
+          <li>${waterProfile.equipmentNote}</li>
+          <li>${fishProfile.temperament}</li>
+          <li>${maintenanceProfile.note}</li>
+        </ul>
+        <p>Next reading: <a href="${fishProfile.guidePath}">browse matching aquarium guides</a>.</p>
       `;
     }
 
