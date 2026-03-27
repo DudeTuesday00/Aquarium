@@ -94,6 +94,14 @@ import { wizardQuestions } from '../data/wizard';
         <p>${result.setupSummary}</p>
         <p>${result.stockingSummary}</p>
         <p>${result.maintenanceSummary}</p>
+        <h4 class="mt-8 text-primary">Fish We Recommend</h4>
+        <ul>
+          ${result.fishRecommendations.map((fish) => `<li><strong>${fish.name}</strong> (${fish.stockingCount}) — ${fish.reason} Compatibility: ${fish.compatibility}</li>`).join('')}
+        </ul>
+        <h4 class="mt-8 text-primary">Avoid These Fish</h4>
+        <ul>
+          ${result.avoidFish.map((fish) => `<li><strong>${fish.name}</strong> — ${fish.reason}</li>`).join('')}
+        </ul>
         <h4 class="mt-8 text-primary">Suggested Equipment Bundle</h4>
         <p><strong>${result.equipmentBundle.name}</strong>: ${result.equipmentBundle.summary}</p>
         <ul>

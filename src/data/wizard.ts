@@ -47,6 +47,18 @@ export interface GuideMatch {
   reason: string;
 }
 
+export interface FishRecommendation {
+  name: string;
+  reason: string;
+  stockingCount: string;
+  compatibility: string;
+}
+
+export interface FishWarning {
+  name: string;
+  reason: string;
+}
+
 export interface ProductMatch {
   id: string;
   name: string;
@@ -67,6 +79,8 @@ export interface WizardRecommendation {
   stockingSummary: string;
   maintenanceSummary: string;
   startupRange: string;
+  fishRecommendations: FishRecommendation[];
+  avoidFish: FishWarning[];
   equipmentBundle: EquipmentBundle;
   accessoryProducts: ProductMatch[];
   matchedGuides: GuideMatch[];
@@ -456,6 +470,272 @@ function getGuideMatches(answers: CompleteRecommendationAnswers): GuideMatch[] {
   return matches.slice(0, 4);
 }
 
+function getFishRecommendations(answers: CompleteRecommendationAnswers): FishRecommendation[] {
+  if (answers.water === 'salt') {
+    if (answers.tank === 'small') {
+      return [
+        {
+          name: 'ocellaris clownfish pair',
+          reason: 'one of the most approachable saltwater starter fish options for a simple fish-only setup',
+          stockingCount: '2 fish',
+          compatibility: 'Best kept as a bonded pair with very light additional stocking in a small tank.'
+        },
+        {
+          name: 'firefish goby',
+          reason: 'adds movement without needing an aggressive stocking plan',
+          stockingCount: '1 fish',
+          compatibility: 'Works best with peaceful tank mates and plenty of hiding space.'
+        }
+      ];
+    }
+
+    if (answers.tank === 'medium') {
+      return [
+        {
+          name: 'ocellaris clownfish pair',
+          reason: 'a common and stable core choice for medium saltwater tanks',
+          stockingCount: '2 fish',
+          compatibility: 'Good anchor pair for a peaceful saltwater community when added early.'
+        },
+        {
+          name: 'royal gramma',
+          reason: 'adds color while staying manageable for non-reef beginner setups',
+          stockingCount: '1 fish',
+          compatibility: 'Usually compatible with clownfish and gobies when caves and territory are available.'
+        },
+        {
+          name: 'watchman goby',
+          reason: 'a practical bottom-oriented fish for a more interesting layout',
+          stockingCount: '1 fish',
+          compatibility: 'Works well with peaceful mid-water fish in a fish-only saltwater setup.'
+        }
+      ];
+    }
+
+    return [
+      {
+        name: 'ocellaris clownfish pair',
+        reason: 'a reliable centerpiece pair even in larger saltwater systems',
+        stockingCount: '2 fish',
+        compatibility: 'Remains a stable core choice as long as later fish are not overly aggressive.'
+      },
+      {
+        name: 'royal gramma',
+        reason: 'adds color and stays compatible with many conservative stocking plans',
+        stockingCount: '1 fish',
+        compatibility: 'Fits well in larger peaceful saltwater communities with rockwork.'
+      },
+      {
+        name: 'watchman goby',
+        reason: 'good for adding activity lower in the tank',
+        stockingCount: '1 fish',
+        compatibility: 'Easy to integrate with clownfish and gramma when the tank is not overstocked.'
+      }
+    ];
+  }
+
+  if (answers.fish === 'betta') {
+    return [
+      {
+        name: 'single betta splendens',
+        reason: 'fits the calm, low-flow single-show-fish route this setup is designed for',
+        stockingCount: '1 fish',
+        compatibility: 'Best kept alone in this recommendation path to avoid fin-nipping and stress.'
+      }
+    ];
+  }
+
+  if (answers.fish === 'cichlid') {
+    if (answers.tank === 'small') {
+      return [
+        {
+          name: 'single ram cichlid',
+          reason: 'one of the few cichlid-style options that can fit a smaller freshwater setup conservatively',
+          stockingCount: '1 fish',
+          compatibility: 'Keep this as a single centerpiece fish in a small tank instead of mixing multiple territorial species.'
+        }
+      ];
+    }
+
+    if (answers.tank === 'medium') {
+      return [
+        {
+          name: 'bolivian ram',
+          reason: 'gives cichlid personality with less aggression than many alternatives',
+          stockingCount: '1 pair or 1 single fish',
+          compatibility: 'More manageable with peaceful tank mates than many cichlids, but still needs territory.'
+        },
+        {
+          name: 'keyhole cichlid',
+          reason: 'a gentler cichlid option for a more manageable community-leaning setup',
+          stockingCount: '1 pair or small compatible group',
+          compatibility: 'Better for mixed setups than more aggressive cichlids, but avoid overstocking.'
+        }
+      ];
+    }
+
+    return [
+      {
+        name: 'electric blue acara',
+        reason: 'offers cichlid personality with a more approachable temperament in larger tanks',
+        stockingCount: '1 pair or 1 single fish',
+        compatibility: 'Works best with similarly sized, non-fragile tank mates and strong filtration.'
+      },
+      {
+        name: 'severum',
+        reason: 'works better once the setup has enough volume and stronger filtration',
+        stockingCount: '1 fish or carefully planned pair',
+        compatibility: 'Needs larger-tank space and should not be mixed casually with highly aggressive cichlids.'
+      }
+    ];
+  }
+
+  if (answers.tank === 'small') {
+    return [
+      {
+        name: 'ember tetras',
+        reason: 'small, peaceful, and well-suited to compact freshwater community tanks',
+        stockingCount: '8-10 fish',
+        compatibility: 'Best in a single-species school or paired with very small peaceful bottom-dwellers.'
+      },
+      {
+        name: 'chili rasboras',
+        reason: 'great for a calm planted nano setup with light stocking',
+        stockingCount: '10-12 fish',
+        compatibility: 'Do best with tiny, peaceful companions and a planted layout.'
+      },
+      {
+        name: 'pygmy corydoras',
+        reason: 'adds bottom activity without overwhelming a smaller layout',
+        stockingCount: '6-8 fish',
+        compatibility: 'Good with nano schooling fish as long as the tank is not overstocked.'
+      }
+    ];
+  }
+
+  if (answers.tank === 'medium') {
+    return [
+      {
+        name: 'neon or cardinal tetras',
+        reason: 'classic schooling fish for medium beginner-friendly community tanks',
+        stockingCount: '10-15 fish',
+        compatibility: 'Works well as the main schooling group with peaceful bottom fish.'
+      },
+      {
+        name: 'harlequin rasboras',
+        reason: 'hardy, peaceful, and easy to mix into a balanced stock plan',
+        stockingCount: '8-12 fish',
+        compatibility: 'Mixes well with tetras, corydoras, and other non-aggressive community fish.'
+      },
+      {
+        name: 'corydoras',
+        reason: 'excellent bottom-dwellers for a stable, community-focused freshwater setup',
+        stockingCount: '6-8 fish',
+        compatibility: 'Best kept in groups and paired with peaceful mid-water fish.'
+      }
+    ];
+  }
+
+  return [
+    {
+      name: 'rainbowfish',
+      reason: 'a strong fit for larger freshwater displays with open swimming space',
+      stockingCount: '6-8 fish',
+      compatibility: 'Best with other active but non-aggressive species in larger tanks.'
+    },
+    {
+      name: 'larger tetra schools',
+      reason: 'larger tanks let you build more impressive schooling behavior safely',
+      stockingCount: '15-20 fish',
+      compatibility: 'Use one larger school instead of too many mixed species for a cleaner stock plan.'
+    },
+    {
+      name: 'corydoras group',
+      reason: 'anchors the bottom level in a large peaceful community tank',
+      stockingCount: '8-10 fish',
+      compatibility: 'Great with peaceful schooling fish and helps round out a larger freshwater display.'
+    }
+  ];
+}
+
+function getAvoidFishWarnings(answers: CompleteRecommendationAnswers): FishWarning[] {
+  if (answers.water === 'salt') {
+    return [
+      {
+        name: 'large tangs',
+        reason: 'Need much more swimming room than these starter saltwater recommendations are built to support.'
+      },
+      {
+        name: 'aggressive marine fish such as triggers',
+        reason: 'Too aggressive and specialized for a conservative beginner-oriented saltwater stocking plan.'
+      }
+    ];
+  }
+
+  if (answers.fish === 'betta') {
+    return [
+      {
+        name: 'fin-nippers such as tiger barbs',
+        reason: 'They commonly harass long-finned bettas and create constant stress.'
+      },
+      {
+        name: 'other bettas or flashy male labyrinth fish',
+        reason: 'They create territorial conflict in the single-show-fish route this setup is designed around.'
+      }
+    ];
+  }
+
+  if (answers.fish === 'cichlid') {
+    if (answers.tank === 'small') {
+      return [
+        {
+          name: 'multiple territorial cichlids',
+          reason: 'A small tank does not provide enough territory to manage aggression safely.'
+        },
+        {
+          name: 'tiny schooling fish',
+          reason: 'They are often stressed or treated as targets in cichlid-style layouts.'
+        }
+      ];
+    }
+
+    return [
+      {
+        name: 'mixed random cichlid species',
+        reason: 'Compatibility falls apart quickly when territorial fish are combined without a specific plan.'
+      },
+      {
+        name: 'fragile community fish',
+        reason: 'Long-finned or timid fish usually do poorly with more assertive cichlid personalities.'
+      }
+    ];
+  }
+
+  if (answers.tank === 'small') {
+    return [
+      {
+        name: 'goldfish',
+        reason: 'They outgrow small tropical setups and have very different waste and temperature needs.'
+      },
+      {
+        name: 'common plecos',
+        reason: 'They grow too large and create too much waste for compact tanks.'
+      }
+    ];
+  }
+
+  return [
+    {
+      name: 'overly aggressive fish',
+      reason: 'They undermine the peaceful community plan this recommendation is built around.'
+    },
+    {
+      name: 'large messy fish that outgrow the plan',
+      reason: 'They push filtration, maintenance, and stocking density beyond what this setup is targeting.'
+    }
+  ];
+}
+
 function getHeadline(answers: CompleteRecommendationAnswers): string {
   const tankProfile = tankProfiles[answers.tank];
   const waterProfile = waterProfiles[answers.water];
@@ -490,6 +770,8 @@ export function buildWizardRecommendation(answers: RecommendationAnswers): Wizar
   const maintenanceProfile = maintenanceProfiles[answers.maint];
   const budgetProfile = budgetProfiles[answers.budget];
   const equipmentBundle = buildEquipmentBundle(answers);
+  const fishRecommendations = getFishRecommendations(answers);
+  const avoidFish = getAvoidFishWarnings(answers);
   const accessoryProducts = getAccessoryProducts(answers);
   const matchedGuides = getGuideMatches(answers);
 
@@ -524,6 +806,8 @@ export function buildWizardRecommendation(answers: RecommendationAnswers): Wizar
     stockingSummary,
     maintenanceSummary,
     startupRange: budgetProfile.startupRange,
+    fishRecommendations,
+    avoidFish,
     equipmentBundle,
     accessoryProducts,
     matchedGuides,
