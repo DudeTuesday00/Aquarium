@@ -1,13 +1,23 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Aquarium Wizard • Home Tanks Made Easy',
+  description = 'Interactive Aquarium Wizard, expert guides, 3D-printed accessories, and knowledge for home & small-office tanks.'
+} = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Interactive Aquarium Wizard, expert guides, 3D-printed accessories, and knowledge for home & small-office tanks." />
-    <title>Aquarium Wizard • Home Tanks Made Easy</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-light-bg dark:bg-slate-950 text-black dark:text-white min-h-screen font-sans flex flex-col">

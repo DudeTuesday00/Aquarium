@@ -1,43 +1,88 @@
-# Astro Starter Kit: Minimal
+# Aquarium Wizard
+
+Aquarium Wizard is an Astro site for home aquarium hobbyists. The current project includes:
+
+- A landing page for the Aquarium Wizard brand
+- A five-step aquarium recommendation wizard
+- A guides section with a starter beginner setup article
+- A shop page for 3D-printed aquarium accessories
+- Gallery, About, and Contact pages
+
+## Stack
+
+- Astro 6
+- Tailwind CSS 4 via `@tailwindcss/vite`
+- Static site output
+
+## Requirements
+
+- Node `22.12.0+` or `24.x`
+- npm `11+`
+
+This repo intentionally blocks unsupported Node versions such as Node 25 because the current Astro toolchain can fail there with misleading build errors.
+
+## Getting Started
+
+Install dependencies:
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Start the dev server:
 
-## 🚀 Project Structure
+```sh
+npm run dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+Create a production build:
+
+```sh
+npm run build
+```
+
+Preview the production build locally:
+
+```sh
+npm run preview
+```
+
+## Project Structure
 
 ```text
 /
 ├── public/
+├── scripts/
+│   └── check-node.mjs
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── wizard.astro
+│   │   ├── guides.astro
+│   │   ├── guides/
+│   │   │   └── beginner-tank-setup.astro
+│   │   ├── shop.astro
+│   │   ├── gallery.astro
+│   │   ├── about.astro
+│   │   └── contact.astro
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Notes
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- The wizard is currently client-side and returns a recommendation based on five required answers.
+- Guides are currently implemented as static `.astro` pages, not Astro content collections.
+- Several business details are still placeholders, including product purchase links, gallery media, and some About page content.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Next Priorities
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Replace placeholder product and affiliate links with real destinations
+- Add real gallery assets and richer guide content
+- Expand SEO with Open Graph and social metadata
+- Verify the site in a supported Node 22 or 24 environment before deployment

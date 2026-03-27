@@ -2,7 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
+<Layout
+  title="Aquarium Wizard • Personalized Tank Recommendations"
+  description="Answer five quick questions to get a personalized aquarium setup recommendation based on tank size, fish style, maintenance level, and budget."
+>
   <main class="max-w-4xl mx-auto px-6 py-12">
     <h1 class="text-5xl font-bold text-primary mb-2">Aquarium Wizard</h1>
     <p class="text-xl text-accent-2 mb-10">Answer 5 quick questions and get your personalized recommendation</p>
@@ -97,6 +100,7 @@ import Layout from '../layouts/Layout.astro';
         <button id="prev-btn" class="px-8 py-3 border-2 border-primary text-primary rounded-2xl font-medium hover:bg-primary hover:text-white hidden">← Previous</button>
         <button id="next-btn" class="px-8 py-3 bg-primary text-white rounded-2xl font-medium hover:bg-accent-1">Next →</button>
       </div>
+      <p id="wizard-error" class="mt-4 text-sm font-medium text-red-600 dark:text-red-400 hidden" aria-live="polite"></p>
     </div>
   </main>
 
@@ -108,12 +112,36 @@ import Layout from '../layouts/Layout.astro';
     const prevBtn = document.getElementById('prev-btn');
     const results = document.getElementById('results');
     const recommendation = document.getElementById('recommendation');
+    const errorMessage = document.getElementById('wizard-error');
+    const stepFields = {
+      1: 'tank-size',
+      2: 'water-type',
+      3: 'fish-pref',
+      4: 'maintenance',
+      5: 'budget'
+    };
 
     function showStep(n) {
       steps.forEach(s => s.classList.add('hidden'));
       document.getElementById(`step-${n}`).classList.remove('hidden');
       prevBtn.classList.toggle('hidden', n === 1);
       nextBtn.textContent = n === totalSteps ? 'Get My Recommendation' : 'Next →';
+      clearError();
+    }
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorMessage.classList.remove('hidden');
+    }
+
+    function clearError() {
+      errorMessage.textContent = '';
+      errorMessage.classList.add('hidden');
+    }
+
+    function hasAnswerForStep(stepNumber) {
+      const fieldName = stepFields[stepNumber];
+      return Boolean(document.querySelector(`input[name="${fieldName}"]:checked`));
     }
 
     function getAnswers() {
@@ -127,6 +155,10 @@ import Layout from '../layouts/Layout.astro';
     }
 
     function generateRecommendation(answers) {
+      if (!answers.tank || !answers.water || !answers.fish || !answers.maint || !answers.budget) {
+        return '';
+      }
+
       return `
         <p class="text-2xl mb-4">Based on your choices, we recommend a <strong>${answers.tank === 'small' ? '10-gallon' : answers.tank === 'medium' ? '30-gallon' : '55-gallon'} ${answers.water === 'fresh' ? 'freshwater' : 'saltwater'} tank</strong>.</p>
         <p>You’ll love a community of ${answers.fish === 'community' ? 'tetras, rasboras & guppies' : answers.fish === 'betta' ? 'a beautiful Betta' : 'peaceful cichlids'}.</p>
@@ -137,16 +169,29 @@ import Layout from '../layouts/Layout.astro';
     }
 
     nextBtn.addEventListener('click', () => {
+      if (!hasAnswerForStep(currentStep)) {
+        showError('Select an answer before continuing.');
+        return;
+      }
+
       if (currentStep < totalSteps) {
         currentStep++;
         showStep(currentStep);
       } else {
         const answers = getAnswers();
-        recommendation.innerHTML = generateRecommendation(answers);
+        const html = generateRecommendation(answers);
+
+        if (!html) {
+          showError('Complete every step before generating your recommendation.');
+          return;
+        }
+
+        recommendation.innerHTML = html;
         document.getElementById('wizard').querySelectorAll('.step').forEach(s => s.classList.add('hidden'));
         results.classList.remove('hidden');
         nextBtn.classList.add('hidden');
         prevBtn.classList.add('hidden');
+        clearError();
       }
     });
 
@@ -155,6 +200,12 @@ import Layout from '../layouts/Layout.astro';
         currentStep--;
         showStep(currentStep);
       }
+    });
+
+    Object.values(stepFields).forEach((fieldName) => {
+      document.querySelectorAll(`input[name="${fieldName}"]`).forEach((input) => {
+        input.addEventListener('change', clearError);
+      });
     });
 
     // Start at step 1
