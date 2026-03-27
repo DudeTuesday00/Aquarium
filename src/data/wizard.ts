@@ -1,7 +1,19 @@
-export type WizardAnswerKey = 'tank' | 'water' | 'fish' | 'maint' | 'budget';
+export type WizardAnswerKey =
+  | 'experience'
+  | 'environment'
+  | 'tank'
+  | 'water'
+  | 'fish'
+  | 'plants'
+  | 'maint'
+  | 'budget';
+
+export type ExperienceValue = 'beginner' | 'some' | 'advanced';
+export type EnvironmentValue = 'home' | 'office';
 export type TankValue = 'small' | 'medium' | 'large';
 export type WaterValue = 'fresh' | 'salt';
 export type FishValue = 'community' | 'betta' | 'cichlid';
+export type PlantsValue = 'yes' | 'no';
 export type MaintenanceValue = 'low' | 'medium';
 export type BudgetValue = 'low' | 'medium' | 'high';
 
@@ -19,9 +31,12 @@ export interface WizardQuestion {
 }
 
 export interface RecommendationAnswers {
+  experience: ExperienceValue | '';
+  environment: EnvironmentValue | '';
   tank: TankValue | '';
   water: WaterValue | '';
   fish: FishValue | '';
+  plants: PlantsValue | '';
   maint: MaintenanceValue | '';
   budget: BudgetValue | '';
 }
@@ -60,52 +75,83 @@ export interface WizardRecommendation {
 
 export const wizardQuestions: WizardQuestion[] = [
   {
+    key: 'experience',
+    fieldName: 'experience-level',
+    step: 1,
+    title: 'Step 1: Experience Level',
+    options: [
+      { value: 'beginner', label: 'Beginner - this will be my first aquarium' },
+      { value: 'some', label: 'Some experience - I have kept fish before' },
+      { value: 'advanced', label: 'Advanced - I am comfortable with equipment and water care' }
+    ]
+  },
+  {
+    key: 'environment',
+    fieldName: 'tank-environment',
+    step: 2,
+    title: 'Step 2: Where Will the Tank Live?',
+    options: [
+      { value: 'home', label: 'Home - living room, bedroom, kitchen, or entryway' },
+      { value: 'office', label: 'Small office - desk, waiting room, or front office' }
+    ]
+  },
+  {
     key: 'tank',
     fieldName: 'tank-size',
-    step: 1,
-    title: 'Step 1: Tank Size',
+    step: 3,
+    title: 'Step 3: Tank Size',
     options: [
-      { value: 'small', label: 'Small (5-20 gallons) - Apartment / Desk' },
-      { value: 'medium', label: 'Medium (20-55 gallons) - Living Room' },
-      { value: 'large', label: 'Large (55+ gallons) - Dedicated Setup' }
+      { value: 'small', label: 'Small (5-20 gallons) - compact footprint' },
+      { value: 'medium', label: 'Medium (20-55 gallons) - most flexible range' },
+      { value: 'large', label: 'Large (55+ gallons) - dedicated display' }
     ]
   },
   {
     key: 'water',
     fieldName: 'water-type',
-    step: 2,
-    title: 'Step 2: Water Type',
+    step: 4,
+    title: 'Step 4: Water Type',
     options: [
-      { value: 'fresh', label: 'Freshwater (easier for beginners)' },
-      { value: 'salt', label: 'Saltwater (more colorful fish)' }
+      { value: 'fresh', label: 'Freshwater - simpler and more beginner-friendly' },
+      { value: 'salt', label: 'Saltwater - higher visual payoff but more work' }
     ]
   },
   {
     key: 'fish',
     fieldName: 'fish-pref',
-    step: 3,
-    title: 'Step 3: Fish Preference',
+    step: 5,
+    title: 'Step 5: Fish Style',
     options: [
-      { value: 'community', label: 'Community fish (peaceful, colorful)' },
-      { value: 'betta', label: 'Betta or single fish' },
-      { value: 'cichlid', label: 'Cichlids or more active fish' }
+      { value: 'community', label: 'Peaceful community fish' },
+      { value: 'betta', label: 'Betta or single-show fish' },
+      { value: 'cichlid', label: 'Active cichlids or more assertive fish' }
+    ]
+  },
+  {
+    key: 'plants',
+    fieldName: 'live-plants',
+    step: 6,
+    title: 'Step 6: Do You Want Live Plants?',
+    options: [
+      { value: 'yes', label: 'Yes - I want a planted look' },
+      { value: 'no', label: 'No - I prefer a simpler setup' }
     ]
   },
   {
     key: 'maint',
     fieldName: 'maintenance',
-    step: 4,
-    title: 'Step 4: Maintenance Level',
+    step: 7,
+    title: 'Step 7: Maintenance Level',
     options: [
-      { value: 'low', label: 'Low (under 2 hours/week)' },
-      { value: 'medium', label: 'Medium (2-4 hours/week)' }
+      { value: 'low', label: 'Low - under 2 hours per week' },
+      { value: 'medium', label: 'Medium - I can handle regular upkeep' }
     ]
   },
   {
     key: 'budget',
     fieldName: 'budget',
-    step: 5,
-    title: 'Step 5: Budget for Accessories',
+    step: 8,
+    title: 'Step 8: Budget for Accessories and Upgrades',
     options: [
       { value: 'low', label: 'Under $150' },
       { value: 'medium', label: '$150-$350' },
@@ -113,6 +159,32 @@ export const wizardQuestions: WizardQuestion[] = [
     ]
   }
 ];
+
+const experienceProfiles = {
+  beginner: {
+    fit: 'beginner-safe',
+    note: 'Keep decisions simple and avoid stacking too many variables at once.'
+  },
+  some: {
+    fit: 'comfortable for returning hobbyists',
+    note: 'You can handle a little more equipment complexity if the setup solves a real need.'
+  },
+  advanced: {
+    fit: 'open to more specialized setups',
+    note: 'You can support more demanding gear and stocking choices as long as the tank size matches the plan.'
+  }
+} as const;
+
+const environmentProfiles = {
+  home: {
+    label: 'home setup',
+    note: 'Home tanks can tolerate a little more personality, motion, and maintenance variation.'
+  },
+  office: {
+    label: 'small-office setup',
+    note: 'Office tanks should stay quieter, cleaner-looking, and easier for a short maintenance window.'
+  }
+} as const;
 
 const tankProfiles = {
   small: {
@@ -135,7 +207,7 @@ const tankProfiles = {
 const waterProfiles = {
   fresh: {
     label: 'freshwater',
-    experience: 'the easiest path for beginners and practical daily ownership',
+    experience: 'the easiest path for practical daily ownership',
     note: 'Use dechlorinator, a reliable test kit, and simple stocking discipline.'
   },
   salt: {
@@ -163,6 +235,17 @@ const fishProfiles = {
   }
 } as const;
 
+const plantProfiles = {
+  yes: {
+    label: 'planted presentation',
+    note: 'Plan for plant-safe layout decisions, cleaner cable management, and at least modest lighting quality.'
+  },
+  no: {
+    label: 'low-complexity hardscape setup',
+    note: 'This keeps equipment simpler and reduces one more variable for first-time owners.'
+  }
+} as const;
+
 const maintenanceProfiles = {
   low: {
     label: 'low-maintenance routine',
@@ -178,23 +261,31 @@ const maintenanceProfiles = {
 
 const budgetProfiles = {
   low: {
-    label: 'starter budget',
     startupRange: '$120-$180',
     accessoryTier: 2
   },
   medium: {
-    label: 'balanced budget',
     startupRange: '$250-$350',
     accessoryTier: 3
   },
   high: {
-    label: 'premium budget',
     startupRange: '$450+',
     accessoryTier: 4
   }
 } as const;
 
-const equipmentBundles: Record<`${WaterValue}-${TankValue}`, EquipmentBundle> = {
+type CompleteRecommendationAnswers = {
+  experience: ExperienceValue;
+  environment: EnvironmentValue;
+  tank: TankValue;
+  water: WaterValue;
+  fish: FishValue;
+  plants: PlantsValue;
+  maint: MaintenanceValue;
+  budget: BudgetValue;
+};
+
+const baseBundles: Record<`${WaterValue}-${TankValue}`, EquipmentBundle> = {
   'fresh-small': {
     name: 'Compact Freshwater Starter Bundle',
     summary: 'Quiet and simple equipment for small home or desk tanks.',
@@ -227,14 +318,14 @@ const equipmentBundles: Record<`${WaterValue}-${TankValue}`, EquipmentBundle> = 
   }
 };
 
-const productCatalog: Record<string, ProductMatch & { priorities: string[] }> = {
+const productCatalog: Record<string, ProductMatch & { tags: string[] }> = {
   'filter-guard': {
     id: 'filter-guard',
     name: 'Filter Guard',
     price: '$12.99',
     href: '/shop',
     summary: 'Protects fish from intake tubes and keeps beginner setups safer.',
-    priorities: ['low-any-any', 'medium-any-any', 'high-any-any']
+    tags: ['all', 'beginner', 'office']
   },
   'feeding-ring': {
     id: 'feeding-ring',
@@ -242,23 +333,23 @@ const productCatalog: Record<string, ProductMatch & { priorities: string[] }> = 
     price: '$8.99',
     href: '/shop',
     summary: 'Keeps food in one spot and reduces floating mess in community and betta tanks.',
-    priorities: ['low-community-any', 'low-betta-any', 'medium-any-any', 'high-any-any']
+    tags: ['community', 'betta', 'office', 'all']
   },
   'plant-clips': {
     id: 'plant-clips',
     name: 'Plant Clips',
     price: '$14.99',
     href: '/shop',
-    summary: 'Keeps plants and decor under control in freshwater tanks.',
-    priorities: ['medium-community-any', 'medium-betta-any', 'high-any-any']
+    summary: 'Keeps live plants and decor in place in planted freshwater tanks.',
+    tags: ['plants', 'fresh']
   },
   'custom-mounts': {
     id: 'custom-mounts',
     name: 'Custom Accessory Mounts',
     price: '$24.99+',
     href: '/shop',
-    summary: 'Best for premium display setups that need a cleaner cable or equipment layout.',
-    priorities: ['high-any-medium', 'high-any-large']
+    summary: 'Best for premium display setups that need cleaner cable or equipment layout.',
+    tags: ['premium', 'large', 'display']
   }
 };
 
@@ -293,36 +384,61 @@ const guideCatalog: Record<string, Omit<GuideMatch, 'reason'>> = {
   }
 };
 
-type CompleteRecommendationAnswers = {
-  tank: TankValue;
-  water: WaterValue;
-  fish: FishValue;
-  maint: MaintenanceValue;
-  budget: BudgetValue;
-};
-
 function guideMatch(slug: keyof typeof guideCatalog, reason: string): GuideMatch {
   return { ...guideCatalog[slug], reason };
 }
 
-function getAccessoryProducts(answers: CompleteRecommendationAnswers): ProductMatch[] {
-  const exactPriority = `${answers.budget}-${answers.fish}-${answers.tank}`;
-  const broadPriority = `${answers.budget}-any-any`;
+function buildEquipmentBundle(answers: CompleteRecommendationAnswers): EquipmentBundle {
+  const base = baseBundles[`${answers.water}-${answers.tank}`];
+  const items = [...base.items];
 
-  return Object.values(productCatalog)
-    .filter((product) => product.priorities.includes(exactPriority) || product.priorities.includes(broadPriority))
-    .slice(0, budgetProfiles[answers.budget].accessoryTier - 1)
-    .map(({ priorities: _priorities, ...product }) => product);
+  if (answers.plants === 'yes' && answers.water === 'fresh') {
+    items.push('plant-friendly substrate', 'better planted-tank lighting');
+  }
+
+  if (answers.environment === 'office') {
+    items.push('quiet timer setup');
+  }
+
+  if (answers.experience === 'beginner') {
+    items.push('water-change bucket kit');
+  }
+
+  return {
+    ...base,
+    items
+  };
+}
+
+function getAccessoryProducts(answers: CompleteRecommendationAnswers): ProductMatch[] {
+  const selectedIds = new Set<string>(['filter-guard']);
+
+  if (answers.fish === 'community' || answers.fish === 'betta' || answers.environment === 'office') {
+    selectedIds.add('feeding-ring');
+  }
+
+  if (answers.plants === 'yes' && answers.water === 'fresh') {
+    selectedIds.add('plant-clips');
+  }
+
+  if (answers.budget === 'high' || answers.tank === 'large') {
+    selectedIds.add('custom-mounts');
+  }
+
+  return Array.from(selectedIds)
+    .slice(0, budgetProfiles[answers.budget].accessoryTier)
+    .map((id) => productCatalog[id]);
 }
 
 function getGuideMatches(answers: CompleteRecommendationAnswers): GuideMatch[] {
   const matches: GuideMatch[] = [
-    guideMatch('beginner-tank-setup', 'Use this as your foundation for setup order and cycling.'),
-    guideMatch('freshwater-vs-saltwater', 'Compare the long-term cost and maintenance tradeoffs for your chosen path.')
+    guideMatch('beginner-tank-setup', 'Use this as your foundation for setup order, cycling, and avoiding early mistakes.'),
+    guideMatch('freshwater-vs-saltwater', 'Use this to sanity-check whether your chosen water type matches your time, budget, and goals.'),
+    guideMatch('aquarium-filter-types', 'Filter choice should follow your tank size, noise tolerance, and maintenance target.')
   ];
 
   if (answers.water === 'salt') {
-    matches.push(guideMatch('saltwater-beginner-basics', 'This covers the extra testing and maintenance a saltwater setup requires.'));
+    matches.push(guideMatch('saltwater-beginner-basics', 'This explains the extra testing and maintenance a saltwater path requires.'));
   }
 
   if (answers.fish === 'community') {
@@ -337,13 +453,27 @@ function getGuideMatches(answers: CompleteRecommendationAnswers): GuideMatch[] {
     matches.push(guideMatch('cichlid-tank-basics', 'This explains compatibility, territory, and stronger filtration needs.'));
   }
 
-  matches.push(guideMatch('aquarium-filter-types', 'Choose a filter that matches your tank size and maintenance tolerance.'));
-
   return matches.slice(0, 4);
 }
 
+function getHeadline(answers: CompleteRecommendationAnswers): string {
+  const tankProfile = tankProfiles[answers.tank];
+  const waterProfile = waterProfiles[answers.water];
+  const environmentProfile = environmentProfiles[answers.environment];
+  return `${tankProfile.headline} ${waterProfile.label} ${environmentProfile.label}`;
+}
+
 export function isCompleteWizardAnswers(answers: RecommendationAnswers): answers is CompleteRecommendationAnswers {
-  return Boolean(answers.tank && answers.water && answers.fish && answers.maint && answers.budget);
+  return Boolean(
+    answers.experience &&
+      answers.environment &&
+      answers.tank &&
+      answers.water &&
+      answers.fish &&
+      answers.plants &&
+      answers.maint &&
+      answers.budget
+  );
 }
 
 export function buildWizardRecommendation(answers: RecommendationAnswers): WizardRecommendation | null {
@@ -351,24 +481,52 @@ export function buildWizardRecommendation(answers: RecommendationAnswers): Wizar
     return null;
   }
 
+  const experienceProfile = experienceProfiles[answers.experience];
+  const environmentProfile = environmentProfiles[answers.environment];
   const tankProfile = tankProfiles[answers.tank];
   const waterProfile = waterProfiles[answers.water];
   const fishProfile = fishProfiles[answers.fish];
+  const plantProfile = plantProfiles[answers.plants];
   const maintenanceProfile = maintenanceProfiles[answers.maint];
   const budgetProfile = budgetProfiles[answers.budget];
-  const equipmentBundle = equipmentBundles[`${answers.water}-${answers.tank}`];
+  const equipmentBundle = buildEquipmentBundle(answers);
   const accessoryProducts = getAccessoryProducts(answers);
   const matchedGuides = getGuideMatches(answers);
 
+  const setupSummary =
+    answers.environment === 'office'
+      ? `This plan is tuned for a quieter, cleaner-looking office display and keeps equipment choices practical.`
+      : `This plan is tuned for a home display where you have more flexibility with personality, layout, and maintenance rhythm.`;
+
+  const stockingSummary =
+    answers.experience === 'beginner' && answers.water === 'salt'
+      ? `Your answers point toward a visually ambitious setup, but the recommendation stays conservative because saltwater plus beginner status needs extra margin.`
+      : `Your livestock direction is a ${fishProfile.label} built around ${fishProfile.stocking}.`;
+
+  const maintenanceSummary =
+    answers.plants === 'yes'
+      ? `Plan for a ${maintenanceProfile.label}: ${maintenanceProfile.routine}. Because you want a ${plantProfile.label}, lighting and cleanup discipline matter more.`
+      : `Plan for a ${maintenanceProfile.label}: ${maintenanceProfile.routine}.`;
+
+  const notes = [
+    experienceProfile.note,
+    environmentProfile.note,
+    tankProfile.note,
+    waterProfile.note,
+    plantProfile.note,
+    fishProfile.temperament,
+    maintenanceProfile.note
+  ];
+
   return {
-    headline: `${tankProfile.headline} ${waterProfile.label} setup`,
-    setupSummary: `This is ${tankProfile.environment} and follows ${waterProfile.experience}.`,
-    stockingSummary: `Your livestock direction is a ${fishProfile.label} built around ${fishProfile.stocking}.`,
-    maintenanceSummary: `Plan for a ${maintenanceProfile.label}: ${maintenanceProfile.routine}.`,
+    headline: getHeadline(answers),
+    setupSummary,
+    stockingSummary,
+    maintenanceSummary,
     startupRange: budgetProfile.startupRange,
     equipmentBundle,
     accessoryProducts,
     matchedGuides,
-    notes: [tankProfile.note, waterProfile.note, fishProfile.temperament, maintenanceProfile.note]
+    notes
   };
 }
