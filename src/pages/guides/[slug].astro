@@ -44,7 +44,7 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
           Back to Guides
         </a>
 
-        <div class={`mt-6 grid gap-8 lg:items-end ${guide.data.heroLayout === 'balanced' ? 'lg:grid-cols-[minmax(0,1fr)_minmax(18rem,1fr)]' : 'lg:grid-cols-[minmax(0,1.2fr)_20rem]'}`}>
+        <div class={`mt-6 grid gap-8 ${guide.data.heroLayout === 'balanced' ? 'lg:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)] lg:items-start' : 'lg:grid-cols-[minmax(0,1.2fr)_20rem] lg:items-end'}`}>
           <div>
             <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-primary/70">
               <span>{guide.data.category}</span>
@@ -67,7 +67,7 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
             <img
               src={guide.data.heroImage}
               alt={guide.data.heroImageAlt || guide.data.title}
-              class={`guide-hero-image ${guide.data.heroImageFit === 'contain' ? 'object-contain' : 'object-cover'} ${guide.data.heroImageAspect === 'square' ? 'guide-hero-square' : ''}`}
+              class={`guide-hero-image ${guide.data.heroLayout === 'balanced' ? 'guide-hero-image-balanced' : ''} ${guide.data.heroImageFit === 'contain' ? 'object-contain' : 'object-cover'} ${guide.data.heroImageAspect === 'square' ? 'guide-hero-square' : ''}`}
               loading="eager"
             />
           ) : (
@@ -185,13 +185,18 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
   .guide-hero-image {
     display: block;
     width: 100%;
-    aspect-ratio: 5 / 4;
+    height: auto;
     border-radius: 2rem;
     object-position: center;
   }
 
   .guide-hero-square {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
+  }
+
+  .guide-hero-image-balanced {
+    max-width: 32rem;
+    justify-self: end;
   }
 
   .guide-content :global(h1) {
@@ -334,11 +339,7 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
 
   @media (max-width: 768px) {
     .guide-hero-image {
-      aspect-ratio: 4 / 3;
-    }
-
-    .guide-hero-square {
-      aspect-ratio: 1 / 1;
+      max-width: none;
     }
 
     .guide-content :global(p),
