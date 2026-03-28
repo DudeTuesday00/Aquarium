@@ -7,6 +7,10 @@ publishDate: 2026-03-27
 updatedDate: 2026-03-28
 heroImage: /images/guides/betta-tank-basics.png
 heroImageAlt: Illustrated beginner betta tank setup showing a 5 gallon aquarium with gentle filtration, heater, thermometer, plants, and betta care basics
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: false
 tags:
   - freshwater

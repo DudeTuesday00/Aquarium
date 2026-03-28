@@ -44,14 +44,14 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
           Back to Guides
         </a>
 
-        <div class="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_20rem] lg:items-end">
+        <div class={`mt-6 grid gap-8 lg:items-end ${guide.data.heroLayout === 'balanced' ? 'lg:grid-cols-[minmax(0,1fr)_minmax(18rem,1fr)]' : 'lg:grid-cols-[minmax(0,1.2fr)_20rem]'}`}>
           <div>
             <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-primary/70">
               <span>{guide.data.category}</span>
               <span>{guide.data.audience === 'beginner' ? 'Beginner Friendly' : 'Growing Hobbyist'}</span>
               {guide.data.affiliateReady && <span>Affiliate Ready</span>}
             </div>
-            <h1 class="mt-5 max-w-4xl font-bold tracking-tight text-primary">
+            <h1 class={`mt-5 font-bold tracking-tight text-primary ${guide.data.heroTitleSize === 'compact' ? 'max-w-3xl' : 'max-w-4xl'}`}>
               {guide.data.title}
             </h1>
             <p class="mt-5 max-w-3xl text-slate-700 dark:text-slate-200">
@@ -67,7 +67,7 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
             <img
               src={guide.data.heroImage}
               alt={guide.data.heroImageAlt || guide.data.title}
-              class={`guide-hero-image ${guide.data.heroImageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+              class={`guide-hero-image ${guide.data.heroImageFit === 'contain' ? 'object-contain' : 'object-cover'} ${guide.data.heroImageAspect === 'square' ? 'guide-hero-square' : ''}`}
               loading="eager"
             />
           ) : (
@@ -188,6 +188,10 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
     aspect-ratio: 5 / 4;
     border-radius: 2rem;
     object-position: center;
+  }
+
+  .guide-hero-square {
+    aspect-ratio: 1 / 1;
   }
 
   .guide-content :global(h1) {
@@ -331,6 +335,10 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
   @media (max-width: 768px) {
     .guide-hero-image {
       aspect-ratio: 4 / 3;
+    }
+
+    .guide-hero-square {
+      aspect-ratio: 1 / 1;
     }
 
     .guide-content :global(p),
