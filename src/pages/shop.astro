@@ -1,69 +1,98 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const products = [
+  {
+    name: 'Filter Guard',
+    price: '$12.99',
+    summary: 'Protects fish from intake tubes and helps make beginner tanks safer.',
+    details: 'Fits common 10 to 55 gallon home aquariums.',
+    href: 'https://your-etsy-link.com',
+    accent: 'from-primary/95 via-accent-1 to-accent-2',
+    label: 'Fish Safety'
+  },
+  {
+    name: 'Feeding Ring',
+    price: '$8.99',
+    summary: 'Keeps floating food in one zone and reduces mess around the tank.',
+    details: 'Useful for bettas, community tanks, and office aquariums.',
+    href: 'https://your-etsy-link.com',
+    accent: 'from-accent-1/95 via-primary to-accent-2',
+    label: 'Cleaner Feeding'
+  },
+  {
+    name: 'Plant Weight Clips',
+    price: '$14.99',
+    summary: 'Helps keep live plants anchored while new roots establish.',
+    details: 'Set of 6 for planted freshwater layouts.',
+    href: 'https://your-etsy-link.com',
+    accent: 'from-accent-2/95 via-primary to-accent-1',
+    label: 'Planted Tanks'
+  }
+];
 ---
 
 <Layout
   title="Aquarium Accessories Shop • 3D-Printed Tank Tools"
   description="Browse 3D-printed aquarium accessories including filter guards, feeding rings, and plant clips designed for home and office tanks."
 >
-  <main class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-5xl font-bold text-primary mb-4">3D-Printed Aquarium Accessories</h1>
-    <p class="text-xl text-accent-2 mb-10">Hand-designed in Norman, Oklahoma • Perfect for home & small-office tanks</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Product 1 -->
-      <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-xl overflow-hidden group">
-        <div class="h-64 bg-gradient-to-br from-primary to-accent-1 flex items-center justify-center text-white text-6xl">🛡️</div>
-        <div class="p-8">
-          <h3 class="text-2xl font-semibold text-primary group-hover:text-accent-1 transition-colors">Filter Guard</h3>
-          <p class="text-warm-neutral mt-2">Protects fish from intake tubes • Fits 10–55 gallon tanks</p>
-          <div class="mt-6 flex justify-between items-end">
-            <div>
-              <span class="text-3xl font-bold text-primary">$12.99</span>
-            </div>
-            <a href="https://your-etsy-link.com" 
-               class="bg-primary text-white px-8 py-3 rounded-2xl font-medium hover:bg-accent-1 transition-colors">Buy Now</a>
+  <main>
+    <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.1),rgba(243,239,238,0.5))] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.14),rgba(2,6,23,0.96))]">
+      <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:py-18 xl:grid-cols-[minmax(0,1.05fr)_24rem] xl:items-end">
+        <div>
+          <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">3D-Printed Accessories</div>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-primary md:text-6xl md:leading-[0.98]">Practical tank tools built for real home aquariums.</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-700 dark:text-slate-200 md:text-2xl md:leading-9">
+            These accessories are designed to solve common day-to-day aquarium problems without adding clutter, wasted gear, or awkward maintenance.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="/contact" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Request a Custom Print</a>
+            <a href="/guides" class="inline-flex rounded-full border border-primary/20 bg-white/75 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white dark:border-white/10 dark:bg-slate-900/70">Read the Guides First</a>
           </div>
         </div>
-      </div>
 
-      <!-- Product 2 -->
-      <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-xl overflow-hidden group">
-        <div class="h-64 bg-gradient-to-br from-accent-1 to-accent-2 flex items-center justify-center text-white text-6xl">🍽️</div>
-        <div class="p-8">
-          <h3 class="text-2xl font-semibold text-primary group-hover:text-accent-1 transition-colors">Feeding Ring</h3>
-          <p class="text-warm-neutral mt-2">Keeps food in one spot • Reduces waste & mess</p>
-          <div class="mt-6 flex justify-between items-end">
-            <div>
-              <span class="text-3xl font-bold text-primary">$8.99</span>
-            </div>
-            <a href="https://your-etsy-link.com" 
-               class="bg-primary text-white px-8 py-3 rounded-2xl font-medium hover:bg-accent-1 transition-colors">Buy Now</a>
-          </div>
+        <div class="rounded-[2rem] border border-primary/10 bg-white/80 p-6 shadow-[0_28px_90px_-55px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/8 dark:bg-slate-900/82">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Shop Notes</div>
+          <ul class="mt-5 space-y-4 text-sm leading-7 text-slate-700 dark:text-slate-300">
+            <li>Designed in Norman, Oklahoma for home and small-office tanks.</li>
+            <li>Best paired with the recommendation flow in the wizard and guide library.</li>
+            <li>Current links are placeholders until live storefront URLs are added.</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <!-- Product 3 -->
-      <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-xl overflow-hidden group">
-        <div class="h-64 bg-gradient-to-br from-accent-2 to-primary flex items-center justify-center text-white text-6xl">🌿</div>
-        <div class="p-8">
-          <h3 class="text-2xl font-semibold text-primary group-hover:text-accent-1 transition-colors">Plant Weight Clips</h3>
-          <p class="text-warm-neutral mt-2">Holds live plants in place • Set of 6</p>
-          <div class="mt-6 flex justify-between items-end">
-            <div>
-              <span class="text-3xl font-bold text-primary">$14.99</span>
+    <section class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid gap-6 lg:grid-cols-3">
+        {products.map((product) => (
+          <article class="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900">
+            <div class={`h-64 bg-gradient-to-br ${product.accent} p-6 text-white`}>
+              <div class="flex h-full flex-col justify-between rounded-[1.5rem] border border-white/20 bg-white/10 p-5 backdrop-blur-sm">
+                <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white/80">{product.label}</div>
+                <div class="text-3xl font-semibold tracking-tight">{product.name}</div>
+              </div>
             </div>
-            <a href="https://your-etsy-link.com" 
-               class="bg-primary text-white px-8 py-3 rounded-2xl font-medium hover:bg-accent-1 transition-colors">Buy Now</a>
-          </div>
-        </div>
+            <div class="p-7">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h2 class="text-2xl font-semibold tracking-tight text-primary">{product.name}</h2>
+                  <p class="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{product.summary}</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-400">{product.details}</p>
+                </div>
+                <div class="text-2xl font-bold text-primary">{product.price}</div>
+              </div>
+              <div class="mt-7 flex flex-wrap gap-3">
+                <a href={product.href} class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Buy When Live</a>
+                <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Ask About Fit</a>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
 
-    </div>
-
-    <div class="mt-16 text-center">
-      <p class="text-lg text-warm-neutral">More designs coming soon! Want a custom accessory? <a href="/contact" class="text-primary underline">Contact me</a></p>
-    </div>
+      <div class="mt-12 rounded-[2rem] border border-dashed border-primary/20 bg-white/70 px-7 py-7 text-center text-sm leading-7 text-slate-600 dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300">
+        More designs are coming. Once the real storefront is connected, this page can also support featured bundles, affiliate-compatible product pairings, and wizard-matched accessory blocks.
+      </div>
+    </section>
   </main>
 </Layout>

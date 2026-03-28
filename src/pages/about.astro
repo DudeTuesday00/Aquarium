@@ -6,12 +6,52 @@ import Layout from '../layouts/Layout.astro';
   title="About Aquarium Wizard • Diamond Dave"
   description="Learn about Diamond Dave, the aquarium hobbyist and 3D-print designer behind Aquarium Wizard and its beginner-friendly tank resources."
 >
-  <main class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-5xl font-bold text-primary mb-8">About Me</h1>
-    <div class="prose dark:prose-invert max-w-none">
-      <p class="text-xl">Hi, I'm Diamond Dave — a passionate home aquarium enthusiast and 3D-print designer based in Norman, Oklahoma.</p>
-      <p>I built this site to help everyday people create beautiful, thriving aquariums in their homes or small offices. My 3D-printed accessories are designed specifically for hobbyists like you.</p>
-      <!-- Add your full story, photos, etc. here later -->
-    </div>
+  <main>
+    <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.08),rgba(243,239,238,0.55))] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.14),rgba(2,6,23,0.95))]">
+      <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:py-18 xl:grid-cols-[minmax(0,1fr)_24rem] xl:items-end">
+        <div>
+          <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">About the Site</div>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-primary md:text-6xl">Built by a hobbyist for everyday aquarium owners.</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-700 dark:text-slate-200 md:text-2xl md:leading-9">
+            Aquarium Wizard is meant to help people avoid the expensive mistakes that happen when a tank is planned around impulse instead of fit.
+          </p>
+        </div>
+
+        <div class="rounded-[2rem] border border-primary/10 bg-white/80 p-6 shadow-[0_28px_90px_-55px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/8 dark:bg-slate-900/82">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Profile</div>
+          <div class="mt-4 text-2xl font-semibold tracking-tight text-primary">Diamond Dave</div>
+          <p class="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">Aquarium hobbyist, guide builder, and 3D-print accessory designer based in Norman, Oklahoma.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+        <article class="rounded-[2rem] border border-primary/10 bg-white px-7 py-8 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900 md:px-9">
+          <h2 class="text-3xl font-semibold tracking-tight text-primary">Why this site exists</h2>
+          <div class="mt-5 space-y-5 text-base leading-8 text-slate-700 dark:text-slate-300">
+            <p>Too many aquarium sites either stay too shallow to be useful or jump straight into advanced hobby jargon. This project is aimed at the middle: practical guidance for people setting up an aquarium in a living room, bedroom, kitchen, waiting area, or small office.</p>
+            <p>The goal is not to impress advanced hobbyists with complexity. The goal is to help normal people make good decisions about tank size, fish choice, maintenance, filtration, accessories, and long-term care.</p>
+            <p>The 3D-printed products on this site are meant to support that same idea. They should solve real tank problems cleanly, not just add novelty.</p>
+          </div>
+        </article>
+
+        <aside class="space-y-6">
+          <section class="rounded-[2rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Audience</div>
+            <p class="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300">Home and small-office aquarium owners in the USA who want a tank that looks good, stays healthy, and is realistic to maintain.</p>
+          </section>
+          <section class="rounded-[2rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">What to expect</div>
+            <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+              <li>Wizard-based recommendations</li>
+              <li>Long-form aquarium guides</li>
+              <li>3D-printed accessory sales</li>
+              <li>Future newsletter and gallery expansion</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </section>
   </main>
 </Layout>

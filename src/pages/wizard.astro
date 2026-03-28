@@ -7,35 +7,85 @@ import { wizardQuestions } from '../data/wizard';
   title="Aquarium Wizard • Personalized Tank Recommendations"
   description="Answer a guided set of questions to get a personalized aquarium setup recommendation based on experience, environment, tank size, fish style, plants, maintenance, and budget."
 >
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <h1 class="text-5xl font-bold text-primary mb-2">Aquarium Wizard</h1>
-    <p class="text-xl text-accent-2 mb-10">Answer 8 quick questions and get a more precise setup recommendation</p>
-
-    <div id="wizard" class="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-8">
-      {wizardQuestions.map((question, index) => (
-        <div id={`step-${question.step}`} class={`step${index === 0 ? '' : ' hidden'}`}>
-          <h3 class="text-3xl font-semibold text-accent-1 mb-6">{question.title}</h3>
-          <div class="space-y-4">
-            {question.options.map((option) => (
-              <label class="flex items-center gap-3 text-lg cursor-pointer">
-                <input type="radio" name={question.fieldName} value={option.value} class="accent-primary" /> {option.label}
-              </label>
-            ))}
-          </div>
+  <main>
+    <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.1),rgba(243,239,238,0.55))] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.15),rgba(2,6,23,0.96))]">
+      <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:py-18 xl:grid-cols-[minmax(0,1fr)_22rem] xl:items-end">
+        <div>
+          <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Aquarium Wizard</div>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-primary md:text-6xl md:leading-[0.98]">Answer a few questions and narrow the right tank before you spend money.</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-700 dark:text-slate-200 md:text-2xl md:leading-9">
+            The wizard turns tank size, fish style, water type, maintenance tolerance, plants, and budget into a practical direction you can actually use.
+          </p>
         </div>
-      ))}
-
-      <div id="results" class="hidden">
-        <h3 class="text-4xl font-bold text-primary mb-6">Your Perfect Setup Recommendation</h3>
-        <div id="recommendation" class="prose dark:prose-invert text-lg"></div>
+        <div class="rounded-[2rem] border border-primary/10 bg-white/80 p-6 shadow-[0_28px_90px_-55px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/8 dark:bg-slate-900/82">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">What You Get</div>
+          <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+            <li>Fish recommendations and a sample stocking plan</li>
+            <li>Equipment bundle guidance matched to the setup</li>
+            <li>Warnings about fish to avoid mixing</li>
+            <li>Direct links to guides worth reading next</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="flex justify-between mt-10">
-        <button id="prev-btn" class="px-8 py-3 border-2 border-primary text-primary rounded-2xl font-medium hover:bg-primary hover:text-white hidden">← Previous</button>
-        <button id="next-btn" class="px-8 py-3 bg-primary text-white rounded-2xl font-medium hover:bg-accent-1">Next →</button>
+    <section class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid gap-6 xl:grid-cols-[minmax(0,1fr)_19rem]">
+        <div id="wizard" class="rounded-[2rem] border border-primary/10 bg-white p-7 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900 md:p-9">
+          <div class="mb-8 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Guided Setup Flow</div>
+              <h2 class="mt-2 text-3xl font-semibold tracking-tight text-primary">Personalized recommendation builder</h2>
+            </div>
+            <div class="rounded-full border border-primary/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 dark:border-primary/20">
+              {wizardQuestions.length} questions
+            </div>
+          </div>
+
+          {wizardQuestions.map((question, index) => (
+            <div id={`step-${question.step}`} class={`step${index === 0 ? '' : ' hidden'}`}>
+              <div class="mb-6 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Step {question.step}</div>
+              <h3 class="text-3xl font-semibold tracking-tight text-primary">{question.title.replace(/^Step \d+:\s*/, '')}</h3>
+              <div class="mt-6 space-y-4">
+                {question.options.map((option) => (
+                  <label class="flex cursor-pointer items-start gap-4 rounded-[1.5rem] border border-primary/10 bg-light-bg/40 px-5 py-4 transition-colors hover:border-primary/30 hover:bg-white dark:border-white/8 dark:bg-slate-950/70 dark:hover:bg-slate-950">
+                    <input type="radio" name={question.fieldName} value={option.value} class="mt-1 accent-primary" />
+                    <span class="text-base leading-7 text-slate-700 dark:text-slate-200">{option.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <div id="results" class="hidden">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Recommendation Ready</div>
+            <h3 class="mt-2 text-4xl font-bold tracking-tight text-primary">Your aquarium direction</h3>
+            <div id="recommendation" class="wizard-result mt-8"></div>
+          </div>
+
+          <div class="mt-10 flex flex-wrap justify-between gap-4">
+            <button id="prev-btn" class="hidden rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" type="button">Previous</button>
+            <button id="next-btn" class="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" type="button">Next</button>
+          </div>
+          <p id="wizard-error" class="mt-4 text-sm font-medium text-red-600 dark:text-red-400 hidden" aria-live="polite"></p>
+        </div>
+
+        <aside class="space-y-6 xl:sticky xl:top-28 xl:self-start">
+          <section class="rounded-[2rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">How to use it</div>
+            <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+              <li>Answer based on the tank you are actually likely to maintain.</li>
+              <li>Do not choose saltwater unless you genuinely want the extra cost and work.</li>
+              <li>Treat the output as a planning direction, then read the matched guides before buying equipment.</li>
+            </ul>
+          </section>
+          <section class="rounded-[2rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Built for</div>
+            <p class="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300">Home and small-office aquarium owners who want a calmer first decision instead of random forum advice and impulse shopping.</p>
+          </section>
+        </aside>
       </div>
-      <p id="wizard-error" class="mt-4 text-sm font-medium text-red-600 dark:text-red-400 hidden" aria-live="polite"></p>
-    </div>
+    </section>
   </main>
 
   <script>
@@ -49,15 +99,13 @@ import { wizardQuestions } from '../data/wizard';
     const results = document.getElementById('results');
     const recommendation = document.getElementById('recommendation');
     const errorMessage = document.getElementById('wizard-error');
-    const stepFields = Object.fromEntries(
-      wizardQuestions.map((question) => [question.step, question.fieldName])
-    );
+    const stepFields = Object.fromEntries(wizardQuestions.map((question) => [question.step, question.fieldName]));
 
     function showStep(n) {
       steps.forEach((step) => step.classList.add('hidden'));
       document.getElementById(`step-${n}`).classList.remove('hidden');
       prevBtn.classList.toggle('hidden', n === 1);
-      nextBtn.textContent = n === totalSteps ? 'Get My Recommendation' : 'Next →';
+      nextBtn.textContent = n === totalSteps ? 'Get My Recommendation' : 'Next';
       clearError();
     }
 
@@ -84,49 +132,68 @@ import { wizardQuestions } from '../data/wizard';
       }, {});
     }
 
+    function renderList(items) {
+      return `<ul>${items.join('')}</ul>`;
+    }
+
     function renderRecommendation(result) {
       if (!result) {
         return '';
       }
 
       return `
-        <p class="text-2xl mb-4">Based on your choices, we recommend a <strong>${result.headline}</strong>.</p>
-        <p>${result.setupSummary}</p>
-        <p>${result.stockingSummary}</p>
-        <p>${result.maintenanceSummary}</p>
-        <h4 class="mt-8 text-primary">Sample Stocking Plan</h4>
-        <p><strong>${result.stockingPlan.title}</strong>: ${result.stockingPlan.summary}</p>
-        <ul>
-          ${result.stockingPlan.entries.map((entry) => `<li><strong>${entry.species}</strong> (${entry.count}) — ${entry.role}</li>`).join('')}
-        </ul>
-        <h4 class="mt-8 text-primary">Fish We Recommend</h4>
-        <ul>
-          ${result.fishRecommendations.map((fish) => `<li><strong>${fish.name}</strong> (${fish.stockingCount}) — ${fish.reason} Compatibility: ${fish.compatibility}</li>`).join('')}
-        </ul>
-        <h4 class="mt-8 text-primary">Avoid These Fish</h4>
-        <ul>
-          ${result.avoidFish.map((fish) => `<li><strong>${fish.name}</strong> — ${fish.reason}</li>`).join('')}
-        </ul>
-        <h4 class="mt-8 text-primary">Suggested Equipment Bundle</h4>
-        <p><strong>${result.equipmentBundle.name}</strong>: ${result.equipmentBundle.summary}</p>
-        <ul>
-          ${result.equipmentBundle.items.map((item) => `<li>${item}</li>`).join('')}
-        </ul>
-        <h4 class="mt-8 text-primary">Recommended Accessories</h4>
-        <ul>
-          ${result.accessoryProducts.map((product) => `<li><a href="${product.href}">${product.name}</a> (${product.price}) — ${product.summary}</li>`).join('')}
-        </ul>
-        <h4 class="mt-8 text-primary">Guides to Read Next</h4>
-        <ul>
-          ${result.matchedGuides.map((guide) => `<li><a href="/guides/${guide.slug}">${guide.title}</a> — ${guide.reason}</li>`).join('')}
-        </ul>
-        <p class="mt-6 text-accent-2">Estimated startup range: ${result.startupRange}.</p>
-        <ul>
-          ${result.notes.map((note) => `<li>${note}</li>`).join('')}
-        </ul>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/shop" class="inline-block rounded-2xl bg-primary px-8 py-4 font-medium text-white hover:bg-accent-1">Shop Matching Accessories</a>
-          <a href="/guides" class="inline-block rounded-2xl border-2 border-primary px-8 py-4 font-medium text-primary hover:bg-accent-1 hover:text-white">Browse All Guides</a>
+        <div class="space-y-8">
+          <section>
+            <p class="text-xl leading-8 text-slate-700 dark:text-slate-200">Based on your choices, we recommend a <strong class="text-primary">${result.headline}</strong>.</p>
+            <div class="mt-4 space-y-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+              <p>${result.setupSummary}</p>
+              <p>${result.stockingSummary}</p>
+              <p>${result.maintenanceSummary}</p>
+            </div>
+          </section>
+
+          <section class="rounded-[1.6rem] border border-primary/10 bg-light-bg/35 p-6 dark:border-white/8 dark:bg-slate-950/60">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Sample Stocking Plan</div>
+            <p class="mt-3 text-lg font-semibold text-primary">${result.stockingPlan.title}</p>
+            <p class="mt-2 text-sm leading-7 text-slate-700 dark:text-slate-300">${result.stockingPlan.summary}</p>
+            ${renderList(result.stockingPlan.entries.map((entry) => `<li><strong>${entry.species}</strong> (${entry.count}) - ${entry.role}</li>`))}
+          </section>
+
+          <section>
+            <h4>Fish We Recommend</h4>
+            ${renderList(result.fishRecommendations.map((fish) => `<li><strong>${fish.name}</strong> (${fish.stockingCount}) - ${fish.reason} Compatibility: ${fish.compatibility}</li>`))}
+          </section>
+
+          <section>
+            <h4>Avoid These Fish</h4>
+            ${renderList(result.avoidFish.map((fish) => `<li><strong>${fish.name}</strong> - ${fish.reason}</li>`))}
+          </section>
+
+          <section>
+            <h4>Suggested Equipment Bundle</h4>
+            <p><strong>${result.equipmentBundle.name}</strong>: ${result.equipmentBundle.summary}</p>
+            ${renderList(result.equipmentBundle.items.map((item) => `<li>${item}</li>`))}
+          </section>
+
+          <section>
+            <h4>Recommended Accessories</h4>
+            ${renderList(result.accessoryProducts.map((product) => `<li><a href="${product.href}">${product.name}</a> (${product.price}) - ${product.summary}</li>`))}
+          </section>
+
+          <section>
+            <h4>Guides to Read Next</h4>
+            ${renderList(result.matchedGuides.map((guide) => `<li><a href="/guides/${guide.slug}">${guide.title}</a> - ${guide.reason}</li>`))}
+          </section>
+
+          <section class="rounded-[1.6rem] border border-dashed border-primary/20 p-6">
+            <p class="text-sm leading-7 text-slate-700 dark:text-slate-300">Estimated startup range: <strong class="text-primary">${result.startupRange}</strong>.</p>
+            ${renderList(result.notes.map((note) => `<li>${note}</li>`))}
+          </section>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/shop" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Shop Matching Accessories</a>
+            <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Browse All Guides</a>
+          </div>
         </div>
       `;
     }
@@ -180,3 +247,39 @@ import { wizardQuestions } from '../data/wizard';
     showStep(1);
   </script>
 </Layout>
+
+<style>
+  .wizard-result :global(h4) {
+    margin-bottom: 0.8rem;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .wizard-result :global(p),
+  .wizard-result :global(li) {
+    color: rgb(51 65 85);
+    line-height: 1.9;
+  }
+
+  :global(.dark) .wizard-result :global(p),
+  :global(.dark) .wizard-result :global(li) {
+    color: rgb(226 232 240);
+  }
+
+  .wizard-result :global(ul) {
+    margin-top: 0.9rem;
+    padding-left: 1.3rem;
+  }
+
+  .wizard-result :global(li + li) {
+    margin-top: 0.45rem;
+  }
+
+  .wizard-result :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+  }
+</style>
