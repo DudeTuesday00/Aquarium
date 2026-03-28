@@ -5,6 +5,8 @@ category: Equipment
 audience: beginner
 publishDate: 2026-03-27
 updatedDate: 2026-03-27
+heroImage: /images/guides/aquarium-filter-types-explained.png
+heroImageAlt: Illustration of a planted home aquarium in a living room labeled Aquarium Filter Types Explained
 featured: true
 tags:
   - filtration

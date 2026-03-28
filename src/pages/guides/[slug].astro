@@ -64,14 +64,25 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
           </div>
 
           <div class="overflow-hidden rounded-[2rem] border border-primary/15 bg-white/85 shadow-[0_30px_80px_-40px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/10 dark:bg-slate-900/85">
-            <div class="aspect-[5/4] bg-[radial-gradient(circle_at_top_left,rgba(13,175,188,0.24),transparent_48%),linear-gradient(135deg,rgba(232,217,191,0.95),rgba(138,201,171,0.6)_46%,rgba(1,133,174,0.22))] dark:bg-[radial-gradient(circle_at_top_left,rgba(138,201,171,0.2),transparent_42%),linear-gradient(135deg,rgba(15,23,42,0.95),rgba(13,175,188,0.22),rgba(1,133,174,0.18))]">
-              <div class="flex h-full items-end p-6">
-                <div class="max-w-xs rounded-[1.5rem] bg-white/82 px-5 py-4 text-sm leading-6 text-slate-700 shadow-lg backdrop-blur dark:bg-slate-950/78 dark:text-slate-200">
-                  <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/80">Header Image Slot</div>
-                  <p class="mt-2">Official guide artwork can drop here later without changing the article layout.</p>
+            {guide.data.heroImage ? (
+              <div class="guide-hero-media">
+                <img
+                  src={guide.data.heroImage}
+                  alt={guide.data.heroImageAlt || guide.data.title}
+                  class="h-full w-full object-cover object-center"
+                  loading="eager"
+                />
+              </div>
+            ) : (
+              <div class="aspect-[5/4] bg-[radial-gradient(circle_at_top_left,rgba(13,175,188,0.24),transparent_48%),linear-gradient(135deg,rgba(232,217,191,0.95),rgba(138,201,171,0.6)_46%,rgba(1,133,174,0.22))] dark:bg-[radial-gradient(circle_at_top_left,rgba(138,201,171,0.2),transparent_42%),linear-gradient(135deg,rgba(15,23,42,0.95),rgba(13,175,188,0.22),rgba(1,133,174,0.18))]">
+                <div class="flex h-full items-end p-6">
+                  <div class="max-w-xs rounded-[1.5rem] bg-white/82 px-5 py-4 text-sm leading-6 text-slate-700 shadow-lg backdrop-blur dark:bg-slate-950/78 dark:text-slate-200">
+                    <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/80">Header Image Slot</div>
+                    <p class="mt-2">Official guide artwork can drop here later without changing the article layout.</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
@@ -173,6 +184,12 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
 </Layout>
 
 <style>
+  .guide-hero-media {
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(232, 217, 191, 0.9), rgba(138, 201, 171, 0.45), rgba(1, 133, 174, 0.18));
+  }
+
   .guide-content :global(h1) {
     display: none;
   }
@@ -312,6 +329,10 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
   }
 
   @media (max-width: 768px) {
+    .guide-hero-media {
+      aspect-ratio: 4 / 3;
+    }
+
     .guide-content :global(p),
     .guide-content :global(li) {
       font-size: 1rem;

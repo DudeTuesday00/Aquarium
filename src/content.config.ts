@@ -11,6 +11,8 @@ const guides = defineCollection({
     audience: z.enum(['beginner', 'intermediate']),
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     relatedProducts: z.array(z.string()).default([]),
