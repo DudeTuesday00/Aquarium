@@ -5,6 +5,12 @@ category: Setup & Maintenance
 audience: beginner
 publishDate: 2026-03-28
 updatedDate: 2026-03-28
+heroImage: /images/guides/step-by-step-aquarium-setup.png
+heroImageAlt: Illustrated step-by-step aquarium setup guide showing tank cleaning, gravel and decor placement, equipment installation, and final water setup
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - setup

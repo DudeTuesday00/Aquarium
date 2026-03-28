@@ -21,6 +21,7 @@ The current project includes:
 - A scalable guides hub organized by topic
 - Multiple published long-form guides plus placeholder cards for planned guides
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
+- Standardized square guide artwork on multiple published guides
 - A shop page for 3D-printed accessories
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
