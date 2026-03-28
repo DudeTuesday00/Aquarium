@@ -145,6 +145,7 @@ All current and future long-form guides should follow the same presentation patt
 - frontmatter-driven content in `src/content/guides/*.md`
 - optional hero artwork stored under `public/images/guides/`
 - rounded-corner hero image presentation
+- standard square guide-image rendering at `494 x 494 px` when square artwork is used
 - per-guide hero controls through frontmatter when needed
 
 Current supported guide frontmatter fields include:
