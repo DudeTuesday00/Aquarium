@@ -172,6 +172,7 @@ These settings exist so a guide can keep the same overall template while adjusti
 The current live long-form guides include:
 
 - `Aquarium Filter Types Explained`
+- `Common Aquarium Algae Problems and How to Fix Them`
 - `Complete Beginner Tank Setup Guide 2026`
 - `Freshwater vs Saltwater Aquariums`
 - `Freshwater Community Fish`
