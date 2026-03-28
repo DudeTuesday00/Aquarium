@@ -7,7 +7,8 @@ publishDate: 2026-03-27
 updatedDate: 2026-03-27
 heroImage: /images/guides/freshwater-saltwater.png
 heroImageAlt: Comparison-style illustrated freshwater and saltwater aquarium guide header image
-heroImageAspect: wide
+heroImageFit: contain
+heroImageAspect: square
 heroLayout: balanced
 heroTitleSize: compact
 featured: true
