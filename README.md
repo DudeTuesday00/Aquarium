@@ -20,6 +20,7 @@ The current project includes:
 - A structured aquarium wizard with setup recommendations, fish guidance, stocking plans, equipment bundles, and matched guides
 - A scalable guides hub organized by topic
 - Multiple published long-form guides plus placeholder cards for planned guides
+- A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
 - A shop page for 3D-printed accessories
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
@@ -134,6 +135,28 @@ npm run preview
 ├── package.json
 └── tsconfig.json
 ```
+
+## Guide Format Standard
+
+All current and future long-form guides should follow the same presentation pattern:
+
+- long-form editorial article structure
+- dynamic route rendering through `src/pages/guides/[slug].astro`
+- frontmatter-driven content in `src/content/guides/*.md`
+- optional hero artwork stored under `public/images/guides/`
+- rounded-corner hero image presentation
+- per-guide hero controls through frontmatter when needed
+
+Current supported guide frontmatter fields include:
+
+- `heroImage`
+- `heroImageAlt`
+- `heroImageFit`
+- `heroImageAspect`
+- `heroLayout`
+- `heroTitleSize`
+
+These settings exist so a guide can keep the same overall template while adjusting image fit, image proportions, and header balance for specific artwork. The default expectation is that new guides should use the established guide layout first, then only use per-guide overrides when the artwork or title treatment genuinely requires it.
 
 ## Current Gaps
 
