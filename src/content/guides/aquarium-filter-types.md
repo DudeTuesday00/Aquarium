@@ -7,7 +7,8 @@ publishDate: 2026-03-27
 updatedDate: 2026-03-27
 heroImage: /images/guides/aquarium-filter-types-explained.png
 heroImageAlt: Illustration of a planted home aquarium in a living room labeled Aquarium Filter Types Explained
-heroImageAspect: wide
+heroImageFit: contain
+heroImageAspect: square
 heroLayout: balanced
 heroTitleSize: compact
 featured: true
