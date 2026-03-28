@@ -16,12 +16,13 @@ The business model includes:
 
 The current project includes:
 
-- A landing page
-- A basic five-step aquarium wizard
-- A guides hub with one starter guide
+- A redesigned landing page
+- A structured aquarium wizard with setup recommendations, fish guidance, stocking plans, equipment bundles, and matched guides
+- A scalable guides hub organized by topic
+- Multiple published long-form guides plus placeholder cards for planned guides
 - A shop page for 3D-printed accessories
 - Gallery, About, and Contact pages
-- Mobile navigation and light/dark mode support
+- Mobile navigation, light/dark mode support, and a shared editorial-style design system
 
 ## Product Direction
 
@@ -63,6 +64,7 @@ Note: the original brief included `#F3WFEE`, which is not a valid hex code. This
 - Astro 6
 - Tailwind CSS 4 via `@tailwindcss/vite`
 - Static site output
+- Astro content collections for guides
 
 ## Requirements
 
@@ -102,9 +104,16 @@ npm run preview
 ```text
 /
 ├── public/
+│   └── images/
+│       └── guides/
 ├── scripts/
 │   └── check-node.mjs
 ├── src/
+│   ├── content/
+│   │   └── guides/
+│   ├── data/
+│   │   └── wizard.ts
+│   ├── content.config.ts
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
@@ -112,7 +121,7 @@ npm run preview
 │   │   ├── wizard.astro
 │   │   ├── guides.astro
 │   │   ├── guides/
-│   │   │   └── beginner-tank-setup.astro
+│   │   │   └── [slug].astro
 │   │   ├── shop.astro
 │   │   ├── gallery.astro
 │   │   ├── about.astro
@@ -128,11 +137,23 @@ npm run preview
 
 ## Current Gaps
 
-- The wizard is still a placeholder flow and does not yet use a real recommendation ruleset
-- The guides library is not yet implemented as a scalable content system
-- Product links, affiliate links, and gallery media still need real assets and destinations
+- Many planned guides still exist only as placeholder cards on the guides hub and need to be built one by one
+- Product links, affiliate links, and gallery media still need real assets and live destinations
 - AdSense, newsletter tooling, and analytics are not integrated yet
 - Open Graph and richer social/SEO metadata still need to be added
+- Some guide pages now support hero artwork, but most guides still need final branded images
+
+## Published Guides
+
+The current live long-form guides include:
+
+- `Aquarium Filter Types Explained`
+- `Complete Beginner Tank Setup Guide 2026`
+- `Freshwater vs Saltwater Aquariums`
+- `Freshwater Community Fish`
+- `Betta Tank Basics for Beginners`
+
+Additional live short guides may still be expanded into full long-form versions over time.
 
 ## Planning Docs
 

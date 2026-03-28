@@ -13,6 +13,7 @@ const guides = defineCollection({
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
+    heroImageFit: z.enum(['cover', 'contain']).optional(),
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     relatedProducts: z.array(z.string()).default([]),

@@ -69,7 +69,7 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
                 <img
                   src={guide.data.heroImage}
                   alt={guide.data.heroImageAlt || guide.data.title}
-                  class="h-full w-full object-cover object-center"
+                  class={`h-full w-full object-center ${guide.data.heroImageFit === 'contain' ? 'object-contain guide-hero-contain' : 'object-cover'}`}
                   loading="eager"
                 />
               </div>
@@ -188,6 +188,10 @@ const updatedLabel = guide.data.updatedDate?.toLocaleDateString('en-US', {
     aspect-ratio: 5 / 4;
     overflow: hidden;
     background: linear-gradient(135deg, rgba(232, 217, 191, 0.9), rgba(138, 201, 171, 0.45), rgba(1, 133, 174, 0.18));
+  }
+
+  .guide-hero-contain {
+    padding: 1rem;
   }
 
   .guide-content :global(h1) {
