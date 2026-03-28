@@ -15,12 +15,12 @@ const categories = [...new Set(guides.map((guide) => guide.data.category))];
   description="Browse aquarium guides covering beginner tank setup, maintenance, cycling, equipment, and common home aquarium problems."
 >
   <main class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-5xl font-bold text-primary mb-4">Knowledge Guides</h1>
-    <p class="text-xl text-accent-2 mb-10">Everything you need to know about home aquariums — updated 2026</p>
+    <h1 class="font-bold text-primary mb-4">Knowledge Guides</h1>
+    <p class="text-accent-2 mb-10">Everything you need to know about home aquariums — updated 2026</p>
 
     <section class="mb-12 rounded-3xl bg-light-bg p-8 dark:bg-slate-950">
       <div class="text-sm uppercase tracking-widest text-accent-1">Guide Library</div>
-      <h2 class="mt-3 text-3xl font-semibold text-primary">Built for home and small-office aquarium owners</h2>
+      <h2 class="mt-3 font-semibold text-primary">Built for home and small-office aquarium owners</h2>
       <p class="mt-4 max-w-3xl text-warm-neutral">
         Start with beginner setup, compare freshwater and saltwater paths, then branch into fish care, filters, maintenance, and equipment guides.
       </p>
@@ -35,12 +35,12 @@ const categories = [...new Set(guides.map((guide) => guide.data.category))];
 
     {featuredGuides.length > 0 && (
       <section class="mb-12">
-        <h2 class="mb-6 text-3xl font-semibold text-primary">Featured Guides</h2>
+        <h2 class="mb-6 font-semibold text-primary">Featured Guides</h2>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           {featuredGuides.map((guide) => (
             <a href={`/guides/${guide.id}`} class="group rounded-3xl bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-slate-900">
               <div class="text-xs uppercase tracking-widest text-accent-1 mb-2">{guide.data.category}</div>
-              <h3 class="text-2xl font-semibold text-primary transition-colors group-hover:text-accent-1">{guide.data.title}</h3>
+              <h3 class="font-semibold text-primary transition-colors group-hover:text-accent-1">{guide.data.title}</h3>
               <p class="mt-4 text-warm-neutral">{guide.data.description}</p>
               <div class="mt-6 text-sm text-accent-2">Read →</div>
             </a>
@@ -53,7 +53,7 @@ const categories = [...new Set(guides.map((guide) => guide.data.category))];
       {guides.map((guide) => (
         <a href={`/guides/${guide.id}`} class="group rounded-3xl bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-slate-900">
           <div class="text-xs uppercase tracking-widest text-accent-1 mb-2">{guide.data.category}</div>
-          <h3 class="text-2xl font-semibold text-primary transition-colors group-hover:text-accent-1">{guide.data.title}</h3>
+          <h3 class="font-semibold text-primary transition-colors group-hover:text-accent-1">{guide.data.title}</h3>
           <p class="mt-4 line-clamp-3 text-warm-neutral">{guide.data.description}</p>
           <div class="mt-4 text-xs text-accent-2">{guide.data.audience === 'beginner' ? 'Beginner Friendly' : 'For Growing Hobbyists'}</div>
           <div class="mt-6 text-sm text-accent-2">Read →</div>

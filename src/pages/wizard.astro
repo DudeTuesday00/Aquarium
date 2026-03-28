@@ -12,14 +12,14 @@ import { wizardQuestions } from '../data/wizard';
       <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:py-18 xl:grid-cols-[minmax(0,1fr)_22rem] xl:items-end">
         <div>
           <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Aquarium Wizard</div>
-          <h1 class="mt-5 text-5xl font-bold tracking-tight text-primary md:text-6xl md:leading-[0.98]">Answer a few questions and narrow the right tank before you spend money.</h1>
-          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-700 dark:text-slate-200 md:text-2xl md:leading-9">
+          <h1 class="mt-5 font-bold tracking-tight text-primary">Answer a few questions and narrow the right tank before you spend money.</h1>
+          <p class="mt-6 max-w-3xl text-slate-700 dark:text-slate-200">
             The wizard turns tank size, fish style, water type, maintenance tolerance, plants, and budget into a practical direction you can actually use.
           </p>
         </div>
         <div class="rounded-[2rem] border border-primary/10 bg-white/80 p-6 shadow-[0_28px_90px_-55px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/8 dark:bg-slate-900/82">
           <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">What You Get</div>
-          <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+          <ul class="mt-4 space-y-3 text-slate-700 dark:text-slate-300">
             <li>Fish recommendations and a sample stocking plan</li>
             <li>Equipment bundle guidance matched to the setup</li>
             <li>Warnings about fish to avoid mixing</li>
@@ -35,7 +35,7 @@ import { wizardQuestions } from '../data/wizard';
           <div class="mb-8 flex flex-wrap items-center justify-between gap-3">
             <div>
               <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Guided Setup Flow</div>
-              <h2 class="mt-2 text-3xl font-semibold tracking-tight text-primary">Personalized recommendation builder</h2>
+              <h2 class="mt-2 font-semibold tracking-tight text-primary">Personalized recommendation builder</h2>
             </div>
             <div class="rounded-full border border-primary/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 dark:border-primary/20">
               {wizardQuestions.length} questions
@@ -45,12 +45,12 @@ import { wizardQuestions } from '../data/wizard';
           {wizardQuestions.map((question, index) => (
             <div id={`step-${question.step}`} class={`step${index === 0 ? '' : ' hidden'}`}>
               <div class="mb-6 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Step {question.step}</div>
-              <h3 class="text-3xl font-semibold tracking-tight text-primary">{question.title.replace(/^Step \d+:\s*/, '')}</h3>
+              <h3 class="font-semibold tracking-tight text-primary">{question.title.replace(/^Step \d+:\s*/, '')}</h3>
               <div class="mt-6 space-y-4">
                 {question.options.map((option) => (
                   <label class="flex cursor-pointer items-start gap-4 rounded-[1.5rem] border border-primary/10 bg-light-bg/40 px-5 py-4 transition-colors hover:border-primary/30 hover:bg-white dark:border-white/8 dark:bg-slate-950/70 dark:hover:bg-slate-950">
                     <input type="radio" name={question.fieldName} value={option.value} class="mt-1 accent-primary" />
-                    <span class="text-base leading-7 text-slate-700 dark:text-slate-200">{option.label}</span>
+                    <span class="text-slate-700 dark:text-slate-200">{option.label}</span>
                   </label>
                 ))}
               </div>
@@ -59,7 +59,7 @@ import { wizardQuestions } from '../data/wizard';
 
           <div id="results" class="hidden">
             <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Recommendation Ready</div>
-            <h3 class="mt-2 text-4xl font-bold tracking-tight text-primary">Your aquarium direction</h3>
+            <h3 class="mt-2 font-bold tracking-tight text-primary">Your aquarium direction</h3>
             <div id="recommendation" class="wizard-result mt-8"></div>
           </div>
 
@@ -73,7 +73,7 @@ import { wizardQuestions } from '../data/wizard';
         <aside class="space-y-6 xl:sticky xl:top-28 xl:self-start">
           <section class="rounded-[2rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
             <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">How to use it</div>
-            <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+            <ul class="mt-4 space-y-3 text-slate-700 dark:text-slate-300">
               <li>Answer based on the tank you are actually likely to maintain.</li>
               <li>Do not choose saltwater unless you genuinely want the extra cost and work.</li>
               <li>Treat the output as a planning direction, then read the matched guides before buying equipment.</li>
@@ -81,7 +81,7 @@ import { wizardQuestions } from '../data/wizard';
           </section>
           <section class="rounded-[2rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
             <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Built for</div>
-            <p class="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300">Home and small-office aquarium owners who want a calmer first decision instead of random forum advice and impulse shopping.</p>
+            <p class="mt-4 text-slate-700 dark:text-slate-300">Home and small-office aquarium owners who want a calmer first decision instead of random forum advice and impulse shopping.</p>
           </section>
         </aside>
       </div>
@@ -144,8 +144,8 @@ import { wizardQuestions } from '../data/wizard';
       return `
         <div class="space-y-8">
           <section>
-            <p class="text-xl leading-8 text-slate-700 dark:text-slate-200">Based on your choices, we recommend a <strong class="text-primary">${result.headline}</strong>.</p>
-            <div class="mt-4 space-y-3 text-base leading-8 text-slate-700 dark:text-slate-300">
+            <p class="text-slate-700 dark:text-slate-200">Based on your choices, we recommend a <strong class="text-primary">${result.headline}</strong>.</p>
+            <div class="mt-4 space-y-3 text-slate-700 dark:text-slate-300">
               <p>${result.setupSummary}</p>
               <p>${result.stockingSummary}</p>
               <p>${result.maintenanceSummary}</p>
@@ -154,8 +154,8 @@ import { wizardQuestions } from '../data/wizard';
 
           <section class="rounded-[1.6rem] border border-primary/10 bg-light-bg/35 p-6 dark:border-white/8 dark:bg-slate-950/60">
             <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Sample Stocking Plan</div>
-            <p class="mt-3 text-lg font-semibold text-primary">${result.stockingPlan.title}</p>
-            <p class="mt-2 text-sm leading-7 text-slate-700 dark:text-slate-300">${result.stockingPlan.summary}</p>
+            <p class="mt-3 font-semibold text-primary">${result.stockingPlan.title}</p>
+            <p class="mt-2 text-slate-700 dark:text-slate-300">${result.stockingPlan.summary}</p>
             ${renderList(result.stockingPlan.entries.map((entry) => `<li><strong>${entry.species}</strong> (${entry.count}) - ${entry.role}</li>`))}
           </section>
 
@@ -186,7 +186,7 @@ import { wizardQuestions } from '../data/wizard';
           </section>
 
           <section class="rounded-[1.6rem] border border-dashed border-primary/20 p-6">
-            <p class="text-sm leading-7 text-slate-700 dark:text-slate-300">Estimated startup range: <strong class="text-primary">${result.startupRange}</strong>.</p>
+            <p class="text-slate-700 dark:text-slate-300">Estimated startup range: <strong class="text-primary">${result.startupRange}</strong>.</p>
             ${renderList(result.notes.map((note) => `<li>${note}</li>`))}
           </section>
 
