@@ -179,6 +179,7 @@ The current live long-form guides include:
 - `Freshwater vs Saltwater Aquariums`
 - `Freshwater Community Fish`
 - `Betta Tank Basics for Beginners`
+- `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
 - `Step-by-Step Aquarium Setup Guide for Beginners`
 
 Additional live short guides may still be expanded into full long-form versions over time.
