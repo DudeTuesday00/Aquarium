@@ -5,6 +5,12 @@ category: Setup & Maintenance
 audience: beginner
 publishDate: 2026-03-19
 updatedDate: 2026-03-28
+heroImage: /images/guides/beginner-tank-setup.png
+heroImageAlt: Illustrated beginner fish tank setup showing a small planted aquarium with heater, filter, light, and beginner-friendly community fish
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - beginner
