@@ -59,6 +59,18 @@ export interface FishWarning {
   reason: string;
 }
 
+export interface StockingPlanEntry {
+  species: string;
+  count: string;
+  role: string;
+}
+
+export interface StockingPlan {
+  title: string;
+  summary: string;
+  entries: StockingPlanEntry[];
+}
+
 export interface ProductMatch {
   id: string;
   name: string;
@@ -79,6 +91,7 @@ export interface WizardRecommendation {
   stockingSummary: string;
   maintenanceSummary: string;
   startupRange: string;
+  stockingPlan: StockingPlan;
   fishRecommendations: FishRecommendation[];
   avoidFish: FishWarning[];
   equipmentBundle: EquipmentBundle;
@@ -736,6 +749,116 @@ function getAvoidFishWarnings(answers: CompleteRecommendationAnswers): FishWarni
   ];
 }
 
+function getStockingPlan(answers: CompleteRecommendationAnswers): StockingPlan {
+  if (answers.water === 'salt') {
+    if (answers.tank === 'small') {
+      return {
+        title: 'Conservative Nano Saltwater Plan',
+        summary: 'Keep the stock list light and peaceful so the tank stays stable.',
+        entries: [
+          { species: 'ocellaris clownfish', count: '2', role: 'centerpiece pair' },
+          { species: 'firefish goby', count: '1', role: 'peaceful accent fish' }
+        ]
+      };
+    }
+
+    if (answers.tank === 'medium') {
+      return {
+        title: 'Starter Medium Saltwater Plan',
+        summary: 'A practical fish-only plan with one pair and two compatible single fish.',
+        entries: [
+          { species: 'ocellaris clownfish', count: '2', role: 'centerpiece pair' },
+          { species: 'royal gramma', count: '1', role: 'mid-water color' },
+          { species: 'watchman goby', count: '1', role: 'bottom activity' }
+        ]
+      };
+    }
+
+    return {
+      title: 'Large Saltwater Starter Plan',
+      summary: 'A larger display still benefits from a conservative first stock list.',
+      entries: [
+        { species: 'ocellaris clownfish', count: '2', role: 'centerpiece pair' },
+        { species: 'royal gramma', count: '1', role: 'mid-water color' },
+        { species: 'watchman goby', count: '1', role: 'bottom activity' }
+      ]
+    };
+  }
+
+  if (answers.fish === 'betta') {
+    return {
+      title: 'Single-Show-Fish Plan',
+      summary: 'Keep the stock simple and let the betta be the focal fish.',
+      entries: [
+        { species: 'betta splendens', count: '1', role: 'centerpiece fish' }
+      ]
+    };
+  }
+
+  if (answers.fish === 'cichlid') {
+    if (answers.tank === 'small') {
+      return {
+        title: 'Small Cichlid-Style Plan',
+        summary: 'Use one centerpiece fish only to avoid territory problems.',
+        entries: [
+          { species: 'ram cichlid', count: '1', role: 'single centerpiece fish' }
+        ]
+      };
+    }
+
+    if (answers.tank === 'medium') {
+      return {
+        title: 'Medium Cichlid-Style Plan',
+        summary: 'Choose one cichlid route and avoid stacking multiple territorial species.',
+        entries: [
+          { species: 'bolivian ram', count: '2', role: 'pair' },
+          { species: 'robust cleanup crew fish', count: 'small supporting group', role: 'bottom support if compatible' }
+        ]
+      };
+    }
+
+    return {
+      title: 'Large Cichlid-Style Plan',
+      summary: 'Give larger personality fish room and avoid random mixing.',
+      entries: [
+        { species: 'electric blue acara', count: '2', role: 'feature pair' },
+        { species: 'supporting robust tank mates', count: 'limited number', role: 'carefully selected companions' }
+      ]
+    };
+  }
+
+  if (answers.tank === 'small') {
+    return {
+      title: 'Small Community Plan',
+      summary: 'Use one primary nano school plus one small bottom group.',
+      entries: [
+        { species: 'ember tetras', count: '10', role: 'main school' },
+        { species: 'pygmy corydoras', count: '6', role: 'bottom group' }
+      ]
+    };
+  }
+
+  if (answers.tank === 'medium') {
+    return {
+      title: 'Medium Community Plan',
+      summary: 'A balanced community tank usually works best with one schooling layer and one bottom group.',
+      entries: [
+        { species: 'harlequin rasboras', count: '10', role: 'main school' },
+        { species: 'corydoras', count: '8', role: 'bottom group' }
+      ]
+    };
+  }
+
+  return {
+    title: 'Large Community Plan',
+    summary: 'Use the extra volume to scale one school and one bottom group instead of over-mixing species.',
+    entries: [
+      { species: 'rainbowfish', count: '8', role: 'main display school' },
+      { species: 'corydoras', count: '10', role: 'bottom group' }
+    ]
+  };
+}
+
 function getHeadline(answers: CompleteRecommendationAnswers): string {
   const tankProfile = tankProfiles[answers.tank];
   const waterProfile = waterProfiles[answers.water];
@@ -769,6 +892,7 @@ export function buildWizardRecommendation(answers: RecommendationAnswers): Wizar
   const plantProfile = plantProfiles[answers.plants];
   const maintenanceProfile = maintenanceProfiles[answers.maint];
   const budgetProfile = budgetProfiles[answers.budget];
+  const stockingPlan = getStockingPlan(answers);
   const equipmentBundle = buildEquipmentBundle(answers);
   const fishRecommendations = getFishRecommendations(answers);
   const avoidFish = getAvoidFishWarnings(answers);
@@ -806,6 +930,7 @@ export function buildWizardRecommendation(answers: RecommendationAnswers): Wizar
     stockingSummary,
     maintenanceSummary,
     startupRange: budgetProfile.startupRange,
+    stockingPlan,
     fishRecommendations,
     avoidFish,
     equipmentBundle,
