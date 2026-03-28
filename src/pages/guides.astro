@@ -8,6 +8,158 @@ const guides = (await getCollection('guides')).sort(
 
 const featuredGuides = guides.filter((guide) => guide.data.featured);
 const categories = [...new Set(guides.map((guide) => guide.data.category))];
+const upcomingGuides = [
+  {
+    title: 'Choosing the Right Aquarium Size for Home and Office Spaces',
+    description: 'Match tank size to your room, desk, or lifestyle while balancing fish capacity, maintenance level, and visual impact.',
+    category: 'Aquarium Setup & Planning'
+  },
+  {
+    title: 'Step-by-Step Aquarium Setup Guide for Beginners',
+    description: 'Unbox-to-fish-ready instructions, including substrate, equipment placement, and initial water prep for small tanks.',
+    category: 'Aquarium Setup & Planning'
+  },
+  {
+    title: 'The Nitrogen Cycle Explained: Why Cycling Your Tank Matters',
+    description: 'Break down ammonia-to-nitrate conversion and how to safely cycle any new home or office aquarium in 4–6 weeks.',
+    category: 'Aquarium Setup & Planning'
+  },
+  {
+    title: 'Budget Aquarium Setup Under $200',
+    description: 'Complete shopping list and assembly tips for a thriving nano or 10–20 gallon tank perfect for apartments and offices.',
+    category: 'Aquarium Setup & Planning'
+  },
+  {
+    title: 'Essential Aquarium Equipment You Actually Need',
+    description: 'Filter, heater, light, and air pump recommendations tailored to small spaces and low-energy office use.',
+    category: 'Equipment & Technology'
+  },
+  {
+    title: 'Aquarium Lighting Guide: Intensity, Spectrum, and Timers',
+    description: 'Choose LED lights that support live plants and fish while keeping electricity bills low in home settings.',
+    category: 'Equipment & Technology'
+  },
+  {
+    title: 'Filtration Systems for Small Aquariums',
+    description: 'Compare hang-on-back, sponge, and canister filters and how to maintain them in limited-space tanks.',
+    category: 'Equipment & Technology'
+  },
+  {
+    title: 'Water Parameters 101: Testing and Maintaining Ideal Conditions',
+    description: 'Master pH, ammonia, nitrite, nitrate, and hardness testing with simple tools for crystal-clear water year-round.',
+    category: 'Water Quality & Maintenance'
+  },
+  {
+    title: 'How Often to Do Water Changes (and Why)',
+    description: 'Proven schedule and techniques that keep small tanks healthy with minimal disruption to fish and office routines.',
+    category: 'Water Quality & Maintenance'
+  },
+  {
+    title: 'Weekly Aquarium Maintenance Routine for Busy Owners',
+    description: '15-minute checklist covering cleaning, feeding, and visual health checks designed for home and desk aquariums.',
+    category: 'Water Quality & Maintenance'
+  },
+  {
+    title: 'Best Beginner Fish for Small Home and Office Tanks',
+    description: 'Top 10 easy species with stocking guidelines and compatibility charts for smaller freshwater setups.',
+    category: 'Fish & Invertebrate Care'
+  },
+  {
+    title: 'Betta Fish Care: Solo Tanks, Feeding & Enrichment',
+    description: 'Complete guide to keeping bettas happy and healthy in 5–10 gallon setups ideal for desks and nightstands.',
+    category: 'Fish & Invertebrate Care'
+  },
+  {
+    title: 'Community Tank Compatibility Guide',
+    description: 'Safe species mixes that prevent aggression and stress in shared 10–30 gallon home aquariums.',
+    category: 'Fish & Invertebrate Care'
+  },
+  {
+    title: 'Safe Acclimation Techniques for New Fish and Shrimp',
+    description: 'Step-by-step drip and float methods to eliminate transport shock and prevent early losses.',
+    category: 'Fish & Invertebrate Care'
+  },
+  {
+    title: 'Invertebrate Care: Snails, Shrimp & Crayfish in Small Tanks',
+    description: 'Which cleanup crew members thrive in nano and office aquariums without destroying plants.',
+    category: 'Fish & Invertebrate Care'
+  },
+  {
+    title: 'Live Plants vs Artificial Plants: Which Is Best for You?',
+    description: 'Pros, cons, and hybrid setups that look natural with minimal maintenance in busy households.',
+    category: 'Plants & Aquascaping'
+  },
+  {
+    title: 'Setting Up a Low-Maintenance Planted Aquarium',
+    description: 'Substrate, lighting, easy plant species, and fertilizer tips for lush tanks that fit on any office shelf.',
+    category: 'Plants & Aquascaping'
+  },
+  {
+    title: 'Aquascaping Basics: Creating Stunning Underwater Landscapes',
+    description: 'Design rules using rocks, driftwood, and plants to turn any small tank into a living centerpiece.',
+    category: 'Plants & Aquascaping'
+  },
+  {
+    title: 'Common Aquarium Algae Problems and How to Fix Them',
+    description: 'Identify hair, green spot, or blue-green algae and resolve outbreaks without harsh chemicals.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Identifying and Treating Common Fish Diseases',
+    description: 'Spot ich, fin rot, or swim bladder issues early and use safe, over-the-counter treatments.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Overfeeding vs Underfeeding: Nutrition Guidelines',
+    description: 'Feeding schedules and food types that keep fish vibrant without polluting small-volume water.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Emergency Aquarium Troubleshooting Guide',
+    description: 'Quick fixes for cloudy water, jumping fish, power outages, or sudden temperature drops.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Nano Aquarium Care for Tiny Spaces',
+    description: 'Special tips for tanks under 10 gallons, perfect for dorms, cubicles, and modern apartments.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Goldfish Care Myths Busted',
+    description: 'Why most small bowls fail and how to keep fancy goldfish healthy in proper home setups.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Breeding Easy Aquarium Fish at Home',
+    description: 'Beginner-friendly species and simple spawning setups for livebearers and invertebrates.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Seasonal Aquarium Care: Summer Heat & Winter Tips',
+    description: 'Protect your tank from temperature swings and evaporation common in homes and offices.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Low-Tech vs High-Tech Planted Tanks',
+    description: 'Compare CO2 systems and advanced lighting with simple methods that still deliver beautiful results.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Aquarium Automation for Busy Owners',
+    description: 'Smart timers, auto-feeders, and dosing pumps that make small-tank care almost hands-free.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Eco-Friendly Aquarium Practices',
+    description: 'Sustainable choices in equipment, decor, and fish sourcing that reduce your environmental footprint.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  },
+  {
+    title: 'Upgrading Your Aquarium: When and How to Scale Up',
+    description: 'Signs your tank needs more space plus seamless move strategies for growing home or office collections.',
+    category: 'Health, Troubleshooting & Advanced Topics'
+  }
+];
 ---
 
 <Layout
@@ -60,5 +212,32 @@ const categories = [...new Set(guides.map((guide) => guide.data.category))];
         </a>
       ))}
     </div>
+
+    <section class="mt-16">
+      <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <div class="text-xs uppercase tracking-widest text-accent-1">Planned Guides</div>
+          <h2 class="mt-3 font-semibold text-primary">Coming next in the guide library</h2>
+        </div>
+        <p class="max-w-2xl text-slate-600 dark:text-slate-300">
+          These topics are queued for full long-form buildouts. Placeholder cards are here now so the site can show the planned coverage map.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {upcomingGuides.map((guide) => (
+          <article class="rounded-[1.75rem] border border-dashed border-primary/20 bg-white/70 p-7 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-primary/20 dark:bg-slate-900/75">
+            <div class="flex items-center justify-between gap-4">
+              <div class="text-[0.68rem] uppercase tracking-[0.24em] text-accent-1">{guide.category}</div>
+              <span class="rounded-full border border-primary/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary/80 dark:border-primary/25">
+                Placeholder
+              </span>
+            </div>
+            <h3 class="mt-4 font-semibold text-primary">{guide.title}</h3>
+            <p class="mt-3 text-slate-600 dark:text-slate-300">{guide.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   </main>
 </Layout>
