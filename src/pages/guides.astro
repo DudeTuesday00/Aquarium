@@ -6,8 +6,6 @@ const guides = (await getCollection('guides')).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 
-const featuredGuides = guides.filter((guide) => guide.data.featured);
-const categories = [...new Set(guides.map((guide) => guide.data.category))];
 const upcomingGuides = [
   {
     title: 'Choosing the Right Aquarium Size for Home and Office Spaces',
@@ -160,6 +158,45 @@ const upcomingGuides = [
     category: 'Health, Troubleshooting & Advanced Topics'
   }
 ];
+
+const topicSections = [
+  {
+    id: 'setup-planning',
+    label: 'Setup & Planning',
+    categories: ['Aquarium Setup & Planning', 'Planning', 'Setup & Maintenance']
+  },
+  {
+    id: 'equipment-technology',
+    label: 'Equipment & Technology',
+    categories: ['Equipment & Technology', 'Equipment']
+  },
+  {
+    id: 'water-quality-maintenance',
+    label: 'Water Quality & Maintenance',
+    categories: ['Water Quality & Maintenance']
+  },
+  {
+    id: 'fish-invertebrate-care',
+    label: 'Fish & Invertebrate Care',
+    categories: ['Fish & Invertebrate Care', 'Freshwater Fish']
+  },
+  {
+    id: 'plants-aquascaping',
+    label: 'Plants & Aquascaping',
+    categories: ['Plants & Aquascaping']
+  },
+  {
+    id: 'health-troubleshooting',
+    label: 'Health, Troubleshooting & Advanced Topics',
+    categories: ['Health, Troubleshooting & Advanced Topics']
+  }
+];
+
+const sections = topicSections.map((section) => ({
+  ...section,
+  liveGuides: guides.filter((guide) => section.categories.includes(guide.data.category)),
+  plannedGuides: upcomingGuides.filter((guide) => section.categories.includes(guide.category))
+}));
 ---
 
 <Layout
@@ -167,77 +204,70 @@ const upcomingGuides = [
   description="Browse aquarium guides covering beginner tank setup, maintenance, cycling, equipment, and common home aquarium problems."
 >
   <main class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="font-bold text-primary mb-4">Knowledge Guides</h1>
-    <p class="text-accent-2 mb-10">Everything you need to know about home aquariums — updated 2026</p>
-
-    <section class="mb-12 rounded-3xl bg-light-bg p-8 dark:bg-slate-950">
-      <div class="text-sm uppercase tracking-widest text-accent-1">Guide Library</div>
-      <h2 class="mt-3 font-semibold text-primary">Built for home and small-office aquarium owners</h2>
-      <p class="mt-4 max-w-3xl text-warm-neutral">
+    <section class="mb-12 rounded-[2rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.08),rgba(243,239,238,0.85))] p-8 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.14),rgba(15,23,42,0.95))] md:p-10">
+      <div class="text-sm uppercase tracking-widest text-accent-1">Knowledge Guides</div>
+      <h1 class="mt-3 font-bold text-primary">Built for home and small-office aquarium owners</h1>
+      <p class="mt-4 max-w-3xl text-slate-700 dark:text-slate-300">
+        Everything you need to know about home aquariums, updated for 2026.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">
         Start with beginner setup, compare freshwater and saltwater paths, then branch into fish care, filters, maintenance, and equipment guides.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
-        {categories.map((category) => (
-          <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-primary shadow dark:bg-slate-900">
-            {category}
-          </span>
+        {sections.map((section) => (
+          <a
+            href={`#${section.id}`}
+            class="rounded-full bg-white px-4 py-2 text-sm font-medium text-primary shadow transition-colors hover:bg-primary hover:text-white dark:bg-slate-900"
+          >
+            {section.label}
+          </a>
         ))}
       </div>
     </section>
 
-    {featuredGuides.length > 0 && (
-      <section class="mb-12">
-        <h2 class="mb-6 font-semibold text-primary">Featured Guides</h2>
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {featuredGuides.map((guide) => (
-            <a href={`/guides/${guide.id}`} class="group rounded-3xl bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-slate-900">
-              <div class="text-xs uppercase tracking-widest text-accent-1 mb-2">{guide.data.category}</div>
-              <h3 class="font-semibold text-primary transition-colors group-hover:text-accent-1">{guide.data.title}</h3>
-              <p class="mt-4 text-warm-neutral">{guide.data.description}</p>
-              <div class="mt-6 text-sm text-accent-2">Read →</div>
-            </a>
-          ))}
-        </div>
-      </section>
-    )}
+    <div class="space-y-16">
+      {sections.map((section) => (
+        <section id={section.id} class="scroll-mt-28">
+          <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div class="text-xs uppercase tracking-widest text-accent-1">{section.label}</div>
+              <h2 class="mt-3 font-semibold text-primary">{section.label}</h2>
+            </div>
+            <p class="max-w-2xl text-slate-600 dark:text-slate-300">
+              {section.liveGuides.length > 0
+                ? 'Published guides and planned topics grouped by the main subject area.'
+                : 'Planned topics grouped here now and ready for full guide buildouts later.'}
+            </p>
+          </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {guides.map((guide) => (
-        <a href={`/guides/${guide.id}`} class="group rounded-3xl bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-slate-900">
-          <div class="text-xs uppercase tracking-widest text-accent-1 mb-2">{guide.data.category}</div>
-          <h3 class="font-semibold text-primary transition-colors group-hover:text-accent-1">{guide.data.title}</h3>
-          <p class="mt-4 line-clamp-3 text-warm-neutral">{guide.data.description}</p>
-          <div class="mt-4 text-xs text-accent-2">{guide.data.audience === 'beginner' ? 'Beginner Friendly' : 'For Growing Hobbyists'}</div>
-          <div class="mt-6 text-sm text-accent-2">Read →</div>
-        </a>
+          {(section.liveGuides.length > 0 || section.plannedGuides.length > 0) && (
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {section.liveGuides.map((guide) => (
+                <a href={`/guides/${guide.id}`} class="group rounded-[1.75rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-slate-900">
+                  <div class="text-xs uppercase tracking-widest text-accent-1 mb-2">{guide.data.category}</div>
+                  <h3 class="font-semibold text-primary transition-colors group-hover:text-accent-1">{guide.data.title}</h3>
+                  <p class="mt-4 line-clamp-3 text-warm-neutral">{guide.data.description}</p>
+                  <div class="mt-4 text-xs text-accent-2">{guide.data.audience === 'beginner' ? 'Beginner Friendly' : 'For Growing Hobbyists'}</div>
+                  <div class="mt-6 text-sm text-accent-2">Read →</div>
+                </a>
+              ))}
+
+              {section.plannedGuides.map((guide) => (
+                <article class="rounded-[1.75rem] border border-dashed border-primary/20 bg-white/70 p-7 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-primary/20 dark:bg-slate-900/75">
+                  <div class="flex items-center justify-between gap-4">
+                    <div class="text-[0.68rem] uppercase tracking-[0.24em] text-accent-1">{guide.category}</div>
+                    <span class="rounded-full border border-primary/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary/80 dark:border-primary/25">
+                      Placeholder
+                    </span>
+                  </div>
+                  <h3 class="mt-4 font-semibold text-primary">{guide.title}</h3>
+                  <p class="mt-3 text-slate-600 dark:text-slate-300">{guide.description}</p>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
       ))}
     </div>
-
-    <section class="mt-16">
-      <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-        <div>
-          <div class="text-xs uppercase tracking-widest text-accent-1">Planned Guides</div>
-          <h2 class="mt-3 font-semibold text-primary">Coming next in the guide library</h2>
-        </div>
-        <p class="max-w-2xl text-slate-600 dark:text-slate-300">
-          These topics are queued for full long-form buildouts. Placeholder cards are here now so the site can show the planned coverage map.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {upcomingGuides.map((guide) => (
-          <article class="rounded-[1.75rem] border border-dashed border-primary/20 bg-white/70 p-7 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-primary/20 dark:bg-slate-900/75">
-            <div class="flex items-center justify-between gap-4">
-              <div class="text-[0.68rem] uppercase tracking-[0.24em] text-accent-1">{guide.category}</div>
-              <span class="rounded-full border border-primary/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary/80 dark:border-primary/25">
-                Placeholder
-              </span>
-            </div>
-            <h3 class="mt-4 font-semibold text-primary">{guide.title}</h3>
-            <p class="mt-3 text-slate-600 dark:text-slate-300">{guide.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
   </main>
 </Layout>
