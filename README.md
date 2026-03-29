@@ -124,6 +124,7 @@ For Cloudflare Pages, use:
 - Optional environment variable for the guides hub ad block: `PUBLIC_ADSENSE_GUIDES_HUB_SLOT=<your ad slot id>`
 - Optional environment variable for guide-page inline ads: `PUBLIC_ADSENSE_GUIDE_INLINE_SLOT=<your ad slot id>`
 - Optional environment variable for the wizard-page ad block: `PUBLIC_ADSENSE_WIZARD_INLINE_SLOT=<your ad slot id>`
+- `public/ads.txt` is committed and should deploy to `https://finsanctuary.com/ads.txt`
 
 The Astro site URL is configured as `https://finsanctuary.com` in `astro.config.mjs`, so canonical URLs and site-level metadata resolve against the production domain.
 
