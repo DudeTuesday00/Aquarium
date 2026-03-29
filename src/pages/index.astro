@@ -1,5 +1,8 @@
 ---
+import AdSenseBlock from '../components/AdSenseBlock.astro';
 import Layout from '../layouts/Layout.astro';
+
+const homeInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_HOME_INLINE_SLOT;
 ---
 
 <Layout
@@ -63,6 +66,10 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 pb-2">
+      <AdSenseBlock className="shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)]" label="Advertisement" slot={homeInlineAdSlot} />
     </section>
 
     <section class="relative overflow-hidden border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.12),rgba(243,239,238,0.58))] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.16),rgba(2,6,23,0.96))]">

@@ -1,4 +1,5 @@
 ---
+import AdSenseBlock from '../../components/AdSenseBlock.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
 
@@ -37,6 +38,7 @@ const heroLayout = guide.data.heroLayout ?? 'balanced';
 const heroTitleSize = guide.data.heroTitleSize ?? 'compact';
 const heroImageFit = guide.data.heroImageFit ?? 'cover';
 const heroImageAspect = guide.data.heroImageAspect ?? 'wide';
+const guideInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_GUIDE_INLINE_SLOT;
 ---
 
 <Layout title={`${guide.data.title} • Fin Sanctuary`} description={guide.data.description}>
@@ -95,9 +97,7 @@ const heroImageAspect = guide.data.heroImageAspect ?? 'wide';
             </div>
           </div>
 
-          <div class="mt-8 rounded-[2rem] border border-dashed border-primary/25 bg-white/80 px-6 py-6 text-center text-slate-600 dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300 md:px-8">
-            AdSense slot reserved for future guide monetization placement.
-          </div>
+          <AdSenseBlock className="mt-8" label="Advertisement" slot={guideInlineAdSlot} />
 
           {relatedGuides.length > 0 && (
             <section class="mt-10">

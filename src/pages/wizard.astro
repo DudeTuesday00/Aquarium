@@ -1,6 +1,9 @@
 ---
+import AdSenseBlock from '../components/AdSenseBlock.astro';
 import Layout from '../layouts/Layout.astro';
 import { wizardQuestions } from '../data/wizard';
+
+const wizardInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_WIZARD_INLINE_SLOT;
 ---
 
 <Layout
@@ -41,6 +44,8 @@ import { wizardQuestions } from '../data/wizard';
     </section>
 
     <section class="mx-auto max-w-6xl px-6 py-10">
+      <AdSenseBlock className="mb-6 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)]" label="Advertisement" slot={wizardInlineAdSlot} />
+
       <div class="grid gap-6 xl:grid-cols-[minmax(0,1fr)_19rem]">
         <div id="wizard" class="rounded-[2rem] border border-primary/10 bg-white p-7 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900 md:p-9">
           <div class="mb-8 flex flex-wrap items-center justify-between gap-3">

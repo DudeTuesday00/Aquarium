@@ -31,6 +31,7 @@ The current project includes:
 - Multiple published long-form guides plus placeholder cards for planned guides
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
 - Standardized square guide artwork on multiple published guides
+- Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
 - Canonical URLs and basic Open Graph metadata generated from the production site URL
 - A shop page for 3D-printed accessories
 - Gallery, About, and Contact pages
@@ -119,6 +120,10 @@ For Cloudflare Pages, use:
 - Build output directory: `dist`
 - Node.js version: `22.12.0` or another supported `22.12+` / `24.x` release
 - Root directory: repo root
+- Optional environment variable for the homepage ad block: `PUBLIC_ADSENSE_HOME_INLINE_SLOT=<your ad slot id>`
+- Optional environment variable for the guides hub ad block: `PUBLIC_ADSENSE_GUIDES_HUB_SLOT=<your ad slot id>`
+- Optional environment variable for guide-page inline ads: `PUBLIC_ADSENSE_GUIDE_INLINE_SLOT=<your ad slot id>`
+- Optional environment variable for the wizard-page ad block: `PUBLIC_ADSENSE_WIZARD_INLINE_SLOT=<your ad slot id>`
 
 The Astro site URL is configured as `https://finsanctuary.com` in `astro.config.mjs`, so canonical URLs and site-level metadata resolve against the production domain.
 
@@ -186,7 +191,8 @@ These settings exist so a guide can keep the same overall template while adjusti
 
 - Many planned guides still exist only as placeholder cards on the guides hub and need to be built one by one
 - Product links, affiliate links, and gallery media still need real assets and live destinations
-- AdSense, newsletter tooling, and analytics are not integrated yet
+- AdSense loader and inline ad blocks are wired, but real ad delivery still requires live slot IDs in deployment environment variables
+- Newsletter tooling and analytics still need to be integrated
 - Richer social/SEO metadata still needs to be expanded beyond the current basic canonical and Open Graph setup
 - Some guide pages now support hero artwork, but most guides still need final branded images
 

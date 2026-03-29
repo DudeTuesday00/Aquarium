@@ -1,4 +1,5 @@
 ---
+import AdSenseBlock from '../components/AdSenseBlock.astro';
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -187,6 +188,8 @@ const sections = topicSections.map((section) => ({
   liveGuides: guides.filter((guide) => section.categories.includes(guide.data.category)),
   plannedGuides: upcomingGuides.filter((guide) => section.categories.includes(guide.category))
 }));
+
+const guidesHubAdSlot = import.meta.env.PUBLIC_ADSENSE_GUIDES_HUB_SLOT;
 ---
 
 <Layout
@@ -214,6 +217,8 @@ const sections = topicSections.map((section) => ({
         ))}
       </div>
     </section>
+
+    <AdSenseBlock className="mb-10 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)]" label="Advertisement" slot={guidesHubAdSlot} />
 
     <div class="space-y-12">
       {sections.map((section) => (
