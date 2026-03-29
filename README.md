@@ -1,9 +1,13 @@
-# Aquarium Wizard
+# Fin Sanctuary
 
-Aquarium Wizard is a content and recommendation website for people in the United States who want an aquarium for their home or small office. The site is not intended for commercial aquarium installations. Its two core pillars are:
+Fin Sanctuary is a content and recommendation website for people in the United States who want an aquarium for their home or small office. The site is not intended for commercial aquarium installations. Its two core pillars are:
 
 - An aquarium setup wizard that helps visitors choose the right tank, fish, equipment, and accessories based on their needs
 - A large knowledge library covering aquarium topics such as fish types, diseases, food, filtration, substrate, lighting, and maintenance
+
+Primary production domain:
+
+- `https://finsanctuary.com`
 
 The business model includes:
 
@@ -17,11 +21,13 @@ The business model includes:
 The current project includes:
 
 - A redesigned landing page
+- Fin Sanctuary branding with the `https://finsanctuary.com` production domain configured in Astro
 - A structured aquarium wizard with setup recommendations, fish guidance, stocking plans, equipment bundles, and matched guides
 - A scalable guides hub organized by topic
 - Multiple published long-form guides plus placeholder cards for planned guides
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
 - Standardized square guide artwork on multiple published guides
+- Canonical URLs and basic Open Graph metadata generated from the production site URL
 - A shop page for 3D-printed accessories
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
@@ -101,6 +107,17 @@ Preview the production build locally:
 npm run preview
 ```
 
+## Deployment
+
+For Cloudflare Pages, use:
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Node.js version: `22.12.0` or another supported `22.12+` / `24.x` release
+- Root directory: repo root
+
+The Astro site URL is configured as `https://finsanctuary.com` in `astro.config.mjs`, so canonical URLs and site-level metadata resolve against the production domain.
+
 ## Project Structure
 
 ```text
@@ -165,7 +182,7 @@ These settings exist so a guide can keep the same overall template while adjusti
 - Many planned guides still exist only as placeholder cards on the guides hub and need to be built one by one
 - Product links, affiliate links, and gallery media still need real assets and live destinations
 - AdSense, newsletter tooling, and analytics are not integrated yet
-- Open Graph and richer social/SEO metadata still need to be added
+- Richer social/SEO metadata still needs to be expanded beyond the current basic canonical and Open Graph setup
 - Some guide pages now support hero artwork, but most guides still need final branded images
 
 ## Published Guides

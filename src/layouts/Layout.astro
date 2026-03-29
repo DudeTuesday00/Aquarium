@@ -7,9 +7,10 @@ interface Props {
 }
 
 const {
-  title = 'Aquarium Wizard • Home Tanks Made Easy',
-  description = 'Interactive Aquarium Wizard, expert guides, 3D-printed accessories, and knowledge for home & small-office tanks.'
+  title = 'Fin Sanctuary • Home Tanks Made Easy',
+  description = 'Fin Sanctuary offers aquarium planning tools, expert guides, 3D-printed accessories, and practical knowledge for home and small-office tanks.'
 } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 ---
 
 <html lang="en">
@@ -17,6 +18,11 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:site_name" content="Fin Sanctuary" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +41,7 @@ const {
         <div class="flex items-center justify-between gap-4">
           <a href="/" class="min-w-0">
             <div class="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-primary/70">Home Aquarium Planning</div>
-            <div class="mt-1 text-2xl font-bold tracking-tight text-primary">Aquarium Wizard</div>
+            <div class="mt-1 text-2xl font-bold tracking-tight text-primary">Fin Sanctuary</div>
           </a>
 
           <nav class="hidden items-center gap-2 rounded-full border border-primary/10 bg-white/75 p-1 shadow-[0_18px_40px_-30px_rgba(1,133,174,0.45)] dark:border-white/8 dark:bg-slate-900/75 lg:flex">
@@ -96,7 +102,7 @@ const {
       <div class="mx-auto max-w-6xl px-6 py-10">
         <div class="grid gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Aquarium Wizard</div>
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Fin Sanctuary</div>
             <h2 class="mt-3 font-bold tracking-tight text-primary">Home aquarium planning, guides, and custom accessories.</h2>
             <p class="mt-4 max-w-xl text-slate-600 dark:text-slate-300">
               Built for home and small-office aquarium owners in the USA. Use the wizard to narrow your setup, read long-form guides, and shop 3D-printed accessories designed for practical daily tank care.
@@ -125,7 +131,7 @@ const {
         </div>
 
         <div class="mt-10 flex flex-col gap-3 border-t border-primary/10 pt-6 text-xs text-slate-500 dark:border-white/8 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Aquarium Wizard • Norman, Oklahoma • Built for home aquarium enthusiasts</p>
+          <p>© 2026 Fin Sanctuary • finsanctuary.com • Norman, Oklahoma • Built for home aquarium enthusiasts</p>
           <p>Educational content first. Ads, affiliate placements, and product offers can layer in cleanly.</p>
         </div>
       </div>
