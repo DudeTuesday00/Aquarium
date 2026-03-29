@@ -22,8 +22,10 @@ The current project includes:
 
 - A redesigned landing page
 - Homepage pillar cards promoted to the top with centered banner artwork
+- Shared header branding now uses a banner image instead of text
 - Fin Sanctuary branding with the `https://finsanctuary.com` production domain configured in Astro
 - A structured aquarium wizard with setup recommendations, fish guidance, stocking plans, equipment bundles, and matched guides
+- Wizard hero now combines the explanatory text in the main header block with a square artwork panel
 - A scalable guides hub organized by topic
 - Multiple published long-form guides plus placeholder cards for planned guides
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
