@@ -21,6 +21,7 @@ The business model includes:
 The current project includes:
 
 - A redesigned landing page
+- Homepage pillar cards promoted to the top with centered banner artwork
 - Fin Sanctuary branding with the `https://finsanctuary.com` production domain configured in Astro
 - A structured aquarium wizard with setup recommendations, fish guidance, stocking plans, equipment bundles, and matched guides
 - A scalable guides hub organized by topic
@@ -124,6 +125,7 @@ The Astro site URL is configured as `https://finsanctuary.com` in `astro.config.
 /
 ├── public/
 │   └── images/
+│       ├── home/
 │       └── guides/
 ├── scripts/
 │   └── check-node.mjs
