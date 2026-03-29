@@ -26,6 +26,7 @@ The current project includes:
 - Fin Sanctuary branding with the `https://finsanctuary.com` production domain configured in Astro
 - A structured aquarium wizard with setup recommendations, fish guidance, stocking plans, equipment bundles, and matched guides
 - Wizard hero now uses a centered single-card layout with image-first hierarchy inspired by the Planting Atlas wizard
+- Wizard hero sizing has been tightened to a more compact final presentation
 - A scalable guides hub organized by topic
 - Multiple published long-form guides plus placeholder cards for planned guides
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
