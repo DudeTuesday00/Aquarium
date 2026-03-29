@@ -28,6 +28,7 @@ The current project includes:
 - Wizard hero now uses a centered single-card layout with image-first hierarchy inspired by the Planting Atlas wizard
 - Wizard hero sizing has been tightened to a more compact final presentation
 - A scalable guides hub organized by topic
+- Guides hub hero now uses a matching centered single-card, image-first Finpedia layout
 - Multiple published long-form guides plus placeholder cards for planned guides
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
 - Standardized square guide artwork on multiple published guides
