@@ -203,6 +203,7 @@ These settings exist so a guide can keep the same overall template while adjusti
 The current live long-form guides include:
 
 - `Aquarium Filter Types Explained`
+- `Budget Aquarium Setup Under $200`
 - `Choosing the Right Aquarium for Your Home or Office`
 - `Common Aquarium Algae Problems and How to Fix Them`
 - `Complete Beginner Tank Setup Guide 2026`
