@@ -203,6 +203,7 @@ These settings exist so a guide can keep the same overall template while adjusti
 The current live long-form guides include:
 
 - `Aquarium Filter Types Explained`
+- `Aquarium Lighting Guide`
 - `Budget Aquarium Setup Under $200`
 - `Cichlid Tank Basics`
 - `Choosing the Right Aquarium for Your Home or Office`
