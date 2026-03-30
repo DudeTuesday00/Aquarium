@@ -5,6 +5,12 @@ category: Aquarium Setup & Planning
 audience: beginner
 publishDate: 2026-03-29
 updatedDate: 2026-03-29
+heroImage: /images/guides/budget-aquarium-setup.png
+heroImageAlt: Illustrated budget aquarium setup under 200 dollars showing a 10 gallon freshwater tank with priced equipment and supplies
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - budget

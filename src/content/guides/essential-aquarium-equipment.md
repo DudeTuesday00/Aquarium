@@ -5,6 +5,12 @@ category: Equipment & Technology
 audience: beginner
 publishDate: 2026-03-29
 updatedDate: 2026-03-29
+heroImage: /images/guides/essential-aquarium-equipment.png
+heroImageAlt: Illustrated aquarium equipment guide showing a freshwater aquarium with filter, heater, water conditioner, test kit, lighting, and cleaning tools
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - equipment
