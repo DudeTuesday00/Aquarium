@@ -210,6 +210,7 @@ The current live long-form guides include:
 - `Common Aquarium Algae Problems and How to Fix Them`
 - `Complete Beginner Tank Setup Guide 2026`
 - `Essential Aquarium Equipment You Actually Need`
+- `Filtration Systems for Small Aquariums`
 - `Freshwater vs Saltwater Aquariums`
 - `Freshwater Community Fish`
 - `Betta Tank Basics for Beginners`
