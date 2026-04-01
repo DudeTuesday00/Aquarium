@@ -35,6 +35,7 @@ The current project includes:
 - Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
 - Canonical URLs and basic Open Graph metadata generated from the production site URL
 - A shop page for 3D-printed accessories
+- About page now includes a real owner photo in the hero profile section for stronger authenticity
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
 
