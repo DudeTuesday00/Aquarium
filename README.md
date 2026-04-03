@@ -221,6 +221,7 @@ The current live long-form guides include:
 - `Step-by-Step Aquarium Setup Guide for Beginners`
 - `Upgrading Your Aquarium: When and How to Scale Up`
 - `Water Parameters 101: Testing and Maintaining Ideal Conditions`
+- `Weekly Aquarium Maintenance Routine for Busy Owners`
 
 Additional live short guides may still be expanded into full long-form versions over time.
 
