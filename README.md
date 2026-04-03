@@ -205,6 +205,7 @@ The current live long-form guides include:
 
 - `Aquarium Filter Types Explained`
 - `Aquarium Lighting Guide`
+- `Best Beginner Fish for Small Home and Office Tanks`
 - `Budget Aquarium Setup Under $200`
 - `Cichlid Tank Basics`
 - `Choosing the Right Aquarium for Your Home or Office`
