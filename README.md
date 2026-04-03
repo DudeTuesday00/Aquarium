@@ -219,6 +219,7 @@ The current live long-form guides include:
 - `Betta Tank Basics for Beginners`
 - `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
 - `Step-by-Step Aquarium Setup Guide for Beginners`
+- `Upgrading Your Aquarium: When and How to Scale Up`
 - `Water Parameters 101: Testing and Maintaining Ideal Conditions`
 
 Additional live short guides may still be expanded into full long-form versions over time.
