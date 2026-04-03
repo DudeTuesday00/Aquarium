@@ -214,6 +214,7 @@ The current live long-form guides include:
 - `Filtration Systems for Small Aquariums`
 - `Freshwater vs Saltwater Aquariums`
 - `Freshwater Community Fish`
+- `How Often to Do Water Changes (and Why)`
 - `Betta Tank Basics for Beginners`
 - `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
 - `Step-by-Step Aquarium Setup Guide for Beginners`
