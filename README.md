@@ -217,7 +217,7 @@ The site now supports dedicated media sections beyond the gallery:
 
 - `src/content/videos/*.md` holds individual video entries
 - `src/pages/videos.astro` is the videos hub
-- `src/pages/videos/[slug].astro` renders a dedicated page for each video
+- `src/pages/videos/[slug].astro` renders a dedicated page for each video and currently uses a placeholder card instead of embedded playback
 - `src/pages/podcasts.astro` is the podcast hub and landing page for future episode publishing
 
 The gallery can still feature media, but videos no longer need to live only as gallery embeds. Each video can now have its own shareable URL, embedded playback, and supporting copy.

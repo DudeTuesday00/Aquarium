@@ -62,16 +62,12 @@ const sectionHeadings = headings.filter((heading) => heading.depth <= 2);
           </div>
 
           <div class="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-light-bg/60 shadow-[0_20px_70px_-50px_rgba(1,133,174,0.45)] dark:border-white/8 dark:bg-slate-950/70">
-            <div class="aspect-video">
-              <iframe
-                class="h-full w-full"
-                src={`https://www.youtube.com/embed/${video.data.videoId}`}
-                title={video.data.title}
-                loading="eager"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+            <div class="flex aspect-video items-end bg-[radial-gradient(circle_at_top,rgba(13,175,188,0.18),transparent_58%),linear-gradient(135deg,rgba(243,239,238,0.9),rgba(138,201,171,0.38),rgba(1,133,174,0.16))] p-6 dark:bg-[radial-gradient(circle_at_top,rgba(13,175,188,0.16),transparent_54%),linear-gradient(135deg,rgba(15,23,42,0.96),rgba(13,175,188,0.2),rgba(1,133,174,0.14))]">
+              <div class="max-w-sm rounded-[1.5rem] border border-white/35 bg-white/85 px-5 py-5 text-slate-700 shadow-[0_18px_55px_-35px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/10 dark:bg-slate-950/82 dark:text-slate-200">
+                <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Video Placeholder</div>
+                <h2 class="mt-3 font-semibold tracking-tight text-primary">Embedded Player Removed</h2>
+                <p class="mt-3 text-slate-700 dark:text-slate-300">This page keeps the dedicated video URL and supporting copy, but the live player has been replaced with a placeholder card for now.</p>
+              </div>
             </div>
           </div>
         </div>
