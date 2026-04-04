@@ -39,6 +39,7 @@ The current project includes:
 - Contact page now includes a role-based email directory for general inquiries, support, newsletter topics, and direct personal contact
 - Gallery page now supports live embedded YouTube video alongside future real-photo gallery expansion
 - Dedicated `Videos` and `Podcasts` sections now exist so media can live on standalone pages instead of only inside the gallery
+- `Videos` and `Podcasts` are now linked in the main site header on both desktop and mobile navigation
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
 
