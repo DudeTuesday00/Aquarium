@@ -37,6 +37,7 @@ The current project includes:
 - A shop page for 3D-printed accessories
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory for general inquiries, support, newsletter topics, and direct personal contact
+- Gallery page now supports live embedded YouTube video alongside future real-photo gallery expansion
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
 
