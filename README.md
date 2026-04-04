@@ -41,6 +41,7 @@ The current project includes:
 - A shop page for 3D-printed accessories
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory plus live email-list signup
+- Guide pages and the shop page now use a shared newsletter signup card for cleaner conversion flow
 - Gallery page now supports live embedded YouTube video alongside a growing real-photo gallery structure
 - Dedicated `Videos` and `Podcasts` sections now exist so media has its own site areas instead of living only inside the gallery
 - `Videos` and `Podcasts` are now linked in the main site header on both desktop and mobile navigation
@@ -173,6 +174,8 @@ These pages are linked in the footer and surfaced where commercial context matte
 ├── scripts/
 │   └── check-node.mjs
 ├── src/
+│   ├── components/
+│   │   └── NewsletterSignupCard.astro
 │   ├── content/
 │   │   └── guides/
 │   ├── data/
@@ -244,7 +247,21 @@ Recent site-improvement work focused on:
 - stronger trust signaling for AdSense and affiliate readiness
 - less “placeholder” framing on production pages
 - better guide discovery with search and beginner entry points
-- stronger conversion paths from guides and wizard results into shop and email signup
+- stronger conversion paths from guides, shop, and wizard results into email signup and next actions
+
+## Newsletter and Conversion Flow
+
+The site currently uses Formspree-backed email capture and shared conversion patterns instead of disconnected placeholder boxes.
+
+Current conversion surfaces include:
+
+- homepage email signup for guide and product updates
+- contact-page email signup plus direct inbox routing
+- shared newsletter signup card on guide pages
+- shared newsletter signup card on the shop page
+- wizard result CTA block pointing visitors to guides, shop, and email signup
+
+This keeps the major decision pages focused on a clearer next action instead of dropping visitors into dead ends.
 
 ## Current Gaps
 
