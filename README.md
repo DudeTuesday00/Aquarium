@@ -35,7 +35,8 @@ The current project includes:
 - Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
 - Canonical URLs and basic Open Graph metadata generated from the production site URL
 - A shop page for 3D-printed accessories
-- About page now leads with owner profile information and a real owner photo for stronger authenticity
+- About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
+- Contact page now includes a role-based email directory for general inquiries, support, newsletter topics, and direct personal contact
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
 
@@ -129,6 +130,17 @@ For Cloudflare Pages, use:
 - `public/ads.txt` is committed and should deploy to `https://finsanctuary.com/ads.txt`
 
 The Astro site URL is configured as `https://finsanctuary.com` in `astro.config.mjs`, so canonical URLs and site-level metadata resolve against the production domain.
+
+## Contact Channels
+
+The live site currently uses these contact addresses:
+
+- `drodge00@finsanctuary.com` for direct personal contact with Dave
+- `info@finsanctuary.com` for general questions and business inquiries
+- `support@finsanctuary.com` for product help and troubleshooting
+- `newsletter@finsanctuary.com` for newsletter-related communication
+
+These addresses are surfaced on the About and Contact pages so visitors can choose the right inbox instead of relying only on the generic contact form.
 
 ## Project Structure
 
