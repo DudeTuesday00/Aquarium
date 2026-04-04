@@ -1,4 +1,5 @@
 ---
+import NewsletterSignupCard from '../components/NewsletterSignupCard.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -28,8 +29,20 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section class="mx-auto max-w-6xl px-6 py-10">
-      <div class="rounded-[2rem] border border-dashed border-primary/20 bg-white/70 px-7 py-8 text-center text-slate-600 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300">
-        No podcast episodes are published yet, but this section is reserved and ready for future audio releases. For now, the <a href="/videos" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4">videos page</a> and <a href="/guides" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4">guide library</a> are the best ways to follow new content.
+      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <section class="rounded-[2rem] border border-dashed border-primary/20 bg-white/70 px-7 py-8 text-slate-600 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Current Status</div>
+          <p class="mt-4">No podcast episodes are published yet, but this section is reserved and ready for future audio releases. For now, the <a href="/videos" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4">videos page</a> and <a href="/guides" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4">guide library</a> are the best ways to follow new content.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/videos" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Browse Videos</a>
+            <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Browse Guides</a>
+          </div>
+        </section>
+        <NewsletterSignupCard
+          interest="newsletter-podcasts-page"
+          description="Join the email list if you want to hear when the first Fin Sanctuary podcast episodes are live, along with new guides and videos."
+          note="That gives this page a real follow path even before the first season is published."
+        />
       </div>
     </section>
   </main>

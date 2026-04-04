@@ -42,6 +42,7 @@ The current project includes:
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory plus live email-list signup
 - Guide pages and the shop page now use a shared newsletter signup card for cleaner conversion flow
+- Gallery, videos, podcasts, and contact now use clearer next-step and signup paths instead of passive dead-end layouts
 - Gallery page now supports live embedded YouTube video alongside a growing real-photo gallery structure
 - Dedicated `Videos` and `Podcasts` sections now exist so media has its own site areas instead of living only inside the gallery
 - `Videos` and `Podcasts` are now linked in the main site header on both desktop and mobile navigation
@@ -259,6 +260,7 @@ Current conversion surfaces include:
 - contact-page email signup plus direct inbox routing
 - shared newsletter signup card on guide pages
 - shared newsletter signup card on the shop page
+- shared newsletter signup card on videos, podcasts, and gallery pages
 - wizard result CTA block pointing visitors to guides, shop, and email signup
 
 This keeps the major decision pages focused on a clearer next action instead of dropping visitors into dead ends.
