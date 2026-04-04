@@ -24,4 +24,19 @@ const guides = defineCollection({
   })
 });
 
-export const collections = { guides };
+const videos = defineCollection({
+  loader: glob({ base: './src/content/videos', pattern: '**/*.md' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publishDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    platform: z.enum(['youtube']),
+    videoId: z.string(),
+    externalUrl: z.string().url(),
+    featured: z.boolean().default(false),
+    tags: z.array(z.string()).default([])
+  })
+});
+
+export const collections = { guides, videos };

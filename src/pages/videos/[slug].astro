@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const videos = await getCollection('videos');
+
+  return videos.map((video) => ({
+    params: { slug: video.id },
+    props: { video }
+  }));
+}
+
+const { video } = Astro.props;
+const { Content, headings } = await render(video);
+const allVideos = await getCollection('videos');
+const relatedVideos = allVideos.filter((entry) => entry.id !== video.id).slice(0, 3);
+const publishedLabel = video.data.publishDate.toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+const updatedLabel = video.data.updatedDate?.toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+const sectionHeadings = headings.filter((heading) => heading.depth <= 2);
+---
+
+<Layout title={`${video.data.title} • Fin Sanctuary Video`} description={video.data.description}>
+  <main class="bg-light-bg/65 dark:bg-slate-950">
+    <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.09),rgba(243,239,238,0.4))] dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.16),rgba(2,6,23,0.96))]">
+      <div class="mx-auto max-w-6xl px-6 py-8 md:py-10">
+        <a href="/videos" class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80 transition-colors hover:text-primary">
+          <span aria-hidden="true">←</span>
+          Back to Videos
+        </a>
+
+        <div class="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(18rem,0.95fr)] lg:items-start">
+          <div>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-primary/70">
+              <span>YouTube Video</span>
+              {video.data.featured && <span>Featured</span>}
+            </div>
+            <h1 class="mt-5 max-w-3xl font-bold tracking-tight text-primary">{video.data.title}</h1>
+            <p class="mt-5 max-w-3xl text-slate-700 dark:text-slate-200">{video.data.description}</p>
+            <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600 dark:text-slate-300">
+              <span>Published {publishedLabel}</span>
+              {updatedLabel && <span>Updated {updatedLabel}</span>}
+            </div>
+            <div class="mt-6">
+              <a
+                href={video.data.externalUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+              >
+                Watch on YouTube
+              </a>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-light-bg/60 shadow-[0_20px_70px_-50px_rgba(1,133,174,0.45)] dark:border-white/8 dark:bg-slate-950/70">
+            <div class="aspect-video">
+              <iframe
+                class="h-full w-full"
+                src={`https://www.youtube.com/embed/${video.data.videoId}`}
+                title={video.data.title}
+                loading="eager"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-8 md:py-10">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-10">
+        <article class="min-w-0">
+          <div class="rounded-[2rem] border border-primary/10 bg-white px-6 py-6 shadow-[0_24px_80px_-50px_rgba(1,133,174,0.35)] dark:border-white/8 dark:bg-slate-900 md:px-8 md:py-8">
+            <div class="media-content">
+              <Content />
+            </div>
+          </div>
+
+          {relatedVideos.length > 0 && (
+            <section class="mt-10">
+              <div class="mb-6">
+                <div class="text-xs font-semibold uppercase tracking-[0.24em] text-primary/75">Watch Next</div>
+                <h2 class="mt-2 font-semibold tracking-tight text-primary">More Videos</h2>
+              </div>
+              <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {relatedVideos.map((entry) => (
+                  <a href={`/videos/${entry.id}`} class="group rounded-[1.75rem] border border-primary/10 bg-white p-6 transition-transform duration-200 hover:-translate-y-1 hover:border-primary/30 dark:border-white/8 dark:bg-slate-900">
+                    <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-accent-1">Video</div>
+                    <h3 class="mt-3 font-semibold tracking-tight text-primary transition-colors group-hover:text-accent-1">{entry.data.title}</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-300">{entry.data.description}</p>
+                    <div class="mt-5 text-sm font-medium text-primary">Open page →</div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+        </article>
+
+        <aside class="space-y-6 lg:sticky lg:top-28 lg:self-start">
+          <section class="rounded-[1.75rem] border border-primary/10 bg-white p-6 shadow-[0_18px_50px_-40px_rgba(1,133,174,0.45)] dark:border-white/8 dark:bg-slate-900">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Quick Facts</div>
+            <dl class="mt-4 space-y-4 text-slate-600 dark:text-slate-300">
+              <div>
+                <dt class="font-semibold text-primary">Platform</dt>
+                <dd>YouTube</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-primary">Published</dt>
+                <dd>{publishedLabel}</dd>
+              </div>
+              {updatedLabel && (
+                <div>
+                  <dt class="font-semibold text-primary">Updated</dt>
+                  <dd>{updatedLabel}</dd>
+                </div>
+              )}
+            </dl>
+          </section>
+
+          {sectionHeadings.length > 0 && (
+            <section class="rounded-[1.75rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
+              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">On This Page</div>
+              <nav class="mt-4">
+                <ul class="space-y-3 text-slate-600 dark:text-slate-300">
+                  {sectionHeadings.map((heading) => (
+                    <li>
+                      <a href={`#${heading.slug}`} class={`block transition-colors hover:text-primary ${heading.depth === 1 ? 'font-semibold text-primary' : 'pl-3'}`}>
+                        {heading.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </section>
+          )}
+        </aside>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .media-content :global(h1) {
+    display: none;
+  }
+
+  .media-content :global(h2),
+  .media-content :global(h3),
+  .media-content :global(h4) {
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .media-content :global(h2) {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 32px;
+    line-height: 1.6;
+  }
+
+  .media-content :global(h3) {
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+    font-size: 26px;
+    line-height: 1.6;
+  }
+
+  .media-content :global(p),
+  .media-content :global(li) {
+    color: rgb(51 65 85);
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  :global(.dark) .media-content :global(p),
+  :global(.dark) .media-content :global(li) {
+    color: rgb(226 232 240);
+  }
+
+  .media-content :global(p + p) {
+    margin-top: 1.15rem;
+  }
+
+  .media-content :global(ul),
+  .media-content :global(ol) {
+    margin: 1.15rem 0 1.5rem;
+    padding-left: 1.4rem;
+  }
+
+  .media-content :global(li + li) {
+    margin-top: 0.55rem;
+  }
+  </style>

@@ -38,6 +38,7 @@ The current project includes:
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory for general inquiries, support, newsletter topics, and direct personal contact
 - Gallery page now supports live embedded YouTube video alongside future real-photo gallery expansion
+- Dedicated `Videos` and `Podcasts` sections now exist so media can live on standalone pages instead of only inside the gallery
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
 
@@ -49,6 +50,8 @@ The long-term site structure is:
 - `Guides`: educational content library organized by topic and skill level
 - `Shop`: 3D-printed aquarium accessories made by the site owner
 - `Gallery`: real tanks, accessories, and customer submissions
+- `Videos`: standalone pages for YouTube uploads and future video library growth
+- `Podcasts`: standalone section for future episode pages and audio publishing
 - `Newsletter`: aquarium tips, new products, and affiliate/promotional content
 - `About` and `Contact`: trust-building pages for the brand
 
@@ -165,7 +168,11 @@ These addresses are surfaced on the About and Contact pages so visitors can choo
 │   │   ├── index.astro
 │   │   ├── wizard.astro
 │   │   ├── guides.astro
+│   │   ├── videos.astro
+│   │   ├── podcasts.astro
 │   │   ├── guides/
+│   │   │   └── [slug].astro
+│   │   ├── videos/
 │   │   │   └── [slug].astro
 │   │   ├── shop.astro
 │   │   ├── gallery.astro
@@ -202,6 +209,17 @@ Current supported guide frontmatter fields include:
 - `heroTitleSize`
 
 These settings exist so a guide can keep the same overall template while adjusting image fit, image proportions, and header balance for specific artwork. The default expectation is that new guides should use the established guide layout first, then only use per-guide overrides when the artwork or title treatment genuinely requires it.
+
+## Media Architecture
+
+The site now supports dedicated media sections beyond the gallery:
+
+- `src/content/videos/*.md` holds individual video entries
+- `src/pages/videos.astro` is the videos hub
+- `src/pages/videos/[slug].astro` renders a dedicated page for each video
+- `src/pages/podcasts.astro` is the podcast hub and landing page for future episode publishing
+
+The gallery can still feature media, but videos no longer need to live only as gallery embeds. Each video can now have its own shareable URL, embedded playback, and supporting copy.
 
 ## Current Gaps
 
