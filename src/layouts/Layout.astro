@@ -140,15 +140,23 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString(
             <div class="mt-4 grid gap-3 text-sm">
               <a href="/about" class="text-slate-700 transition-colors hover:text-primary dark:text-slate-200">About Me</a>
               <a href="/contact" class="text-slate-700 transition-colors hover:text-primary dark:text-slate-200">Contact</a>
-              <span class="text-slate-600 dark:text-slate-300">Google AdSense ready</span>
-              <span class="text-slate-600 dark:text-slate-300">Affiliate content ready</span>
+              <a href="/affiliate-disclosure" class="text-slate-700 transition-colors hover:text-primary dark:text-slate-200">Affiliate Disclosure</a>
+              <a href="/advertising-disclosure" class="text-slate-700 transition-colors hover:text-primary dark:text-slate-200">Advertising Disclosure</a>
             </div>
           </div>
         </div>
 
-        <div class="mt-10 flex flex-col gap-3 border-t border-primary/10 pt-6 text-xs text-slate-500 dark:border-white/8 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Fin Sanctuary • finsanctuary.com • Norman, Oklahoma • Built for home aquarium enthusiasts</p>
-          <p>Educational content first. Ads, affiliate placements, and product offers can layer in cleanly.</p>
+        <div class="mt-10 border-t border-primary/10 pt-6 dark:border-white/8">
+          <div class="flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+            <a href="/privacy-policy" class="transition-colors hover:text-primary">Privacy Policy</a>
+            <a href="/terms-of-use" class="transition-colors hover:text-primary">Terms of Use</a>
+            <a href="/affiliate-disclosure" class="transition-colors hover:text-primary">Affiliate Disclosure</a>
+            <a href="/advertising-disclosure" class="transition-colors hover:text-primary">Advertising Disclosure</a>
+          </div>
+          <div class="mt-4 flex flex-col gap-3 text-xs text-slate-500 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
+            <p>© 2026 Fin Sanctuary • finsanctuary.com • Norman, Oklahoma • Built for home aquarium enthusiasts</p>
+            <p>Educational content first. Ads, affiliate placements, and product offers can layer in cleanly.</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -56,7 +56,7 @@ const products = [
           <ul class="mt-5 space-y-4 text-slate-700 dark:text-slate-300">
             <li>Designed in Norman, Oklahoma for home and small-office tanks.</li>
             <li>Best paired with the recommendation flow in the wizard and guide library.</li>
-            <li>Current links are placeholders until live storefront URLs are added.</li>
+            <li>Direct ordering and fit questions can be handled through the contact page while the storefront is being finalized.</li>
           </ul>
         </div>
       </div>
@@ -82,16 +82,32 @@ const products = [
                 <div class="font-bold text-primary">{product.price}</div>
               </div>
               <div class="mt-7 flex flex-wrap gap-3">
-                <a href={product.href} class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Buy When Live</a>
-                <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Ask About Fit</a>
+                <a href="/contact" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Ask About Ordering</a>
+                <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Read a Matching Guide</a>
               </div>
             </div>
           </article>
         ))}
       </div>
 
-      <div class="mt-10 rounded-[2rem] border border-dashed border-primary/20 bg-white/70 px-7 py-6 text-center text-slate-600 dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300">
-        More designs are coming. Once the real storefront is connected, this page can also support featured bundles, affiliate-compatible product pairings, and wizard-matched accessory blocks.
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        <section class="rounded-[2rem] border border-primary/10 bg-white px-7 py-6 text-slate-600 dark:border-white/8 dark:bg-slate-900 dark:text-slate-300">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Next Step</div>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Match the accessory to the tank, not the other way around.</h2>
+          <p class="mt-4">If you are not sure which product makes sense, use the guides and the aquarium wizard first, then ask about product fit or custom prints through the contact page.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Browse Guides</a>
+            <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Ask About Product Fit</a>
+          </div>
+        </section>
+        <section class="rounded-[2rem] border border-primary/10 bg-white px-7 py-6 text-slate-600 dark:border-white/8 dark:bg-slate-900 dark:text-slate-300">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Disclosures</div>
+          <p class="mt-4">Fin Sanctuary uses clear commercial disclosures so visitors know when links, ads, or product placements may support the site.</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="/affiliate-disclosure" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Affiliate Disclosure</a>
+            <a href="/advertising-disclosure" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Advertising Disclosure</a>
+          </div>
+        </section>
       </div>
     </section>
   </main>

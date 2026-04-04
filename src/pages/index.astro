@@ -10,7 +10,17 @@ const homeInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_HOME_INLINE_SLOT;
   description="Plan a home aquarium with a guided wizard, long-form aquarium guides, and custom 3D-printed accessories for practical daily tank care."
 >
   <main>
-    <section class="mx-auto max-w-6xl px-6 py-10 md:py-12">
+    <section class="mx-auto max-w-6xl px-6 pt-10 pb-6 md:pt-12 md:pb-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Start Here</div>
+        <h1 class="mt-4 font-bold tracking-tight text-primary">Choose the right first step for your home aquarium.</h1>
+        <p class="mt-5 text-slate-700 dark:text-slate-200">
+          Fin Sanctuary helps USA-based home and small-office aquarium owners plan smarter before they buy, whether they need a guided recommendation or a deep educational guide.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 pb-8 md:pb-10">
       <div class="grid gap-6 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
         <div class="rounded-[2rem] border border-primary/10 bg-white px-7 py-8 shadow-[0_22px_80px_-55px_rgba(1,133,174,0.45)] dark:border-white/8 dark:bg-slate-900 md:px-8">
           <div class="flex justify-center">
@@ -68,6 +78,23 @@ const homeInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_HOME_INLINE_SLOT;
       </div>
     </section>
 
+    <section class="mx-auto max-w-6xl px-6 pb-8 md:pb-10">
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="rounded-[1.6rem] border border-primary/10 bg-white/80 px-5 py-5 shadow-[0_18px_55px_-45px_rgba(1,133,174,0.38)] dark:border-white/8 dark:bg-slate-900/82">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Beginner-First</div>
+          <p class="mt-3 text-slate-700 dark:text-slate-300">The site is built to reduce overwhelm and turn first-tank questions into a clear next move.</p>
+        </div>
+        <div class="rounded-[1.6rem] border border-primary/10 bg-white/80 px-5 py-5 shadow-[0_18px_55px_-45px_rgba(1,133,174,0.38)] dark:border-white/8 dark:bg-slate-900/82">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Real Owner</div>
+          <p class="mt-3 text-slate-700 dark:text-slate-300">Fin Sanctuary is tied to a real person, a real aquarium hobby, and a direct contact path through the site.</p>
+        </div>
+        <div class="rounded-[1.6rem] border border-primary/10 bg-white/80 px-5 py-5 shadow-[0_18px_55px_-45px_rgba(1,133,174,0.38)] dark:border-white/8 dark:bg-slate-900/82">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Matched Products</div>
+          <p class="mt-3 text-slate-700 dark:text-slate-300">Products and accessories are meant to support a sound tank plan, not interrupt the educational flow.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="mx-auto max-w-6xl px-6 pb-2">
       <AdSenseBlock className="shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)]" label="Advertisement" slot={homeInlineAdSlot} />
     </section>
@@ -76,36 +103,21 @@ const homeInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_HOME_INLINE_SLOT;
       <div class="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_top,rgba(138,201,171,0.35),transparent_58%)] dark:bg-[radial-gradient(circle_at_top,rgba(138,201,171,0.12),transparent_54%)]"></div>
       <div class="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:py-14 xl:grid-cols-[minmax(0,1.05fr)_28rem] xl:items-end">
         <div class="relative">
-          <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Home Aquarium Planning</div>
+          <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Why It Works</div>
           <h1 class="mt-5 max-w-4xl font-bold tracking-tight text-primary">
-            Build the right aquarium before you buy the wrong gear.
+            Planning, education, and product decisions should reinforce each other.
           </h1>
           <p class="mt-6 max-w-2xl text-slate-700 dark:text-slate-200">
-            Use the wizard to narrow the tank, fish, filter, and equipment that actually fit your home or small office. Then use the guides to go deeper before you spend money.
+            The strongest aquarium sites help visitors slow down, make fewer expensive mistakes, and buy gear only after the tank plan makes sense. That is the role Fin Sanctuary is built to fill.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/wizard" class="inline-flex items-center rounded-full bg-primary px-7 py-4 text-base font-semibold text-white transition-colors hover:bg-accent-1">
-              Start the Wizard
+            <a href="/about" class="inline-flex items-center rounded-full bg-primary px-7 py-4 text-base font-semibold text-white transition-colors hover:bg-accent-1">
+              Meet the Owner
             </a>
-            <a href="/guides" class="inline-flex items-center rounded-full border border-primary/20 bg-white/75 px-7 py-4 text-base font-semibold text-primary transition-colors hover:bg-primary hover:text-white dark:border-white/10 dark:bg-slate-900/70">
-              Browse Guides
+            <a href="/contact" class="inline-flex items-center rounded-full border border-primary/20 bg-white/75 px-7 py-4 text-base font-semibold text-primary transition-colors hover:bg-primary hover:text-white dark:border-white/10 dark:bg-slate-900/70">
+              Ask a Question
             </a>
-          </div>
-
-          <div class="mt-8 grid gap-4 sm:grid-cols-3">
-            <div class="rounded-[1.5rem] border border-primary/10 bg-white/70 px-5 py-5 backdrop-blur dark:border-white/8 dark:bg-slate-900/70">
-              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Use Case</div>
-              <p class="mt-3 text-slate-700 dark:text-slate-300">Built for home and small-office aquariums in the USA, not commercial installs.</p>
-            </div>
-            <div class="rounded-[1.5rem] border border-primary/10 bg-white/70 px-5 py-5 backdrop-blur dark:border-white/8 dark:bg-slate-900/70">
-              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Focus</div>
-              <p class="mt-3 text-slate-700 dark:text-slate-300">Beginner-friendly recommendations with room to grow into more advanced setups.</p>
-            </div>
-            <div class="rounded-[1.5rem] border border-primary/10 bg-white/70 px-5 py-5 backdrop-blur dark:border-white/8 dark:bg-slate-900/70">
-              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Products</div>
-              <p class="mt-3 text-slate-700 dark:text-slate-300">Shop custom 3D-printed accessories without interrupting the educational flow.</p>
-            </div>
           </div>
         </div>
 
@@ -174,24 +186,36 @@ const homeInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_HOME_INLINE_SLOT;
     <section class="mx-auto max-w-6xl px-6 py-10 md:py-12">
       <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <div class="rounded-[2rem] border border-primary/10 bg-white px-7 py-8 dark:border-white/8 dark:bg-slate-900 md:px-8">
-          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Shop + Newsletter</div>
-          <h2 class="mt-3 font-semibold tracking-tight text-primary">Designed to support products, affiliate links, and future newsletter growth.</h2>
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Shop + Updates</div>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Keep research, product questions, and future updates connected.</h2>
           <p class="mt-4 max-w-3xl text-slate-700 dark:text-slate-300">
-            The site should educate first, then make it easy to act. That means product placements that feel earned, clear calls to shop matching accessories, and a newsletter path for people who are still researching their tank.
+            Fin Sanctuary should educate first, then make the next step obvious. That includes product-fit questions, practical accessory recommendations, and an email list for new guides, product drops, and useful aquarium updates.
           </p>
-          <div class="mt-7 flex flex-wrap gap-4">
-            <a href="/shop" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Visit the Shop</a>
-            <a href="/contact" class="inline-flex rounded-full border border-primary/20 bg-white px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white dark:border-white/10 dark:bg-slate-950/70">Ask a Question</a>
+          <div class="mt-7 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)]">
+            <div class="space-y-4">
+              <div class="flex flex-wrap gap-4">
+                <a href="/shop" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Visit the Shop</a>
+                <a href="/contact" class="inline-flex rounded-full border border-primary/20 bg-white px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white dark:border-white/10 dark:bg-slate-950/70">Ask a Question</a>
+              </div>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Questions about product fit, custom prints, or guide requests can go through the contact page before the storefront and newsletter systems get deeper integrations.</p>
+            </div>
+            <form action="https://formspree.io/f/xpqynalz" method="POST" class="rounded-[1.6rem] border border-primary/10 bg-light-bg/55 p-5 dark:border-white/8 dark:bg-slate-950/60">
+              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Email Updates</div>
+              <input type="hidden" name="interest" value="newsletter-homepage" />
+              <p class="mt-3 text-slate-700 dark:text-slate-300">Join the email list for new guides, 3D-printed accessory updates, and practical aquarium planning notes.</p>
+              <input type="email" name="email" placeholder="you@example.com" required class="mt-4 w-full rounded-[1.25rem] border border-primary/15 bg-white px-5 py-4 text-slate-900 outline-none transition-colors focus:border-primary dark:border-white/10 dark:bg-slate-900 dark:text-white" />
+              <button type="submit" class="mt-4 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Join the Email List</button>
+            </form>
           </div>
         </div>
 
         <div class="rounded-[2rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(232,217,191,0.55),rgba(255,255,255,0.9))] p-6 dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.12),rgba(15,23,42,0.92))]">
-          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Coming Soon</div>
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">What You’ll Get</div>
           <ul class="mt-5 space-y-4 text-slate-700 dark:text-slate-300">
-            <li>Newsletter signup for new guides and product drops</li>
-            <li>Official guide header artwork and photo-led article pages</li>
-            <li>Deeper fish, disease, lighting, and substrate coverage</li>
-            <li>Cleaner affiliate and AdSense placements that fit the editorial layout</li>
+            <li>More long-form guides built around real beginner decisions and common maintenance problems.</li>
+            <li>Product recommendations that tie back to the guides and the aquarium wizard instead of random shopping lists.</li>
+            <li>A growing media library with videos, tank examples, and future audio content.</li>
+            <li>Clear commercial disclosures so ads, affiliate links, and products stay transparent.</li>
           </ul>
         </div>
       </div>
