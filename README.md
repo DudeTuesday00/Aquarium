@@ -38,7 +38,7 @@ The current project includes:
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory for general inquiries, support, newsletter topics, and direct personal contact
 - Gallery page now supports live embedded YouTube video alongside future real-photo gallery expansion
-- Dedicated `Videos` and `Podcasts` sections now exist so media can live on standalone pages instead of only inside the gallery
+- Dedicated `Videos` and `Podcasts` sections now exist so media has its own site areas instead of living only inside the gallery
 - `Videos` and `Podcasts` are now linked in the main site header on both desktop and mobile navigation
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
@@ -216,11 +216,10 @@ These settings exist so a guide can keep the same overall template while adjusti
 The site now supports dedicated media sections beyond the gallery:
 
 - `src/content/videos/*.md` holds individual video entries
-- `src/pages/videos.astro` is the videos hub
-- `src/pages/videos/[slug].astro` renders a dedicated page for each video and currently uses a placeholder card instead of embedded playback
+- `src/pages/videos.astro` is the videos hub and now renders videos as tiles with thumbnails, titles, descriptions, and direct YouTube links
 - `src/pages/podcasts.astro` is the podcast hub and landing page for future episode publishing
 
-The gallery can still feature media, but videos no longer need to live only as gallery embeds. Each video can now have its own shareable URL, embedded playback, and supporting copy.
+The gallery can still feature media, but videos no longer need to live only as gallery embeds. The current site model uses a simple video-library page rather than separate on-site video detail URLs.
 
 ## Current Gaps
 

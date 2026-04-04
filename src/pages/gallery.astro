@@ -61,10 +61,10 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
               <p class="mt-4 text-slate-700 dark:text-slate-300">{featuredVideo.data.description}</p>
               <div class="mt-5 flex flex-wrap gap-3">
                 <a
-                  href={`/videos/${featuredVideo.id}`}
+                  href="/videos"
                   class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1"
                 >
-                  Open Video Page
+                  Browse Video Library
                 </a>
                 <a
                   href={featuredVideo.data.externalUrl}
