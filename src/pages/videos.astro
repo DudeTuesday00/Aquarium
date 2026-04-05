@@ -42,7 +42,17 @@ const videoTiles = videos.map((video) => ({
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {videoTiles.map((video) => (
           <article class="group overflow-hidden rounded-[1.75rem] border border-primary/10 bg-white shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] transition-transform hover:-translate-y-1 dark:border-white/8 dark:bg-slate-900">
-            <a href={video.data.externalUrl} target="_blank" rel="noreferrer" class="block">
+            <a
+              href={video.data.externalUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="block"
+              data-track-click="video_outbound_click"
+              data-track-location="videos-tile-thumbnail"
+              data-track-label={video.data.title}
+              data-track-category="video"
+              data-track-destination={video.data.externalUrl}
+            >
               <img
                 src={video.thumbnail}
                 alt={`${video.data.title} thumbnail`}
@@ -66,6 +76,11 @@ const videoTiles = videos.map((video) => ({
                 target="_blank"
                 rel="noreferrer"
                 class="mt-5 inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                data-track-click="video_outbound_click"
+                data-track-location="videos-tile-cta"
+                data-track-label={video.data.title}
+                data-track-category="video"
+                data-track-destination={video.data.externalUrl}
               >
                 Watch on YouTube
               </a>
@@ -80,8 +95,8 @@ const videoTiles = videos.map((video) => ({
           <h2 class="mt-3 font-semibold tracking-tight text-primary">Use videos to move into guides and practical planning.</h2>
           <p class="mt-4">The video library works best when it points back into the educational side of the site. Watch on YouTube, then keep going with the guide library or the aquarium wizard if you are planning a setup.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Browse Guides</a>
-            <a href="/wizard" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Use the Wizard</a>
+            <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="media_next_step_click" data-track-location="videos-next-step" data-track-label="Browse Guides" data-track-category="guides" data-track-destination="/guides">Browse Guides</a>
+            <a href="/wizard" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="media_next_step_click" data-track-location="videos-next-step" data-track-label="Use the Wizard" data-track-category="wizard" data-track-destination="/wizard">Use the Wizard</a>
           </div>
         </section>
         <NewsletterSignupCard

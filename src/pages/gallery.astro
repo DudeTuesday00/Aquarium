@@ -65,6 +65,11 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
                 <a
                   href="/videos"
                   class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1"
+                  data-track-click="media_next_step_click"
+                  data-track-location="gallery-featured-video"
+                  data-track-label="Browse Video Library"
+                  data-track-category="video"
+                  data-track-destination="/videos"
                 >
                   Browse Video Library
                 </a>
@@ -73,6 +78,11 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
                   target="_blank"
                   rel="noreferrer"
                   class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                  data-track-click="video_outbound_click"
+                  data-track-location="gallery-featured-video"
+                  data-track-label={featuredVideo.data.title}
+                  data-track-category="video"
+                  data-track-destination={featuredVideo.data.externalUrl}
                 >
                   Watch on YouTube
                 </a>
@@ -117,10 +127,10 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
       <div class="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <section class="rounded-[2rem] border border-dashed border-primary/20 bg-white/70 px-7 py-6 text-slate-600 dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300">
           <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Next Step</div>
-          <p class="mt-4">Want your tank featured here later? Use the <a href="/contact" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4">contact page</a> to reach out about future photo and video submissions, then use the guides and video library to keep exploring the educational side of the site.</p>
+          <p class="mt-4">Want your tank featured here later? Use the <a href="/contact" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="media_next_step_click" data-track-location="gallery-next-step-copy" data-track-label="Contact for Submission" data-track-category="contact" data-track-destination="/contact">contact page</a> to reach out about future photo and video submissions, then use the guides and video library to keep exploring the educational side of the site.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/videos" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Browse Videos</a>
-            <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Browse Guides</a>
+            <a href="/videos" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="media_next_step_click" data-track-location="gallery-next-step" data-track-label="Browse Videos" data-track-category="video" data-track-destination="/videos">Browse Videos</a>
+            <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="media_next_step_click" data-track-location="gallery-next-step" data-track-label="Browse Guides" data-track-category="guides" data-track-destination="/guides">Browse Guides</a>
           </div>
         </section>
         <NewsletterSignupCard

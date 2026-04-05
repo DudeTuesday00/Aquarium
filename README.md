@@ -38,6 +38,7 @@ The current project includes:
 - Standardized square guide artwork on multiple published guides
 - Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
 - A lightweight GA4-ready analytics layer with tracked newsletter submits, CTA clicks, shop-interest clicks, guide next-step clicks, email-link clicks, and wizard completion events
+- Analytics coverage now extends across onboarding, media outbound clicks, newsletter continuation, and direct-contact paths
 - Public trust/compliance pages for privacy, terms, affiliate disclosure, and advertising disclosure
 - Canonical URLs, richer Open Graph/Twitter metadata, and structured data generated from the production site URL
 - Dedicated OG preview images now exist for the homepage, guides hub, wizard, shop, gallery, about, and start-here pages
@@ -218,6 +219,7 @@ These pages are linked in the footer and surfaced where commercial context matte
 │   └── styles/
 │       └── global.css
 ├── docs/
+│   ├── analytics-events.md
 │   └── site-architecture.md
 ├── astro.config.mjs
 ├── package.json
@@ -299,7 +301,8 @@ The current analytics/event layer is intentionally lightweight:
 
 - GA4 can be enabled with `PUBLIC_GA_MEASUREMENT_ID`
 - events safely push through `window.dataLayer` even before GA4 is configured
-- current tracked actions include newsletter submits, contact form submits, major CTA clicks, shop-interest clicks, email-link clicks, guide navigation/related clicks, and wizard completion events
+- current tracked actions include newsletter submits, contact form submits, major CTA clicks, shop-interest clicks, email-link clicks, guide navigation/related clicks, wizard completion events, media outbound clicks, and Start Here/onboarding choices
+- event definitions and recommended first reports are documented in `docs/analytics-events.md`
 
 ## SEO and Metadata
 
