@@ -43,7 +43,7 @@ The current project includes:
 - Canonical URLs, richer Open Graph/Twitter metadata, and structured data generated from the production site URL
 - Dedicated OG preview images now exist for the homepage, guides hub, wizard, shop, gallery, about, and start-here pages
 - `robots.txt` and generated `sitemap.xml` support are now included for crawler readiness
-- A shop page that now presents the planned 3D-printed accessory lineup and the future Etsy storefront path without fake direct-purchase links
+- A shop page that now points visitors to the live Pixels and Chisels Etsy storefront while keeping fit guidance and custom-print questions on-site
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory plus live email-list signup
 - Guide pages and the shop page now use a shared newsletter signup card for cleaner conversion flow
@@ -63,7 +63,7 @@ The long-term site structure is:
 - `Wizard`: recommendation flow for tank size, fish style, equipment, accessories, and beginner fit
 - `Start Here`: beginner-first onboarding route for first-time visitors
 - `Guides`: educational content library organized by topic and skill level
-- `Shop`: 3D-printed aquarium accessories made by the site owner, with Etsy as the future public ordering path
+- `Shop`: 3D-printed aquarium accessories made by the site owner, with Etsy as the public ordering path
 - `Gallery`: real tanks, accessories, and customer submissions
 - `Videos`: standalone pages for YouTube uploads and future video library growth
 - `Podcasts`: standalone section for future episode pages and audio publishing
@@ -286,7 +286,7 @@ Current conversion surfaces include:
 - wizard result CTA block pointing visitors to guides, shop, and email signup
 - tracked CTA and conversion surfaces across the homepage, guides, contact, shop, and wizard
 
-The shop page now uses an Etsy-forward model instead of placeholder checkout links. Visitors see the planned accessory lineup, can ask about custom prints or fit, and can join the list for Etsy launch notices and product drops.
+The shop page now uses the live Pixels and Chisels Etsy storefront as its public ordering path. Visitors can browse the accessory lineup, click through to Etsy, ask about custom prints or fit, and join the list for new product drops.
 
 This keeps the major decision pages focused on a clearer next action instead of dropping visitors into dead ends.
 
@@ -321,7 +321,7 @@ This phase improves how the site presents in search results, crawlers, and socia
 ## Current Gaps
 
 - Many planned guides still exist only as placeholder cards on the guides hub and need to be built one by one
-- The shop now has the correct Etsy-based structure, but it still needs the actual Etsy storefront URL, real product listings, and real product media
+- The shop now has the live Etsy storefront path, but it still needs a fuller set of real product listings, real product media, and tighter guide-to-product matching
 - Affiliate links and gallery media still need real assets and live destinations
 - AdSense loader and inline ad blocks are wired, but real ad delivery still requires live slot IDs in deployment environment variables
 - Newsletter tooling still needs deeper integration beyond the current Formspree-based signup capture
@@ -350,6 +350,7 @@ The current live long-form guides include:
 - `Goldfish Care Myths Busted`
 - `How Often to Do Water Changes (and Why)`
 - `Identifying and Treating Common Fish Diseases`
+- `Invertebrate Care: Snails, Shrimp & Crayfish in Small Tanks`
 - `Live Plants vs Artificial Plants: Which Is Best for You?`
 - `Betta Fish Care: Solo Tanks, Feeding & Enrichment`
 - `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
