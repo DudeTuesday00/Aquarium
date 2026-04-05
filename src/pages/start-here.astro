@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const firstGuides = [
+  {
+    title: 'Choosing the Right Aquarium',
+    href: '/guides/choosing-the-right-aquarium',
+    description: 'Start with size, room fit, budget, and the kind of tank that makes sense for your space.',
+    label: 'Planning'
+  },
+  {
+    title: 'Freshwater vs Saltwater',
+    href: '/guides/freshwater-vs-saltwater',
+    description: 'Compare cost, maintenance, equipment, and livestock complexity before you commit.',
+    label: 'Decision'
+  },
+  {
+    title: 'Beginner Tank Setup Guide',
+    href: '/guides/beginner-tank-setup',
+    description: 'See the safest first setup path once you know what kind of aquarium you want.',
+    label: 'Setup'
+  }
+];
+---
+
+<Layout
+  title="Start Here • Fin Sanctuary Beginner Aquarium Path"
+  description="New to aquariums? Start here for the simplest beginner path through planning, setup, guides, and the Fin Sanctuary aquarium wizard."
+  keywords={['start here aquarium', 'beginner aquarium guide', 'first aquarium steps', 'home aquarium beginner']}
+>
+  <main>
+    <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.1),rgba(243,239,238,0.55))] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.15),rgba(2,6,23,0.96))]">
+      <div class="mx-auto max-w-6xl px-6 py-10 md:py-12">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Start Here</div>
+          <h1 class="mt-5 font-bold tracking-tight text-primary">New to aquariums? Use this page as your first path through the site.</h1>
+          <p class="mt-6 text-slate-700 dark:text-slate-200">
+            Fin Sanctuary can do a lot now, but first-time visitors should not have to guess where to begin. This page gives you the simplest route from early planning to your first safe setup.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="/wizard" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Use the Wizard First</a>
+            <a href="/guides" class="inline-flex rounded-full border border-primary/20 bg-white/75 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white dark:border-white/10 dark:bg-slate-900/70">Browse the Guides</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-10 md:py-12">
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="rounded-[2rem] border border-primary/10 bg-white p-7 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Step 1</div>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Decide what kind of aquarium fits your life.</h2>
+          <p class="mt-4 text-slate-700 dark:text-slate-300">
+            Start with tank size, room placement, budget, and whether you want a simpler freshwater path or a more advanced saltwater path.
+          </p>
+          <a href="/guides/choosing-the-right-aquarium" class="mt-6 inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Read the Planning Guide</a>
+        </article>
+
+        <article class="rounded-[2rem] border border-primary/10 bg-white p-7 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Step 2</div>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Use the wizard if you want a narrower recommendation.</h2>
+          <p class="mt-4 text-slate-700 dark:text-slate-300">
+            The aquarium wizard works best when you want a faster answer about tank size, fish style, equipment bundle, and maintenance level.
+          </p>
+          <a href="/wizard" class="mt-6 inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Open the Wizard</a>
+        </article>
+
+        <article class="rounded-[2rem] border border-primary/10 bg-white p-7 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Step 3</div>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Read the setup guides before buying anything.</h2>
+          <p class="mt-4 text-slate-700 dark:text-slate-300">
+            The strongest next move is almost always to read the matched guide, confirm your direction, and only then move into accessories or product questions.
+          </p>
+          <a href="/guides/beginner-tank-setup" class="mt-6 inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Read the Setup Guide</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="border-y border-primary/10 bg-white/55 dark:border-white/8 dark:bg-slate-950/55">
+      <div class="mx-auto max-w-6xl px-6 py-10 md:py-12">
+        <div class="mb-8 max-w-3xl">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Best First Reads</div>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Three guides that answer the biggest beginner questions first.</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          {firstGuides.map((guide) => (
+            <a href={guide.href} class="group rounded-[1.75rem] border border-primary/10 bg-white p-7 shadow-[0_18px_55px_-45px_rgba(1,133,174,0.35)] transition-transform hover:-translate-y-1 dark:border-white/8 dark:bg-slate-900">
+              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-accent-1">{guide.label}</div>
+              <h3 class="mt-3 font-semibold tracking-tight text-primary transition-colors group-hover:text-accent-1">{guide.title}</h3>
+              <p class="mt-4 text-slate-700 dark:text-slate-300">{guide.description}</p>
+              <div class="mt-5 text-sm font-medium text-primary">Open guide →</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-10 md:py-12">
+      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <section class="rounded-[2rem] border border-primary/10 bg-white px-7 py-7 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">If You Still Feel Stuck</div>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Use one direct question instead of wandering between pages.</h2>
+          <p class="mt-4 text-slate-700 dark:text-slate-300">
+            If you already know your room, tank size target, or fish interest, the wizard is the fastest option. If you need help choosing between options, the guide library is usually better. If you need personal help, use the contact page.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/wizard" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Go to the Wizard</a>
+            <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Contact Fin Sanctuary</a>
+          </div>
+        </section>
+
+        <section class="rounded-[2rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(232,217,191,0.55),rgba(255,255,255,0.9))] p-6 dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.12),rgba(15,23,42,0.92))]">
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Simple Rule</div>
+          <ul class="mt-5 space-y-4 text-slate-700 dark:text-slate-300">
+            <li>Plan first.</li>
+            <li>Cycle the tank before adding fish.</li>
+            <li>Read the setup guide before buying accessories.</li>
+            <li>Use the site’s disclosures and trust pages whenever commercial links appear.</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+</Layout>

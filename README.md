@@ -29,6 +29,7 @@ The current project includes:
 - Wizard hero now uses a centered single-card layout with image-first hierarchy inspired by the Planting Atlas wizard
 - Wizard hero sizing has been tightened to a more compact final presentation
 - Wizard results now include stronger next-step conversion paths to guides, shop, and email signup
+- A dedicated `Start Here` page now gives true beginners a simpler first path through planning, wizard use, and core setup guides
 - A scalable guides hub organized by topic
 - Guides hub hero now uses a matching centered single-card, image-first Finpedia layout
 - Guides hub now includes beginner “Start Here” recommendations and client-side search/filtering
@@ -47,6 +48,7 @@ The current project includes:
 - Gallery page now supports live embedded YouTube video alongside a growing real-photo gallery structure
 - Dedicated `Videos` and `Podcasts` sections now exist so media has its own site areas instead of living only inside the gallery
 - `Videos` and `Podcasts` are now linked in the main site header on both desktop and mobile navigation
+- `Start Here` is now linked in the main site header, footer, homepage, and guides hub for beginner onboarding
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
 
@@ -55,6 +57,7 @@ The current project includes:
 The long-term site structure is:
 
 - `Wizard`: recommendation flow for tank size, fish style, equipment, accessories, and beginner fit
+- `Start Here`: beginner-first onboarding route for first-time visitors
 - `Guides`: educational content library organized by topic and skill level
 - `Shop`: 3D-printed aquarium accessories made by the site owner
 - `Gallery`: real tanks, accessories, and customer submissions
@@ -190,6 +193,7 @@ These pages are linked in the footer and surfaced where commercial context matte
 │   ├── pages/
 │   │   ├── index.astro
 │   │   ├── sitemap.xml.ts
+│   │   ├── start-here.astro
 │   │   ├── wizard.astro
 │   │   ├── guides.astro
 │   │   ├── videos.astro
@@ -249,6 +253,7 @@ The gallery can still feature media, but videos no longer need to live only as g
 Recent site-improvement work focused on:
 
 - clearer first-click homepage flow
+- stronger beginner onboarding for first-time visitors
 - stronger trust signaling for AdSense and affiliate readiness
 - less “placeholder” framing on production pages
 - better guide discovery with search and beginner entry points
