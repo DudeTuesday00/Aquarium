@@ -37,6 +37,7 @@ The current project includes:
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
 - Standardized square guide artwork on multiple published guides
 - Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
+- A lightweight GA4-ready analytics layer with tracked newsletter submits, CTA clicks, shop-interest clicks, guide next-step clicks, email-link clicks, and wizard completion events
 - Public trust/compliance pages for privacy, terms, affiliate disclosure, and advertising disclosure
 - Canonical URLs, richer Open Graph/Twitter metadata, and structured data generated from the production site URL
 - `robots.txt` and generated `sitemap.xml` support are now included for crawler readiness
@@ -142,6 +143,7 @@ For Cloudflare Pages, use:
 - Optional environment variable for the guides hub ad block: `PUBLIC_ADSENSE_GUIDES_HUB_SLOT=<your ad slot id>`
 - Optional environment variable for guide-page inline ads: `PUBLIC_ADSENSE_GUIDE_INLINE_SLOT=<your ad slot id>`
 - Optional environment variable for the wizard-page ad block: `PUBLIC_ADSENSE_WIZARD_INLINE_SLOT=<your ad slot id>`
+- Optional environment variable for GA4 event collection: `PUBLIC_GA_MEASUREMENT_ID=<your GA4 measurement id>`
 - `public/ads.txt` is committed and should deploy to `https://finsanctuary.com/ads.txt`
 
 The Astro site URL is configured as `https://finsanctuary.com` in `astro.config.mjs`, so canonical URLs and site-level metadata resolve against the production domain.
@@ -271,10 +273,17 @@ Current conversion surfaces include:
 - shared newsletter signup card on the shop page
 - shared newsletter signup card on videos, podcasts, and gallery pages
 - wizard result CTA block pointing visitors to guides, shop, and email signup
+- tracked CTA and conversion surfaces across the homepage, guides, contact, shop, and wizard
 
 The shop page now uses an Etsy-forward model instead of placeholder checkout links. Visitors see the planned accessory lineup, can ask about custom prints or fit, and can join the list for Etsy launch notices and product drops.
 
 This keeps the major decision pages focused on a clearer next action instead of dropping visitors into dead ends.
+
+The current analytics/event layer is intentionally lightweight:
+
+- GA4 can be enabled with `PUBLIC_GA_MEASUREMENT_ID`
+- events safely push through `window.dataLayer` even before GA4 is configured
+- current tracked actions include newsletter submits, contact form submits, major CTA clicks, shop-interest clicks, email-link clicks, guide navigation/related clicks, and wizard completion events
 
 ## SEO and Metadata
 
@@ -295,7 +304,8 @@ This phase improves how the site presents in search results, crawlers, and socia
 - The shop now has the correct Etsy-based structure, but it still needs the actual Etsy storefront URL, real product listings, and real product media
 - Affiliate links and gallery media still need real assets and live destinations
 - AdSense loader and inline ad blocks are wired, but real ad delivery still requires live slot IDs in deployment environment variables
-- Newsletter tooling and analytics still need deeper integration beyond the current Formspree-based signup capture
+- Newsletter tooling still needs deeper integration beyond the current Formspree-based signup capture
+- Analytics now has a baseline event layer, but it still needs a real reporting/dashboard workflow and broader outbound-click instrumentation
 - Social preview artwork can still be improved further with dedicated OG images per major page type
 - Some guide pages now support hero artwork, but most guides still need final branded images
 

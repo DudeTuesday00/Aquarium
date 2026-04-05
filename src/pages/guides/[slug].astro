@@ -76,7 +76,7 @@ const guideSchema = canonical => ({
   <main class="bg-light-bg/65 dark:bg-slate-950">
     <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.09),rgba(243,239,238,0.4))] dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.16),rgba(2,6,23,0.96))]">
       <div class="mx-auto max-w-6xl px-6 py-8 md:py-10">
-        <a href="/guides" class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80 transition-colors hover:text-primary">
+        <a href="/guides" class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80 transition-colors hover:text-primary" data-track-click="guide_navigation_click" data-track-location="guide-header" data-track-label="Back to Guides" data-track-category="guides" data-track-destination="/guides">
           <span aria-hidden="true">←</span>
           Back to Guides
         </a>
@@ -99,7 +99,7 @@ const guideSchema = canonical => ({
               {updatedLabel && <span>Updated {updatedLabel}</span>}
             </div>
             <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">
-              Commercial transparency matters here. See the <a href="/affiliate-disclosure" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4">Affiliate Disclosure</a> and <a href="/advertising-disclosure" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4">Advertising Disclosure</a>.
+              Commercial transparency matters here. See the <a href="/affiliate-disclosure" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="disclosure_click" data-track-location="guide-header" data-track-label="Affiliate Disclosure" data-track-category="trust" data-track-destination="/affiliate-disclosure">Affiliate Disclosure</a> and <a href="/advertising-disclosure" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="disclosure_click" data-track-location="guide-header" data-track-label="Advertising Disclosure" data-track-category="trust" data-track-destination="/advertising-disclosure">Advertising Disclosure</a>.
             </p>
           </div>
 
@@ -138,9 +138,9 @@ const guideSchema = canonical => ({
             <h2 class="mt-3 font-semibold tracking-tight text-primary">Keep moving from reading to action.</h2>
             <p class="mt-4 text-slate-700 dark:text-slate-300">Use the related guides to go deeper, check the shop if you need matching accessories, or join the email list if you want future guides and product updates.</p>
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Browse More Guides</a>
-              <a href="/shop" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Shop Matching Accessories</a>
-              <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Ask a Question</a>
+              <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="guide_next_step_click" data-track-location="guide-next-step" data-track-label="Browse More Guides" data-track-category="guides" data-track-destination="/guides">Browse More Guides</a>
+              <a href="/shop" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="guide_next_step_click" data-track-location="guide-next-step" data-track-label="Shop Matching Accessories" data-track-category="shop" data-track-destination="/shop">Shop Matching Accessories</a>
+              <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="guide_next_step_click" data-track-location="guide-next-step" data-track-label="Ask a Question" data-track-category="contact" data-track-destination="/contact">Ask a Question</a>
             </div>
           </section>
 
@@ -161,7 +161,7 @@ const guideSchema = canonical => ({
               </div>
               <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {relatedGuides.map((entry) => (
-                  <a href={`/guides/${entry.id}`} class="group rounded-[1.75rem] border border-primary/10 bg-white p-6 transition-transform duration-200 hover:-translate-y-1 hover:border-primary/30 dark:border-white/8 dark:bg-slate-900">
+                  <a href={`/guides/${entry.id}`} class="group rounded-[1.75rem] border border-primary/10 bg-white p-6 transition-transform duration-200 hover:-translate-y-1 hover:border-primary/30 dark:border-white/8 dark:bg-slate-900" data-track-click="guide_related_click" data-track-location="guide-related" data-track-label={entry.data.title} data-track-category="guides" data-track-destination={`/guides/${entry.id}`}>
                     <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-accent-1">{entry.data.category}</div>
                     <h3 class="mt-3 font-semibold tracking-tight text-primary transition-colors group-hover:text-accent-1">{entry.data.title}</h3>
                     <p class="mt-3 text-slate-600 dark:text-slate-300">{entry.data.description}</p>

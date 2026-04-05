@@ -32,7 +32,7 @@ const wizardInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_WIZARD_INLINE_SLOT;
             <p class="max-w-md text-base leading-relaxed text-slate-600 dark:text-slate-300">
               Answer a few simple questions about your conditions and goals — we'll recommend the perfect plans for your aquarium to grow and thrive.
             </p>
-            <a href="#wizard" class="mt-1 inline-flex rounded-2xl bg-primary px-10 py-3 text-lg font-semibold text-white shadow-md transition-colors duration-200 hover:bg-accent-1">
+            <a href="#wizard" class="mt-1 inline-flex rounded-2xl bg-primary px-10 py-3 text-lg font-semibold text-white shadow-md transition-colors duration-200 hover:bg-accent-1" data-track-click="cta_click" data-track-location="wizard-hero" data-track-label="Get Started" data-track-category="wizard" data-track-destination="#wizard">
               Get Started →
             </a>
             <p class="text-xs text-slate-400 dark:text-slate-500">
@@ -210,9 +210,9 @@ const wizardInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_WIZARD_INLINE_SLOT;
             <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">What To Do Next</div>
             <p class="mt-3 text-slate-700 dark:text-slate-300">Use this recommendation as your starting plan, then move into matched reading, accessory selection, or email updates depending on how ready you are to act.</p>
             <div class="mt-5 flex flex-wrap gap-4">
-              <a href="/shop" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Shop Matching Accessories</a>
-              <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Read Matched Guides</a>
-              <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Join the Email List</a>
+              <a href="/shop" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="wizard_result_click" data-track-location="wizard-results" data-track-label="Shop Matching Accessories" data-track-category="shop" data-track-destination="/shop">Shop Matching Accessories</a>
+              <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="wizard_result_click" data-track-location="wizard-results" data-track-label="Read Matched Guides" data-track-category="guides" data-track-destination="/guides">Read Matched Guides</a>
+              <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="wizard_result_click" data-track-location="wizard-results" data-track-label="Join the Email List" data-track-category="contact" data-track-destination="/contact">Join the Email List</a>
             </div>
           </section>
         </div>
@@ -236,14 +236,27 @@ const wizardInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_WIZARD_INLINE_SLOT;
           return;
         }
 
-        const html = renderRecommendation(buildWizardRecommendation(answers));
+        const result = buildWizardRecommendation(answers);
+        const html = renderRecommendation(result);
 
-        if (!html) {
+        if (!html || !result) {
           showError('Complete every step before generating your recommendation.');
           return;
         }
 
         recommendation.innerHTML = html;
+        window.finTrack?.('wizard_completed', {
+          location: 'wizard-results',
+          headline: result.headline,
+          experience: answers.experience,
+          environment: answers.environment,
+          tank: answers.tank,
+          water: answers.water,
+          fish: answers.fish,
+          plants: answers.plants,
+          maint: answers.maint,
+          budget: answers.budget
+        });
         document.getElementById('wizard').querySelectorAll('.step').forEach((step) => step.classList.add('hidden'));
         results.classList.remove('hidden');
         nextBtn.classList.add('hidden');

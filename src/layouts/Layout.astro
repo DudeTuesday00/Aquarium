@@ -28,6 +28,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString(
 const defaultOgImage = Astro.site ? new URL('/images/home/fin-sanctuary.png', Astro.site).toString() : undefined;
 const resolvedOgImage = ogImage ?? defaultOgImage;
 const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const siteSchemas = Astro.site
   ? [
       {
@@ -80,6 +81,18 @@ const combinedSchemas = [...siteSchemas, ...pageSchemas];
     <meta name="theme-color" content="#0185AE" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {gaMeasurementId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+        <script is:inline define:vars={{ gaMeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          window.gtag = window.gtag || gtag;
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        </script>
+      </>
+    )}
     <meta name="google-adsense-account" content="ca-pub-2083020536499662" />
     <script
       async
@@ -223,6 +236,15 @@ const combinedSchemas = [...siteSchemas, ...pageSchemas];
     </footer>
 
     <script>
+      window.finTrack = window.finTrack || ((eventName, params = {}) => {
+        const payload = { ...params, page_path: window.location.pathname };
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: eventName, ...payload });
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, payload);
+        }
+      });
+
       const themeButtons = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')].filter(Boolean);
       const html = document.documentElement;
 
@@ -252,6 +274,33 @@ const combinedSchemas = [...siteSchemas, ...pageSchemas];
         const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
         mobileBtn.setAttribute('aria-expanded', String(!expanded));
         mobileMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (event) => {
+        const trackTarget = event.target.closest('[data-track-click]');
+        if (!trackTarget) return;
+
+        const { trackClick, trackLocation, trackLabel, trackCategory, trackInterest, trackDestination } = trackTarget.dataset;
+        window.finTrack(trackClick, {
+          location: trackLocation,
+          label: trackLabel,
+          category: trackCategory,
+          interest: trackInterest,
+          destination: trackDestination
+        });
+      });
+
+      document.addEventListener('submit', (event) => {
+        const form = event.target.closest('form[data-track-submit]');
+        if (!form) return;
+
+        const { trackSubmit, trackLocation, trackLabel, trackCategory, trackInterest } = form.dataset;
+        window.finTrack(trackSubmit, {
+          location: trackLocation,
+          label: trackLabel,
+          category: trackCategory,
+          interest: trackInterest
+        });
       });
     </script>
   </body>
