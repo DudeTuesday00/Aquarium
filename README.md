@@ -315,6 +315,7 @@ The current live long-form guides include:
 - `Freshwater Community Fish`
 - `Goldfish Care Myths Busted`
 - `How Often to Do Water Changes (and Why)`
+- `Identifying and Treating Common Fish Diseases`
 - `Betta Tank Basics for Beginners`
 - `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
 - `Step-by-Step Aquarium Setup Guide for Beginners`
