@@ -4,13 +4,56 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
+  keywords?: string[];
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title = 'Fin Sanctuary • Home Tanks Made Easy',
-  description = 'Fin Sanctuary offers aquarium planning tools, expert guides, 3D-printed accessories, and practical knowledge for home and small-office tanks.'
+  description = 'Fin Sanctuary offers aquarium planning tools, expert guides, 3D-printed accessories, and practical knowledge for home and small-office tanks.',
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+  publishedTime,
+  modifiedTime,
+  keywords = [],
+  jsonLd = []
 } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+const defaultOgImage = Astro.site ? new URL('/images/home/fin-sanctuary.png', Astro.site).toString() : undefined;
+const resolvedOgImage = ogImage ?? defaultOgImage;
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+const siteSchemas = Astro.site
+  ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Fin Sanctuary',
+        url: Astro.site.toString(),
+        logo: new URL('/images/home/fin-sanctuary.png', Astro.site).toString(),
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            email: 'info@finsanctuary.com',
+            contactType: 'customer support'
+          }
+        ]
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Fin Sanctuary',
+        url: Astro.site.toString()
+      }
+    ]
+  : [];
+const pageSchemas = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+const combinedSchemas = [...siteSchemas, ...pageSchemas];
 ---
 
 <html lang="en">
@@ -18,11 +61,23 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString(
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:site_name" content="Fin Sanctuary" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
+    {resolvedOgImage && <meta property="og:image" content={resolvedOgImage} />}
+    {resolvedOgImage && <meta property="og:image:alt" content={title} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    <meta name="twitter:card" content={resolvedOgImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
+    <meta name="theme-color" content="#0185AE" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="google-adsense-account" content="ca-pub-2083020536499662" />
@@ -34,6 +89,9 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString(
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    {combinedSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body class="min-h-screen bg-light-bg text-slate-950 dark:bg-slate-950 dark:text-white font-sans flex flex-col">
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">

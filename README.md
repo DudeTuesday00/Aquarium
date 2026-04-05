@@ -37,7 +37,8 @@ The current project includes:
 - Standardized square guide artwork on multiple published guides
 - Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
 - Public trust/compliance pages for privacy, terms, affiliate disclosure, and advertising disclosure
-- Canonical URLs and basic Open Graph metadata generated from the production site URL
+- Canonical URLs, richer Open Graph/Twitter metadata, and structured data generated from the production site URL
+- `robots.txt` and generated `sitemap.xml` support are now included for crawler readiness
 - A shop page for 3D-printed accessories
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory plus live email-list signup
@@ -169,6 +170,8 @@ These pages are linked in the footer and surfaced where commercial context matte
 ```text
 /
 ├── public/
+│   ├── ads.txt
+│   ├── robots.txt
 │   └── images/
 │       ├── home/
 │       └── guides/
@@ -186,6 +189,7 @@ These pages are linked in the footer and surfaced where commercial context matte
 │   │   └── Layout.astro
 │   ├── pages/
 │   │   ├── index.astro
+│   │   ├── sitemap.xml.ts
 │   │   ├── wizard.astro
 │   │   ├── guides.astro
 │   │   ├── videos.astro
@@ -265,13 +269,26 @@ Current conversion surfaces include:
 
 This keeps the major decision pages focused on a clearer next action instead of dropping visitors into dead ends.
 
+## SEO and Metadata
+
+The site now includes a stronger metadata baseline for search engines and link previews:
+
+- canonical URLs generated from `https://finsanctuary.com`
+- richer Open Graph and Twitter card metadata through the shared layout
+- Organization and WebSite JSON-LD on the shared layout
+- Article JSON-LD plus article metadata on guide pages
+- `public/robots.txt`
+- generated sitemap route at `/sitemap.xml`
+
+This phase improves how the site presents in search results, crawlers, and social sharing without changing the editorial page structure.
+
 ## Current Gaps
 
 - Many planned guides still exist only as placeholder cards on the guides hub and need to be built one by one
 - Product links, affiliate links, and gallery media still need real assets and live destinations
 - AdSense loader and inline ad blocks are wired, but real ad delivery still requires live slot IDs in deployment environment variables
 - Newsletter tooling and analytics still need deeper integration beyond the current Formspree-based signup capture
-- Richer social/SEO metadata still needs to be expanded beyond the current basic canonical and Open Graph setup
+- Social preview artwork can still be improved further with dedicated OG images per major page type
 - Some guide pages now support hero artwork, but most guides still need final branded images
 
 ## Published Guides

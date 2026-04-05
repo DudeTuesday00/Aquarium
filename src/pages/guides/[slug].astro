@@ -40,9 +40,39 @@ const heroTitleSize = guide.data.heroTitleSize ?? 'compact';
 const heroImageFit = guide.data.heroImageFit ?? 'cover';
 const heroImageAspect = guide.data.heroImageAspect ?? 'wide';
 const guideInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_GUIDE_INLINE_SLOT;
+const guideOgImage = guide.data.heroImage && Astro.site ? new URL(guide.data.heroImage, Astro.site).toString() : undefined;
+const guideSchema = canonical => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: guide.data.title,
+  description: guide.data.description,
+  datePublished: guide.data.publishDate.toISOString(),
+  dateModified: (guide.data.updatedDate ?? guide.data.publishDate).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Diamond Dave'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Fin Sanctuary'
+  },
+  articleSection: guide.data.category,
+  keywords: guide.data.tags,
+  image: guideOgImage ? [guideOgImage] : undefined,
+  mainEntityOfPage: canonical
+});
 ---
 
-<Layout title={`${guide.data.title} • Fin Sanctuary`} description={guide.data.description}>
+<Layout
+  title={`${guide.data.title} • Fin Sanctuary`}
+  description={guide.data.description}
+  ogType="article"
+  ogImage={guideOgImage}
+  publishedTime={guide.data.publishDate.toISOString()}
+  modifiedTime={(guide.data.updatedDate ?? guide.data.publishDate).toISOString()}
+  keywords={guide.data.tags}
+  jsonLd={guideSchema(Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString())}
+>
   <main class="bg-light-bg/65 dark:bg-slate-950">
     <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.09),rgba(243,239,238,0.4))] dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.16),rgba(2,6,23,0.96))]">
       <div class="mx-auto max-w-6xl px-6 py-8 md:py-10">
