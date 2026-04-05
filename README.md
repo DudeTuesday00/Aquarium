@@ -310,6 +310,7 @@ The current live long-form guides include:
 - `Community Tank Compatibility Guide`
 - `Complete Beginner Tank Setup Guide 2026`
 - `Essential Aquarium Equipment You Actually Need`
+- `Emergency Aquarium Troubleshooting Guide`
 - `Filtration Systems for Small Aquariums`
 - `Freshwater vs Saltwater Aquariums`
 - `Freshwater Community Fish`
