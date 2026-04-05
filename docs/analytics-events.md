@@ -26,6 +26,9 @@ Fin Sanctuary now has a lightweight event layer designed to work with `window.da
 - `guide_related_click`
   - Fired when a related guide card is opened from a guide page.
 
+- `guide_share_click`
+  - Fired when a visitor uses the guide-page share tools for X, Facebook, Pinterest, or Instagram link copy.
+
 - `guide_feature_click`
   - Fired from featured-guide links on the homepage.
 
@@ -53,6 +56,7 @@ Fin Sanctuary now has a lightweight event layer designed to work with `window.da
 - Wizard completions by `tank`, `water`, and `budget`
 - Shop inquiry clicks by `location`
 - Top clicked guide-to-guide paths
+- Guide share performance by platform
 - YouTube outbound clicks from `videos` and `gallery`
 - Start Here CTA performance by `label`
 

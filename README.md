@@ -36,6 +36,7 @@ The current project includes:
 - Multiple published long-form guides plus placeholder cards for planned guides
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
 - Standardized square guide artwork on multiple published guides
+- Guide pages now include built-in social sharing controls for X, Facebook, Pinterest, and Instagram-friendly link copying
 - Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
 - A lightweight GA4-ready analytics layer with tracked newsletter submits, CTA clicks, shop-interest clicks, guide next-step clicks, email-link clicks, and wizard completion events
 - Analytics coverage now extends across onboarding, media outbound clicks, newsletter continuation, and direct-contact paths
@@ -281,6 +282,7 @@ Current conversion surfaces include:
 - homepage email signup for guide and product updates
 - contact-page email signup plus direct inbox routing
 - shared newsletter signup card on guide pages
+- built-in social sharing on guide pages for passive growth and long-form content distribution
 - shared newsletter signup card on the shop page
 - shared newsletter signup card on videos, podcasts, and gallery pages
 - wizard result CTA block pointing visitors to guides, shop, and email signup
@@ -301,7 +303,7 @@ The current analytics/event layer is intentionally lightweight:
 
 - GA4 can be enabled with `PUBLIC_GA_MEASUREMENT_ID`
 - events safely push through `window.dataLayer` even before GA4 is configured
-- current tracked actions include newsletter submits, contact form submits, major CTA clicks, shop-interest clicks, email-link clicks, guide navigation/related clicks, wizard completion events, media outbound clicks, and Start Here/onboarding choices
+- current tracked actions include newsletter submits, contact form submits, major CTA clicks, shop-interest clicks, email-link clicks, guide navigation/related/share clicks, wizard completion events, media outbound clicks, and Start Here/onboarding choices
 - event definitions and recommended first reports are documented in `docs/analytics-events.md`
 
 ## SEO and Metadata

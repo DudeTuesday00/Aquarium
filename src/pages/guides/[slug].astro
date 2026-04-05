@@ -40,7 +40,13 @@ const heroTitleSize = guide.data.heroTitleSize ?? 'compact';
 const heroImageFit = guide.data.heroImageFit ?? 'cover';
 const heroImageAspect = guide.data.heroImageAspect ?? 'wide';
 const guideInlineAdSlot = import.meta.env.PUBLIC_ADSENSE_GUIDE_INLINE_SLOT;
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
 const guideOgImage = guide.data.heroImage && Astro.site ? new URL(guide.data.heroImage, Astro.site).toString() : undefined;
+const shareImage = guideOgImage ?? (Astro.site ? new URL('/images/og/guides.svg', Astro.site).toString() : undefined);
+const shareText = `${guide.data.title} | Fin Sanctuary`;
+const xShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(shareText)}`;
+const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}`;
+const pinterestShareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(canonicalUrl)}${shareImage ? `&media=${encodeURIComponent(shareImage)}` : ''}&description=${encodeURIComponent(guide.data.description)}`;
 const guideSchema = canonical => ({
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -71,7 +77,7 @@ const guideSchema = canonical => ({
   publishedTime={guide.data.publishDate.toISOString()}
   modifiedTime={(guide.data.updatedDate ?? guide.data.publishDate).toISOString()}
   keywords={guide.data.tags}
-  jsonLd={guideSchema(Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString())}
+  jsonLd={guideSchema(canonicalUrl)}
 >
   <main class="bg-light-bg/65 dark:bg-slate-950">
     <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.09),rgba(243,239,238,0.4))] dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.16),rgba(2,6,23,0.96))]">
@@ -199,6 +205,65 @@ const guideSchema = canonical => ({
             </dl>
           </section>
 
+          <section class="rounded-[1.75rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
+            <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Share This Guide</div>
+            <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">Share long-form aquarium advice to X, Facebook, Pinterest, or copy the link for Instagram posts and stories.</p>
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <a
+                href={xShareUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1"
+                data-track-click="guide_share_click"
+                data-track-location="guide-share"
+                data-track-label="X"
+                data-track-category="social"
+                data-track-destination={xShareUrl}
+              >
+                Share on X
+              </a>
+              <a
+                href={facebookShareUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-full border border-primary/20 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                data-track-click="guide_share_click"
+                data-track-location="guide-share"
+                data-track-label="Facebook"
+                data-track-category="social"
+                data-track-destination={facebookShareUrl}
+              >
+                Facebook
+              </a>
+              <a
+                href={pinterestShareUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-full border border-primary/20 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                data-track-click="guide_share_click"
+                data-track-location="guide-share"
+                data-track-label="Pinterest"
+                data-track-category="social"
+                data-track-destination={pinterestShareUrl}
+              >
+                Pinterest
+              </a>
+              <button
+                type="button"
+                class="guide-share-copy inline-flex items-center justify-center rounded-full border border-primary/20 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                data-track-click="guide_share_click"
+                data-track-location="guide-share"
+                data-track-label="Instagram Copy Link"
+                data-track-category="social"
+                data-track-destination={canonicalUrl}
+                data-copy-url={canonicalUrl}
+              >
+                Instagram
+              </button>
+            </div>
+            <p class="guide-share-feedback mt-4 min-h-[1.25rem] text-xs font-medium uppercase tracking-[0.18em] text-accent-1" aria-live="polite"></p>
+          </section>
+
           {sectionHeadings.length > 0 && (
             <section class="rounded-[1.75rem] border border-primary/10 bg-white p-6 dark:border-white/8 dark:bg-slate-900">
               <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">On This Page</div>
@@ -233,6 +298,27 @@ const guideSchema = canonical => ({
     </section>
   </main>
 </Layout>
+
+<script>
+  const copyButton = document.querySelector('.guide-share-copy');
+  const copyFeedback = document.querySelector('.guide-share-feedback');
+
+  copyButton?.addEventListener('click', async () => {
+    const url = copyButton.dataset.copyUrl;
+    if (!url) return;
+
+    try {
+      await navigator.clipboard.writeText(url);
+      if (copyFeedback) {
+        copyFeedback.textContent = 'Link copied for Instagram sharing';
+      }
+    } catch {
+      if (copyFeedback) {
+        copyFeedback.textContent = 'Copy failed, but the guide URL is in the address bar';
+      }
+    }
+  });
+</script>
 
 <style>
   .guide-hero-image {
