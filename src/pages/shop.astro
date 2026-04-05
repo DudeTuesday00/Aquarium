@@ -5,46 +5,49 @@ import Layout from '../layouts/Layout.astro';
 const products = [
   {
     name: 'Filter Guard',
-    price: '$12.99',
     summary: 'Protects fish from intake tubes and helps make beginner tanks safer.',
-    details: 'Fits common 10 to 55 gallon home aquariums.',
-    href: 'https://your-etsy-link.com',
+    details: 'Planned for common 10 to 55 gallon home aquariums once the Etsy shop opens.',
     accent: 'from-primary/95 via-accent-1 to-accent-2',
-    label: 'Fish Safety'
+    label: 'Planned Etsy Release',
+    fit: 'Best for beginner community tanks, smaller fish, and intake protection upgrades.'
   },
   {
     name: 'Feeding Ring',
-    price: '$8.99',
     summary: 'Keeps floating food in one zone and reduces mess around the tank.',
-    details: 'Useful for bettas, community tanks, and office aquariums.',
-    href: 'https://your-etsy-link.com',
+    details: 'Planned as an easy Etsy accessory for bettas, community tanks, and office aquariums.',
     accent: 'from-accent-1/95 via-primary to-accent-2',
-    label: 'Cleaner Feeding'
+    label: 'Planned Etsy Release',
+    fit: 'Best for calmer feeding zones, floating foods, and cleaner surface routines.'
   },
   {
     name: 'Plant Weight Clips',
-    price: '$14.99',
     summary: 'Helps keep live plants anchored while new roots establish.',
-    details: 'Set of 6 for planted freshwater layouts.',
-    href: 'https://your-etsy-link.com',
+    details: 'Planned for planted freshwater layouts and low-tech aquascapes sold through Etsy.',
     accent: 'from-accent-2/95 via-primary to-accent-1',
-    label: 'Planted Tanks'
+    label: 'Planned Etsy Release',
+    fit: 'Best for low-tech planted tanks, rescapes, and floating stem control.'
   }
+];
+
+const shopSteps = [
+  'Use the guides and wizard to confirm what your tank actually needs.',
+  'Ask about fit or custom-print options through the contact page.',
+  'Follow the newsletter for Etsy launch notices and new accessory drops.'
 ];
 ---
 
 <Layout
-  title="Aquarium Accessories Shop • 3D-Printed Tank Tools"
-  description="Browse 3D-printed aquarium accessories including filter guards, feeding rings, and plant clips designed for home and office tanks."
+  title="Aquarium Accessories Shop • Etsy Storefront Coming Soon"
+  description="Explore the planned Fin Sanctuary accessory lineup, request custom-fit 3D prints, and follow upcoming aquarium product releases that will be sold through Etsy."
 >
   <main>
     <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.1),rgba(243,239,238,0.5))] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.14),rgba(2,6,23,0.96))]">
       <div class="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:py-12 xl:grid-cols-[minmax(0,1.05fr)_24rem] xl:items-end">
         <div>
           <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">3D-Printed Accessories</div>
-          <h1 class="mt-5 font-bold tracking-tight text-primary">Practical tank tools built for real home aquariums.</h1>
+          <h1 class="mt-5 font-bold tracking-tight text-primary">Practical tank tools, with Etsy as the product path.</h1>
           <p class="mt-6 max-w-3xl text-slate-700 dark:text-slate-200">
-            These accessories are designed to solve common day-to-day aquarium problems without adding clutter, wasted gear, or awkward maintenance.
+            Fin Sanctuary accessories are being organized for a future Etsy storefront. For now, this page works as the product roadmap: what is planned, what each accessory is for, and how to ask about custom prints or fit before live listings are published.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="/contact" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Request a Custom Print</a>
@@ -53,17 +56,33 @@ const products = [
         </div>
 
         <div class="rounded-[2rem] border border-primary/10 bg-white/80 p-6 shadow-[0_28px_90px_-55px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/8 dark:bg-slate-900/82">
-          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Shop Notes</div>
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">How Ordering Will Work</div>
           <ul class="mt-5 space-y-4 text-slate-700 dark:text-slate-300">
-            <li>Designed in Norman, Oklahoma for home and small-office tanks.</li>
-            <li>Best paired with the recommendation flow in the wizard and guide library.</li>
-            <li>Direct ordering and fit questions can be handled through the contact page while the storefront is being finalized.</li>
+            <li>Accessories are designed in Norman, Oklahoma for home and small-office tanks.</li>
+            <li>When products go live, the public buying path will be Etsy.</li>
+            <li>Until then, fit questions and custom-print requests can go through the contact page.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="mx-auto max-w-6xl px-6 py-10">
+      <section class="mb-8 rounded-[2rem] border border-primary/10 bg-white px-7 py-6 text-slate-600 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.35)] dark:border-white/8 dark:bg-slate-900 dark:text-slate-300">
+        <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Current Shop Status</div>
+        <h2 class="mt-3 font-semibold tracking-tight text-primary">The storefront is being prepared for Etsy, not direct checkout.</h2>
+        <p class="mt-4 max-w-3xl">
+          There are no fake buy buttons or fake Etsy links here. Instead, the shop shows the planned accessory lineup, what each item is meant to solve, and the clearest next step if you want to ask about fit, custom prints, or upcoming availability.
+        </p>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          {shopSteps.map((step, index) => (
+            <div class="rounded-[1.4rem] border border-primary/10 bg-light-bg/70 px-5 py-4 dark:border-white/8 dark:bg-slate-950/70">
+              <div class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-accent-1">Step {index + 1}</div>
+              <p class="mt-3 text-slate-700 dark:text-slate-300">{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <div class="grid gap-6 lg:grid-cols-3">
         {products.map((product) => (
           <article class="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900">
@@ -74,16 +93,16 @@ const products = [
               </div>
             </div>
             <div class="p-7">
-              <div class="flex items-start justify-between gap-4">
+              <div>
                 <div>
                   <h2 class="font-semibold tracking-tight text-primary">{product.name}</h2>
                   <p class="mt-3 text-slate-700 dark:text-slate-300">{product.summary}</p>
                   <p class="mt-2 text-slate-500 dark:text-slate-400">{product.details}</p>
+                  <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">{product.fit}</p>
                 </div>
-                <div class="font-bold text-primary">{product.price}</div>
               </div>
               <div class="mt-7 flex flex-wrap gap-3">
-                <a href="/contact" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Ask About Ordering</a>
+                <a href="/contact" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Ask About Fit or Custom Print</a>
                 <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Read a Matching Guide</a>
               </div>
             </div>
@@ -95,7 +114,7 @@ const products = [
         <section class="rounded-[2rem] border border-primary/10 bg-white px-7 py-6 text-slate-600 dark:border-white/8 dark:bg-slate-900 dark:text-slate-300">
           <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Next Step</div>
           <h2 class="mt-3 font-semibold tracking-tight text-primary">Match the accessory to the tank, not the other way around.</h2>
-          <p class="mt-4">If you are not sure which product makes sense, use the guides and the aquarium wizard first, then ask about product fit or custom prints through the contact page.</p>
+          <p class="mt-4">Use the guides and the aquarium wizard first, then ask about fit or custom prints through the contact page. When the listings are live, Etsy will be the public ordering path.</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Browse Guides</a>
             <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Ask About Product Fit</a>
@@ -111,8 +130,8 @@ const products = [
         </section>
         <NewsletterSignupCard
           interest="newsletter-shop-page"
-          description="Join the email list for new accessory releases, custom-print updates, and guide links that explain what to buy and why."
-          note="This is the best low-pressure way to follow product drops while the storefront continues to expand."
+          description="Join the email list for new accessory releases, custom-print updates, Etsy launch notices, and guide links that explain what to buy and why."
+          note="This is the best low-pressure way to follow product drops before the Etsy storefront is live."
         />
       </div>
     </section>

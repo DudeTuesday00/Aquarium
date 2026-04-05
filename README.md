@@ -40,7 +40,7 @@ The current project includes:
 - Public trust/compliance pages for privacy, terms, affiliate disclosure, and advertising disclosure
 - Canonical URLs, richer Open Graph/Twitter metadata, and structured data generated from the production site URL
 - `robots.txt` and generated `sitemap.xml` support are now included for crawler readiness
-- A shop page for 3D-printed accessories
+- A shop page that now presents the planned 3D-printed accessory lineup and the future Etsy storefront path without fake direct-purchase links
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory plus live email-list signup
 - Guide pages and the shop page now use a shared newsletter signup card for cleaner conversion flow
@@ -59,7 +59,7 @@ The long-term site structure is:
 - `Wizard`: recommendation flow for tank size, fish style, equipment, accessories, and beginner fit
 - `Start Here`: beginner-first onboarding route for first-time visitors
 - `Guides`: educational content library organized by topic and skill level
-- `Shop`: 3D-printed aquarium accessories made by the site owner
+- `Shop`: 3D-printed aquarium accessories made by the site owner, with Etsy as the future public ordering path
 - `Gallery`: real tanks, accessories, and customer submissions
 - `Videos`: standalone pages for YouTube uploads and future video library growth
 - `Podcasts`: standalone section for future episode pages and audio publishing
@@ -272,6 +272,8 @@ Current conversion surfaces include:
 - shared newsletter signup card on videos, podcasts, and gallery pages
 - wizard result CTA block pointing visitors to guides, shop, and email signup
 
+The shop page now uses an Etsy-forward model instead of placeholder checkout links. Visitors see the planned accessory lineup, can ask about custom prints or fit, and can join the list for Etsy launch notices and product drops.
+
 This keeps the major decision pages focused on a clearer next action instead of dropping visitors into dead ends.
 
 ## SEO and Metadata
@@ -290,7 +292,8 @@ This phase improves how the site presents in search results, crawlers, and socia
 ## Current Gaps
 
 - Many planned guides still exist only as placeholder cards on the guides hub and need to be built one by one
-- Product links, affiliate links, and gallery media still need real assets and live destinations
+- The shop now has the correct Etsy-based structure, but it still needs the actual Etsy storefront URL, real product listings, and real product media
+- Affiliate links and gallery media still need real assets and live destinations
 - AdSense loader and inline ad blocks are wired, but real ad delivery still requires live slot IDs in deployment environment variables
 - Newsletter tooling and analytics still need deeper integration beyond the current Formspree-based signup capture
 - Social preview artwork can still be improved further with dedicated OG images per major page type
