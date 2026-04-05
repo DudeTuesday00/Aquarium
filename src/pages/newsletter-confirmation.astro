@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Newsletter Confirmation • Fin Sanctuary"
+  description="Thanks for joining the Fin Sanctuary email list. Keep exploring the guide library, wizard, and aquarium planning resources."
+>
+  <main>
+    <section class="mx-auto max-w-4xl px-6 py-16 md:py-20">
+      <div class="rounded-[2rem] border border-primary/10 bg-white px-7 py-10 text-center shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900 md:px-10">
+        <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">You’re In</div>
+        <h1 class="mt-5 font-bold tracking-tight text-primary">Thanks for joining the Fin Sanctuary newsletter.</h1>
+        <p class="mt-6 text-slate-700 dark:text-slate-200">
+          You can keep exploring now with the guide library, the aquarium wizard, or the beginner-first onboarding path.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/guides" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1">Browse Guides</a>
+          <a href="/wizard" class="inline-flex rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Use the Wizard</a>
+          <a href="/start-here" class="inline-flex rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">Start Here</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

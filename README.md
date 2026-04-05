@@ -46,6 +46,7 @@ The current project includes:
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
 - Contact page now includes a role-based email directory plus live email-list signup
 - Guide pages and the shop page now use a shared newsletter signup card for cleaner conversion flow
+- The site now includes a dedicated newsletter landing page and confirmation page instead of relying only on scattered signup forms
 - Gallery, videos, podcasts, and contact now use clearer next-step and signup paths instead of passive dead-end layouts
 - Gallery page now supports live embedded YouTube video alongside a growing real-photo gallery structure
 - Dedicated `Videos` and `Podcasts` sections now exist so media has its own site areas instead of living only inside the gallery
@@ -145,6 +146,7 @@ For Cloudflare Pages, use:
 - Optional environment variable for guide-page inline ads: `PUBLIC_ADSENSE_GUIDE_INLINE_SLOT=<your ad slot id>`
 - Optional environment variable for the wizard-page ad block: `PUBLIC_ADSENSE_WIZARD_INLINE_SLOT=<your ad slot id>`
 - Optional environment variable for GA4 event collection: `PUBLIC_GA_MEASUREMENT_ID=<your GA4 measurement id>`
+- Optional environment variable for a future newsletter provider endpoint: `PUBLIC_NEWSLETTER_ACTION=<your form action url>`
 - `public/ads.txt` is committed and should deploy to `https://finsanctuary.com/ads.txt`
 
 The Astro site URL is configured as `https://finsanctuary.com` in `astro.config.mjs`, so canonical URLs and site-level metadata resolve against the production domain.
@@ -190,6 +192,7 @@ These pages are linked in the footer and surfaced where commercial context matte
 │   ├── content/
 │   │   └── guides/
 │   ├── data/
+│   │   ├── newsletter.ts
 │   │   └── wizard.ts
 │   ├── content.config.ts
 │   ├── layouts/
@@ -199,6 +202,8 @@ These pages are linked in the footer and surfaced where commercial context matte
 │   │   ├── sitemap.xml.ts
 │   │   ├── start-here.astro
 │   │   ├── wizard.astro
+│   │   ├── newsletter.astro
+│   │   ├── newsletter-confirmation.astro
 │   │   ├── guides.astro
 │   │   ├── videos.astro
 │   │   ├── podcasts.astro
@@ -265,10 +270,12 @@ Recent site-improvement work focused on:
 
 ## Newsletter and Conversion Flow
 
-The site currently uses Formspree-backed email capture and shared conversion patterns instead of disconnected placeholder boxes.
+The site currently uses a shared newsletter action and shared conversion patterns instead of disconnected placeholder boxes.
 
 Current conversion surfaces include:
 
+- dedicated `/newsletter` landing page
+- dedicated `/newsletter-confirmation` page after signup
 - homepage email signup for guide and product updates
 - contact-page email signup plus direct inbox routing
 - shared newsletter signup card on guide pages
@@ -280,6 +287,13 @@ Current conversion surfaces include:
 The shop page now uses an Etsy-forward model instead of placeholder checkout links. Visitors see the planned accessory lineup, can ask about custom prints or fit, and can join the list for Etsy launch notices and product drops.
 
 This keeps the major decision pages focused on a clearer next action instead of dropping visitors into dead ends.
+
+The newsletter system is now centralized in the repo:
+
+- one shared signup component
+- one shared newsletter action config in `src/data/newsletter.ts`
+- source tagging preserved across all signup locations
+- a dedicated signup page and confirmation page for cleaner UX
 
 The current analytics/event layer is intentionally lightweight:
 
