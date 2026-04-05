@@ -316,7 +316,7 @@ The current live long-form guides include:
 - `Goldfish Care Myths Busted`
 - `How Often to Do Water Changes (and Why)`
 - `Identifying and Treating Common Fish Diseases`
-- `Betta Tank Basics for Beginners`
+- `Betta Fish Care: Solo Tanks, Feeding & Enrichment`
 - `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
 - `Safe Acclimation Techniques for New Fish and Shrimp`
 - `Step-by-Step Aquarium Setup Guide for Beginners`
