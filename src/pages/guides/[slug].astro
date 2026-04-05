@@ -213,44 +213,55 @@ const guideSchema = canonical => ({
                 href={xShareUrl}
                 target="_blank"
                 rel="noreferrer"
-                class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1"
+                class="guide-share-icon"
+                aria-label="Share on X"
+                title="Share on X"
                 data-track-click="guide_share_click"
                 data-track-location="guide-share"
                 data-track-label="X"
                 data-track-category="social"
                 data-track-destination={xShareUrl}
               >
-                Share on X
+                <img src="/images/social/twitter-x.png" alt="" class="guide-share-icon-image" loading="lazy" />
+                <span class="sr-only">Share on X</span>
               </a>
               <a
                 href={facebookShareUrl}
                 target="_blank"
                 rel="noreferrer"
-                class="inline-flex items-center justify-center rounded-full border border-primary/20 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                class="guide-share-icon"
+                aria-label="Share on Facebook"
+                title="Share on Facebook"
                 data-track-click="guide_share_click"
                 data-track-location="guide-share"
                 data-track-label="Facebook"
                 data-track-category="social"
                 data-track-destination={facebookShareUrl}
               >
-                Facebook
+                <img src="/images/social/facebook-icon.png" alt="" class="guide-share-icon-image" loading="lazy" />
+                <span class="sr-only">Share on Facebook</span>
               </a>
               <a
                 href={pinterestShareUrl}
                 target="_blank"
                 rel="noreferrer"
-                class="inline-flex items-center justify-center rounded-full border border-primary/20 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                class="guide-share-icon"
+                aria-label="Share on Pinterest"
+                title="Share on Pinterest"
                 data-track-click="guide_share_click"
                 data-track-location="guide-share"
                 data-track-label="Pinterest"
                 data-track-category="social"
                 data-track-destination={pinterestShareUrl}
               >
-                Pinterest
+                <img src="/images/social/pinterest-logo.png" alt="" class="guide-share-icon-image" loading="lazy" />
+                <span class="sr-only">Share on Pinterest</span>
               </a>
               <button
                 type="button"
-                class="guide-share-copy inline-flex items-center justify-center rounded-full border border-primary/20 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                class="guide-share-copy guide-share-icon"
+                aria-label="Copy guide link for Instagram"
+                title="Copy guide link for Instagram"
                 data-track-click="guide_share_click"
                 data-track-location="guide-share"
                 data-track-label="Instagram Copy Link"
@@ -258,7 +269,8 @@ const guideSchema = canonical => ({
                 data-track-destination={canonicalUrl}
                 data-copy-url={canonicalUrl}
               >
-                Instagram
+                <img src="/images/social/instagram-logo.png" alt="" class="guide-share-icon-image" loading="lazy" />
+                <span class="sr-only">Copy guide link for Instagram</span>
               </button>
             </div>
             <p class="guide-share-feedback mt-4 min-h-[1.25rem] text-xs font-medium uppercase tracking-[0.18em] text-accent-1" aria-live="polite"></p>
@@ -511,6 +523,38 @@ const guideSchema = canonical => ({
     margin: 2.5rem 0;
     border: 0;
     border-top: 1px dashed rgba(1, 133, 174, 0.24);
+  }
+
+  .guide-share-icon {
+    display: inline-flex;
+    min-height: 4.5rem;
+    min-width: 4.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(1, 133, 174, 0.16);
+    background: #ffffff;
+    padding: 0.85rem;
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    box-shadow: 0 14px 34px -28px rgba(1, 133, 174, 0.42);
+  }
+
+  .guide-share-icon:hover {
+    transform: translateY(-1px);
+    border-color: rgba(1, 133, 174, 0.36);
+    box-shadow: 0 18px 42px -28px rgba(1, 133, 174, 0.5);
+  }
+
+  .guide-share-icon-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    display: block;
+  }
+
+  :global(.dark) .guide-share-icon {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: #ffffff;
   }
 
   @media (max-width: 768px) {
