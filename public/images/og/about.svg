@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">About Fin Sanctuary</title>
+  <desc id="desc">Social preview image for the Fin Sanctuary about page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3efee"/>
+      <stop offset="45%" stop-color="#8AC9AB"/>
+      <stop offset="100%" stop-color="#0DAFBC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="30" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.42" stroke-width="2"/>
+  <text x="84" y="150" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7">ABOUT FIN SANCTUARY</text>
+  <text x="84" y="272" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">Meet the Owner</text>
+  <text x="84" y="352" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">Behind the Site</text>
+  <text x="84" y="424" fill="#16354d" font-family="'Lato', Arial, sans-serif" font-size="34">Diamond Dave, practical tank guidance, and real-world aquarium advice</text>
+  <g transform="translate(808 106)">
+    <circle cx="150" cy="112" r="96" fill="#ffffff" fill-opacity="0.74"/>
+    <circle cx="150" cy="88" r="54" fill="#e8d9bf"/>
+    <rect x="72" y="154" width="156" height="144" rx="48" fill="#0185AE" fill-opacity="0.88"/>
+    <rect x="48" y="326" width="204" height="46" rx="23" fill="#ffffff" fill-opacity="0.8"/>
+    <text x="76" y="355" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="18" font-weight="700">Norman, Oklahoma</text>
+  </g>
+</svg>

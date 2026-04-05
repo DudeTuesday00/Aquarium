@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Fin Sanctuary Aquarium Wizard</title>
+  <desc id="desc">Social preview image for the aquarium planning wizard.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0185AE"/>
+      <stop offset="55%" stop-color="#0DAFBC"/>
+      <stop offset="100%" stop-color="#8AC9AB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="38" y="38" width="1124" height="554" rx="30" fill="#081b2a" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="145" cy="118" r="72" fill="#ffffff" fill-opacity="0.18"/>
+  <circle cx="1080" cy="128" r="44" fill="#ffffff" fill-opacity="0.16"/>
+  <text x="84" y="150" fill="#f3efee" font-family="'Lato', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7">AQUARIUM WIZARD</text>
+  <text x="84" y="272" fill="#ffffff" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">Personalized</text>
+  <text x="84" y="352" fill="#ffffff" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">Tank Planning</text>
+  <text x="84" y="424" fill="#e8f9fb" font-family="'Lato', Arial, sans-serif" font-size="34">Questions in, stocking plans and setup direction out</text>
+  <g transform="translate(795 102)">
+    <rect x="0" y="0" width="286" height="410" rx="34" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-opacity="0.35"/>
+    <rect x="34" y="38" width="218" height="82" rx="22" fill="#ffffff" fill-opacity="0.84"/>
+    <rect x="34" y="140" width="218" height="82" rx="22" fill="#ffffff" fill-opacity="0.72"/>
+    <rect x="34" y="242" width="218" height="82" rx="22" fill="#ffffff" fill-opacity="0.6"/>
+    <rect x="34" y="346" width="160" height="36" rx="18" fill="#0b3250" fill-opacity="0.86"/>
+    <text x="61" y="88" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Tank Size</text>
+    <text x="61" y="190" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Fish Style</text>
+    <text x="61" y="292" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Budget</text>
+    <text x="61" y="370" fill="#ffffff" font-family="'Lato', Arial, sans-serif" font-size="18" font-weight="700">Get Results</text>
+  </g>
+</svg>

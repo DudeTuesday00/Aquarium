@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Fin Sanctuary Home</title>
+  <desc id="desc">Social preview image for the Fin Sanctuary homepage.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3efee"/>
+      <stop offset="55%" stop-color="#8AC9AB"/>
+      <stop offset="100%" stop-color="#0185AE"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="20%" cy="10%" r="80%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="34" y="34" width="1132" height="562" rx="28" fill="#ffffff" fill-opacity="0.18" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2"/>
+  <circle cx="220" cy="130" r="210" fill="url(#glow)"/>
+  <path d="M0 485C126 430 252 412 378 431C504 450 630 506 756 505C882 504 1008 446 1200 412V630H0Z" fill="#ffffff" fill-opacity="0.18"/>
+  <text x="84" y="150" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7">FIN SANCTUARY</text>
+  <text x="84" y="272" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="76" font-weight="700">Home Tanks</text>
+  <text x="84" y="356" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="76" font-weight="700">Made Easy</text>
+  <text x="84" y="430" fill="#16354d" font-family="'Lato', Arial, sans-serif" font-size="34">Wizard guidance, long-form guides, and practical aquarium planning</text>
+  <g transform="translate(840 110)">
+    <rect x="0" y="0" width="250" height="320" rx="34" fill="#ffffff" fill-opacity="0.24" stroke="#ffffff" stroke-opacity="0.45"/>
+    <circle cx="125" cy="98" r="54" fill="#0DAFBC" fill-opacity="0.92"/>
+    <path d="M67 98C101 57 149 57 183 98C149 139 101 139 67 98Z" fill="#F3EFEE"/>
+    <circle cx="153" cy="92" r="5" fill="#0b3250"/>
+    <path d="M196 88C223 103 223 125 197 138" fill="none" stroke="#F3EFEE" stroke-width="14" stroke-linecap="round"/>
+    <path d="M73 216C106 188 144 186 177 216" fill="none" stroke="#ffffff" stroke-opacity="0.86" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="84" cy="225" r="6" fill="#ffffff" fill-opacity="0.9"/>
+    <circle cx="125" cy="205" r="6" fill="#ffffff" fill-opacity="0.9"/>
+    <circle cx="171" cy="225" r="6" fill="#ffffff" fill-opacity="0.9"/>
+    <text x="34" y="285" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="22" font-weight="700">Start with the Wizard</text>
+  </g>
+</svg>

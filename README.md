@@ -40,6 +40,7 @@ The current project includes:
 - A lightweight GA4-ready analytics layer with tracked newsletter submits, CTA clicks, shop-interest clicks, guide next-step clicks, email-link clicks, and wizard completion events
 - Public trust/compliance pages for privacy, terms, affiliate disclosure, and advertising disclosure
 - Canonical URLs, richer Open Graph/Twitter metadata, and structured data generated from the production site URL
+- Dedicated OG preview images now exist for the homepage, guides hub, wizard, shop, gallery, about, and start-here pages
 - `robots.txt` and generated `sitemap.xml` support are now included for crawler readiness
 - A shop page that now presents the planned 3D-printed accessory lineup and the future Etsy storefront path without fake direct-purchase links
 - About page now leads with owner profile information, a real owner photo, and direct personal contact details for stronger authenticity
@@ -178,6 +179,7 @@ These pages are linked in the footer and surfaced where commercial context matte
 │   ├── ads.txt
 │   ├── robots.txt
 │   └── images/
+│       ├── og/
 │       ├── home/
 │       └── guides/
 ├── scripts/
@@ -291,6 +293,7 @@ The site now includes a stronger metadata baseline for search engines and link p
 
 - canonical URLs generated from `https://finsanctuary.com`
 - richer Open Graph and Twitter card metadata through the shared layout
+- dedicated OG preview images for the main non-guide page types
 - Organization and WebSite JSON-LD on the shared layout
 - Article JSON-LD plus article metadata on guide pages
 - `public/robots.txt`
@@ -306,7 +309,7 @@ This phase improves how the site presents in search results, crawlers, and socia
 - AdSense loader and inline ad blocks are wired, but real ad delivery still requires live slot IDs in deployment environment variables
 - Newsletter tooling still needs deeper integration beyond the current Formspree-based signup capture
 - Analytics now has a baseline event layer, but it still needs a real reporting/dashboard workflow and broader outbound-click instrumentation
-- Social preview artwork can still be improved further with dedicated OG images per major page type
+- Social preview artwork now covers the core page types, but it can still be improved further with more custom guide-level preview assets and richer media-specific variants
 - Some guide pages now support hero artwork, but most guides still need final branded images
 
 ## Published Guides

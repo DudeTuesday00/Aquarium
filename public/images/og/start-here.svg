@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Start Here at Fin Sanctuary</title>
+  <desc id="desc">Social preview image for the beginner onboarding page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8d9bf"/>
+      <stop offset="50%" stop-color="#f3efee"/>
+      <stop offset="100%" stop-color="#8AC9AB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="30" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.42" stroke-width="2"/>
+  <text x="84" y="150" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7">START HERE</text>
+  <text x="84" y="272" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">The Best First</text>
+  <text x="84" y="352" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">Aquarium Path</text>
+  <text x="84" y="424" fill="#16354d" font-family="'Lato', Arial, sans-serif" font-size="34">Planning, wizard guidance, and setup reading in the right order</text>
+  <g transform="translate(760 108)">
+    <rect x="0" y="0" width="320" height="384" rx="34" fill="#ffffff" fill-opacity="0.22" stroke="#ffffff" stroke-opacity="0.4"/>
+    <circle cx="56" cy="68" r="24" fill="#0185AE"/>
+    <circle cx="56" cy="164" r="24" fill="#0DAFBC"/>
+    <circle cx="56" cy="260" r="24" fill="#8AC9AB"/>
+    <text x="102" y="76" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Choose your tank</text>
+    <text x="102" y="172" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Use the wizard</text>
+    <text x="102" y="268" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Read setup guides</text>
+  </g>
+</svg>

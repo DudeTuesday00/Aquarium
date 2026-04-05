@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Fin Sanctuary Gallery</title>
+  <desc id="desc">Social preview image for the Fin Sanctuary gallery page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0DAFBC"/>
+      <stop offset="50%" stop-color="#8AC9AB"/>
+      <stop offset="100%" stop-color="#f3efee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="38" y="38" width="1124" height="554" rx="30" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.38" stroke-width="2"/>
+  <text x="84" y="150" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7">GALLERY + VIDEO</text>
+  <text x="84" y="272" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">Real Tanks</text>
+  <text x="84" y="352" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">and Accessories</text>
+  <text x="84" y="424" fill="#16354d" font-family="'Lato', Arial, sans-serif" font-size="34">Photos, video, and authentic aquarium examples as the library grows</text>
+  <g transform="translate(770 106)">
+    <rect x="0" y="0" width="320" height="192" rx="28" fill="#ffffff" fill-opacity="0.78"/>
+    <rect x="0" y="212" width="152" height="152" rx="28" fill="#ffffff" fill-opacity="0.62"/>
+    <rect x="168" y="212" width="152" height="152" rx="28" fill="#ffffff" fill-opacity="0.48"/>
+    <polygon points="134,68 216,106 134,144" fill="#0185AE"/>
+    <text x="42" y="270" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="20" font-weight="700">Tank Photos</text>
+    <text x="196" y="270" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="20" font-weight="700">Videos</text>
+  </g>
+</svg>

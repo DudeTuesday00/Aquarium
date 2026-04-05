@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Fin Sanctuary Shop</title>
+  <desc id="desc">Social preview image for the Fin Sanctuary accessory shop page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3efee"/>
+      <stop offset="52%" stop-color="#e8d9bf"/>
+      <stop offset="100%" stop-color="#0185AE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="38" y="38" width="1124" height="554" rx="30" fill="#ffffff" fill-opacity="0.18" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="84" y="150" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7">FIN SANCTUARY SHOP</text>
+  <text x="84" y="272" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">3D-Printed</text>
+  <text x="84" y="352" fill="#0b3250" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700">Accessories</text>
+  <text x="84" y="424" fill="#16354d" font-family="'Lato', Arial, sans-serif" font-size="34">Planned for Etsy, matched to practical home aquarium setups</text>
+  <g transform="translate(790 112)">
+    <rect x="0" y="0" width="290" height="390" rx="34" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-opacity="0.44"/>
+    <rect x="36" y="42" width="218" height="108" rx="24" fill="#0185AE" fill-opacity="0.88"/>
+    <rect x="36" y="170" width="218" height="108" rx="24" fill="#0DAFBC" fill-opacity="0.8"/>
+    <rect x="36" y="298" width="218" height="56" rx="20" fill="#ffffff" fill-opacity="0.82"/>
+    <text x="61" y="104" fill="#ffffff" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Filter Guard</text>
+    <text x="61" y="232" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="24" font-weight="700">Feeding Ring</text>
+    <text x="61" y="332" fill="#0b3250" font-family="'Lato', Arial, sans-serif" font-size="18" font-weight="700">Etsy launch path</text>
+  </g>
+</svg>
