@@ -318,6 +318,7 @@ The current live long-form guides include:
 - `Identifying and Treating Common Fish Diseases`
 - `Betta Tank Basics for Beginners`
 - `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
+- `Safe Acclimation Techniques for New Fish and Shrimp`
 - `Step-by-Step Aquarium Setup Guide for Beginners`
 - `Upgrading Your Aquarium: When and How to Scale Up`
 - `Water Parameters 101: Testing and Maintaining Ideal Conditions`
