@@ -307,6 +307,7 @@ The current live long-form guides include:
 - `Cichlid Tank Basics`
 - `Choosing the Right Aquarium for Your Home or Office`
 - `Common Aquarium Algae Problems and How to Fix Them`
+- `Community Tank Compatibility Guide`
 - `Complete Beginner Tank Setup Guide 2026`
 - `Essential Aquarium Equipment You Actually Need`
 - `Filtration Systems for Small Aquariums`
