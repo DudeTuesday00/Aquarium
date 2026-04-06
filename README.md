@@ -339,6 +339,7 @@ The current live long-form guides include:
 - `Aquarium Lighting Guide`
 - `Aquascaping Basics: Creating Stunning Underwater Landscapes`
 - `Best Beginner Fish for Small Home and Office Tanks`
+- `Breeding Easy Aquarium Fish at Home`
 - `Budget Aquarium Setup Under $200`
 - `Cichlid Tank Basics`
 - `Choosing the Right Aquarium for Your Home or Office`
