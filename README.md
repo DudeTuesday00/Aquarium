@@ -361,6 +361,7 @@ The current live long-form guides include:
 - `Betta Fish Care: Solo Tanks, Feeding & Enrichment`
 - `The Nitrogen Cycle Explained: Why Cycling Your Tank Matters`
 - `Safe Acclimation Techniques for New Fish and Shrimp`
+- `Seasonal Aquarium Care: Summer Heat & Winter Tips`
 - `Setting Up a Low-Maintenance Planted Aquarium`
 - `Step-by-Step Aquarium Setup Guide for Beginners`
 - `Upgrading Your Aquarium: When and How to Scale Up`
