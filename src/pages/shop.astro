@@ -6,39 +6,41 @@ const products = [
   {
     name: 'Filter Guard',
     summary: 'Protects fish from intake tubes and helps make beginner tanks safer.',
-    details: 'Planned for common 10 to 55 gallon home aquariums once the Etsy shop opens.',
+    details: 'Available through the Pixels and Chisels Etsy storefront as the public ordering path for Fin Sanctuary accessories.',
     accent: 'from-primary/95 via-accent-1 to-accent-2',
-    label: 'Planned Etsy Release',
+    label: 'Available on Etsy',
     fit: 'Best for beginner community tanks, smaller fish, and intake protection upgrades.'
   },
   {
     name: 'Feeding Ring',
     summary: 'Keeps floating food in one zone and reduces mess around the tank.',
-    details: 'Planned as an easy Etsy accessory for bettas, community tanks, and office aquariums.',
+    details: 'Available through the Pixels and Chisels Etsy storefront for bettas, community tanks, and office aquariums.',
     accent: 'from-accent-1/95 via-primary to-accent-2',
-    label: 'Planned Etsy Release',
+    label: 'Available on Etsy',
     fit: 'Best for calmer feeding zones, floating foods, and cleaner surface routines.'
   },
   {
     name: 'Plant Weight Clips',
     summary: 'Helps keep live plants anchored while new roots establish.',
-    details: 'Planned for planted freshwater layouts and low-tech aquascapes sold through Etsy.',
+    details: 'Available through the Pixels and Chisels Etsy storefront for planted freshwater layouts and low-tech aquascapes.',
     accent: 'from-accent-2/95 via-primary to-accent-1',
-    label: 'Planned Etsy Release',
+    label: 'Available on Etsy',
     fit: 'Best for low-tech planted tanks, rescapes, and floating stem control.'
   }
 ];
 
+const etsyUrl = 'https://pixelsandchisels.etsy.com';
+
 const shopSteps = [
   'Use the guides and wizard to confirm what your tank actually needs.',
-  'Ask about fit or custom-print options through the contact page.',
-  'Follow the newsletter for Etsy launch notices and new accessory drops.'
+  'Browse the live Etsy storefront for current accessory listings.',
+  'Use the contact page for fit questions, custom-print requests, or special cases.'
 ];
 ---
 
 <Layout
-  title="Aquarium Accessories Shop • Etsy Storefront Coming Soon"
-  description="Explore the planned Fin Sanctuary accessory lineup, request custom-fit 3D prints, and follow upcoming aquarium product releases that will be sold through Etsy."
+  title="Aquarium Accessories Shop • Fin Sanctuary on Etsy"
+  description="Browse Fin Sanctuary aquarium accessory recommendations, visit the live Pixels and Chisels Etsy storefront, and contact Dave for custom-fit print questions."
   ogImage="/images/og/shop.svg"
 >
   <main>
@@ -46,11 +48,12 @@ const shopSteps = [
       <div class="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:py-12 xl:grid-cols-[minmax(0,1.05fr)_24rem] xl:items-end">
         <div>
           <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">3D-Printed Accessories</div>
-          <h1 class="mt-5 font-bold tracking-tight text-primary">Practical tank tools, with Etsy as the product path.</h1>
+          <h1 class="mt-5 font-bold tracking-tight text-primary">Practical tank tools, with Etsy as the live storefront.</h1>
           <p class="mt-6 max-w-3xl text-slate-700 dark:text-slate-200">
-            Fin Sanctuary accessories are being organized for a future Etsy storefront. For now, this page works as the product roadmap: what is planned, what each accessory is for, and how to ask about custom prints or fit before live listings are published.
+            Fin Sanctuary accessories are currently linked through the Pixels and Chisels Etsy storefront. This page explains what each accessory is for, points visitors to the live Etsy shop, and keeps custom-fit or custom-print questions routed through direct contact.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
+            <a href={etsyUrl} target="_blank" rel="noreferrer" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="shop_interest_click" data-track-location="shop-hero" data-track-label="Visit Etsy Storefront" data-track-category="shop" data-track-destination={etsyUrl}>Visit Etsy Storefront</a>
             <a href="/contact" class="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="shop_interest_click" data-track-location="shop-hero" data-track-label="Request a Custom Print" data-track-category="shop" data-track-destination="/contact">Request a Custom Print</a>
             <a href="/guides" class="inline-flex rounded-full border border-primary/20 bg-white/75 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white dark:border-white/10 dark:bg-slate-900/70" data-track-click="cta_click" data-track-location="shop-hero" data-track-label="Read the Guides First" data-track-category="guides" data-track-destination="/guides">Read the Guides First</a>
           </div>
@@ -60,8 +63,8 @@ const shopSteps = [
           <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">How Ordering Will Work</div>
           <ul class="mt-5 space-y-4 text-slate-700 dark:text-slate-300">
             <li>Accessories are designed in Norman, Oklahoma for home and small-office tanks.</li>
-            <li>When products go live, the public buying path will be Etsy.</li>
-            <li>Until then, fit questions and custom-print requests can go through the contact page.</li>
+            <li>The live public buying path is the Pixels and Chisels Etsy storefront.</li>
+            <li>Fit questions and custom-print requests can still go through the contact page.</li>
           </ul>
         </div>
       </div>
@@ -70,9 +73,9 @@ const shopSteps = [
     <section class="mx-auto max-w-6xl px-6 py-10">
       <section class="mb-8 rounded-[2rem] border border-primary/10 bg-white px-7 py-6 text-slate-600 shadow-[0_24px_80px_-55px_rgba(1,133,174,0.35)] dark:border-white/8 dark:bg-slate-900 dark:text-slate-300">
         <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Current Shop Status</div>
-        <h2 class="mt-3 font-semibold tracking-tight text-primary">The storefront is being prepared for Etsy, not direct checkout.</h2>
+        <h2 class="mt-3 font-semibold tracking-tight text-primary">The storefront is live on Etsy, with Fin Sanctuary guiding the fit and use case.</h2>
         <p class="mt-4 max-w-3xl">
-          There are no fake buy buttons or fake Etsy links here. Instead, the shop shows the planned accessory lineup, what each item is meant to solve, and the clearest next step if you want to ask about fit, custom prints, or upcoming availability.
+          This page now points visitors to the live Etsy storefront instead of pretending checkout happens here. Fin Sanctuary still explains what each accessory solves, helps people pick the right fit, and provides a contact path for custom-print questions or buying guidance.
         </p>
         <div class="mt-6 grid gap-4 md:grid-cols-3">
           {shopSteps.map((step, index) => (
@@ -103,6 +106,7 @@ const shopSteps = [
                 </div>
               </div>
               <div class="mt-7 flex flex-wrap gap-3">
+                <a href={etsyUrl} target="_blank" rel="noreferrer" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="shop_interest_click" data-track-location="shop-product-card" data-track-label={`${product.name} Etsy`} data-track-category="shop" data-track-destination={etsyUrl}>View on Etsy</a>
                 <a href="/contact" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="shop_interest_click" data-track-location="shop-product-card" data-track-label={product.name} data-track-category="shop" data-track-destination="/contact">Ask About Fit or Custom Print</a>
                 <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="cta_click" data-track-location="shop-product-card" data-track-label={`${product.name} guide CTA`} data-track-category="guides" data-track-destination="/guides">Read a Matching Guide</a>
               </div>
@@ -114,9 +118,10 @@ const shopSteps = [
       <div class="mt-10 grid gap-6 lg:grid-cols-3">
         <section class="rounded-[2rem] border border-primary/10 bg-white px-7 py-6 text-slate-600 dark:border-white/8 dark:bg-slate-900 dark:text-slate-300">
           <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Next Step</div>
-          <h2 class="mt-3 font-semibold tracking-tight text-primary">Match the accessory to the tank, not the other way around.</h2>
-          <p class="mt-4">Use the guides and the aquarium wizard first, then ask about fit or custom prints through the contact page. When the listings are live, Etsy will be the public ordering path.</p>
+          <h2 class="mt-3 font-semibold tracking-tight text-primary">Match the accessory to the tank, then use the Etsy storefront to buy.</h2>
+          <p class="mt-4">Use the guides and the aquarium wizard first, then browse the Etsy shop for the right accessory. Use the contact page if you need fit help or a custom-print conversation before ordering.</p>
           <div class="mt-6 flex flex-wrap gap-3">
+            <a href={etsyUrl} target="_blank" rel="noreferrer" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="shop_interest_click" data-track-location="shop-next-step" data-track-label="Browse Etsy Storefront" data-track-category="shop" data-track-destination={etsyUrl}>Browse Etsy Storefront</a>
             <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="cta_click" data-track-location="shop-next-step" data-track-label="Browse Guides" data-track-category="guides" data-track-destination="/guides">Browse Guides</a>
             <a href="/contact" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="shop_interest_click" data-track-location="shop-next-step" data-track-label="Ask About Product Fit" data-track-category="shop" data-track-destination="/contact">Ask About Product Fit</a>
           </div>
@@ -132,8 +137,8 @@ const shopSteps = [
         <NewsletterSignupCard
           interest="newsletter-shop-page"
           location="shop-page"
-          description="Join the email list for new accessory releases, custom-print updates, Etsy launch notices, and guide links that explain what to buy and why."
-          note="This is the best low-pressure way to follow product drops before the Etsy storefront is live."
+          description="Join the email list for new accessory releases, custom-print updates, Etsy shop additions, and guide links that explain what to buy and why."
+          note="Use Etsy for current listings, and use the email list to hear about new drops and accessory updates."
         />
       </div>
     </section>
