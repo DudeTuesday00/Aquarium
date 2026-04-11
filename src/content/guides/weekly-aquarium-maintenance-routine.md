@@ -331,4 +331,3 @@ For busy owners, a realistic 15 to 25 minute weekly routine is usually enough to
 - Read the water parameters guide if you want to know what to test during your routine and what the numbers mean.
 - Read the algae guide if weekly maintenance is still not enough to control nuisance growth.
 
-Affiliate note: this guide naturally supports future affiliate placements around siphons, buckets, algae pads, conditioners, towels, and test kits, but it should remain routine-first and beginner-practical rather than shopping-led.

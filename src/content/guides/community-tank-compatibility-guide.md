@@ -325,4 +325,3 @@ The more disciplined the stocking plan, the better the aquarium usually looks an
 - Read the best beginner fish guide if you are stocking a smaller home or office tank.
 - Read the water parameters guide if you want to understand how compatibility and overstocking affect long-term tank stability.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support beginner-friendly filters, test kits, foods, aquascape materials, and community-safe aquarium kits without becoming product-heavy.

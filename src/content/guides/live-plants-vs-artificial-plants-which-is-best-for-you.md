@@ -296,4 +296,3 @@ The best plant choice is the one that fits the kind of tank you will actually ma
 - Read the beginner tank setup guide if you are still deciding on substrate, decor, and layout direction.
 - Read the common algae problems guide if your plant plan is being complicated by nuisance growth.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support beginner live plants, safe artificial plants, low-tech lighting, plant clips, and layout accessories without overpowering the educational flow.

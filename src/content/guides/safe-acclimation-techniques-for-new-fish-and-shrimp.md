@@ -290,4 +290,3 @@ If you want fewer early losses, fewer “mystery deaths,” and better odds that
 - Read the common fish diseases guide if you need to tell acclimation stress apart from early illness.
 - Read the emergency aquarium troubleshooting guide if a new arrival goes into obvious distress after transfer.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support drip-acclimation tools, thermometers, nets, quarantine accessories, and test kits without overpowering the educational content.

@@ -5,23 +5,24 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout
   title="Fin Sanctuary Podcasts"
-  description="Explore the future Fin Sanctuary podcast section, where aquarium conversations, episode notes, and audio links will be organized as the media library grows."
+  description="Get podcast updates from Fin Sanctuary and follow the main educational content while audio episodes are still in development."
+  noindex={true}
 >
   <main>
     <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.08),rgba(243,239,238,0.55))] dark:border-white/8 dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.14),rgba(2,6,23,0.95))]">
       <div class="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:py-12 xl:grid-cols-[minmax(0,1fr)_22rem] xl:items-end">
         <div>
           <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Podcast Library</div>
-          <h1 class="mt-5 font-bold tracking-tight text-primary">A home for future Fin Sanctuary audio episodes.</h1>
+          <h1 class="mt-5 font-bold tracking-tight text-primary">Podcast updates will appear here when audio episodes launch.</h1>
           <p class="mt-6 max-w-3xl text-slate-700 dark:text-slate-200">
-            This section is reserved for future aquarium conversations, show notes, and audio links once the first season is ready to publish.
+            Fin Sanctuary does not have published podcast episodes yet. Until audio is live, this page simply points visitors toward the guides, videos, and newsletter.
           </p>
         </div>
         <div class="rounded-[2rem] border border-primary/10 bg-white/80 p-6 shadow-[0_28px_90px_-55px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/8 dark:bg-slate-900/82">
-          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Planned Format</div>
+          <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">When Audio Launches</div>
           <ul class="mt-4 space-y-3 text-slate-700 dark:text-slate-300">
             <li>Aquarium conversations built around practical beginner and hobbyist problems.</li>
-            <li>Embedded audio, notes, and related links when episodes go live.</li>
+            <li>Episode notes and related links tied back to the guide library.</li>
             <li>Cross-linking between podcasts, videos, guides, and newsletter updates.</li>
           </ul>
         </div>
@@ -30,9 +31,9 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="mx-auto max-w-6xl px-6 py-10">
       <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <section class="rounded-[2rem] border border-dashed border-primary/20 bg-white/70 px-7 py-8 text-slate-600 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300">
+        <section class="rounded-[2rem] border border-primary/10 bg-white/70 px-7 py-8 text-slate-600 shadow-[0_24px_80px_-60px_rgba(1,133,174,0.35)] dark:border-white/8 dark:bg-slate-900/75 dark:text-slate-300">
           <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Current Status</div>
-          <p class="mt-4">No podcast episodes are published yet, but this section is reserved and ready for future audio releases. For now, the <a href="/videos" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="media_next_step_click" data-track-location="podcasts-copy" data-track-label="Videos Page" data-track-category="video" data-track-destination="/videos">videos page</a> and <a href="/guides" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="media_next_step_click" data-track-location="podcasts-copy" data-track-label="Guide Library" data-track-category="guides" data-track-destination="/guides">guide library</a> are the best ways to follow new content.</p>
+          <p class="mt-4">No podcast episodes are published yet. For now, the <a href="/videos" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="media_next_step_click" data-track-location="podcasts-copy" data-track-label="Videos Page" data-track-category="video" data-track-destination="/videos">videos page</a> and <a href="/guides" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="media_next_step_click" data-track-location="podcasts-copy" data-track-label="Guide Library" data-track-category="guides" data-track-destination="/guides">guide library</a> are the best ways to follow new content.</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="/videos" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="media_next_step_click" data-track-location="podcasts-next-step" data-track-label="Browse Videos" data-track-category="video" data-track-destination="/videos">Browse Videos</a>
             <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="media_next_step_click" data-track-location="podcasts-next-step" data-track-label="Browse Guides" data-track-category="guides" data-track-destination="/guides">Browse Guides</a>
@@ -41,8 +42,8 @@ import Layout from '../layouts/Layout.astro';
         <NewsletterSignupCard
           interest="newsletter-podcasts-page"
           location="podcasts-page"
-          description="Join the email list if you want to hear when the first Fin Sanctuary podcast episodes are live, along with new guides and videos."
-          note="That gives this page a real follow path even before the first season is published."
+          description="Join the email list if you want to hear when Fin Sanctuary audio episodes launch, along with new guides and videos."
+          note="This gives the page a useful follow path without pretending audio is already live."
         />
       </div>
     </section>

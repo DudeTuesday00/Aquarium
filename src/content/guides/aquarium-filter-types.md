@@ -334,4 +334,3 @@ The right answer is not the most expensive filter. It is the one that fits your 
 - If you are setting up your first tank, pair this with the beginner tank setup guide.
 - If you already know you want peaceful fish, continue to the freshwater community fish guide.
 
-Affiliate note: when real affiliate links are added later, this guide should naturally support filter recommendations, intake guards, sponge pre-filters, air pumps, and replacement media without interrupting the educational flow.

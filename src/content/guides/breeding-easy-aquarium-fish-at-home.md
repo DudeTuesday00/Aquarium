@@ -308,4 +308,3 @@ If you want a beginner breeding project that stays fun instead of turning stress
 - Read the community compatibility guide if you are wondering whether fry can survive in a mixed-species tank.
 - Read the nano aquarium care guide if your breeding project will happen in a small setup.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support sponge filters, intake guards, mosses, fry foods, breeder-safe heaters, and simple grow-out tools without dominating the educational content.

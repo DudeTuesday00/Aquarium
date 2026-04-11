@@ -359,4 +359,3 @@ If you build around a strong focal area, clean plant grouping, and realistic swi
 - Read the live plants vs artificial plants guide if you are still deciding what kind of visual structure fits your maintenance style.
 - Read the beginner tank setup guide if you want the full setup sequence before locking in your final layout.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support wood, stone, plant clips, trimming tools, beginner lights, and layout accessories without turning the article into a shopping page.

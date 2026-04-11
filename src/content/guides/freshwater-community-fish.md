@@ -292,4 +292,3 @@ A strong community tank is not built by collecting as many fish names as possibl
 - Read the aquarium filter types guide if you still need to choose filtration.
 - Read the freshwater vs saltwater guide if you are still deciding what type of tank to build.
 
-Affiliate note: when affiliate links are added later, this guide should support planted-tank foods, beginner community filters, feeding rings, test kits, and beginner-safe aquarium kits without disrupting the educational flow.

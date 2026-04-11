@@ -273,4 +273,3 @@ The healthiest tanks are not usually the ones that get dramatic rescue maintenan
 - Read the beginner tank setup guide if you want a full maintenance routine that includes filtration, testing, and stocking discipline.
 - Read the common algae problems guide if you are doing water changes but still seeing nuisance growth.
 
-Affiliate note: this guide is naturally suited for future affiliate placements around siphons, buckets, conditioners, thermometers, and maintenance accessories, but the article should stay practical and routine-first rather than product-first.

@@ -297,4 +297,3 @@ The best aquarium upgrades do not feel dramatic after the move. They feel easier
 - Read the budget setup guide if cost is shaping how far you can scale up right now.
 - Read the water parameters guide if you want to monitor the new tank closely after the transfer.
 
-Affiliate note: this guide is naturally suited for future affiliate placements around larger tanks, stronger filters, transfer buckets, conditioners, thermometers, and layout accessories, but the article should stay transition-first rather than gear-first.

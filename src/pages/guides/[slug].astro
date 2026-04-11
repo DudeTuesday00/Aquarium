@@ -87,12 +87,11 @@ const guideSchema = canonical => ({
           Back to Guides
         </a>
 
-        <div class={`mt-6 grid gap-8 ${heroLayout === 'balanced' ? 'lg:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)] lg:items-start' : 'lg:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)] lg:items-start'}`}>
+        <div class={`mt-6 grid gap-8 ${guide.data.heroImage ? 'lg:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)] lg:items-start' : 'max-w-4xl'}`}>
           <div>
             <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-primary/70">
               <span>{guide.data.category}</span>
               <span>{guide.data.audience === 'beginner' ? 'Beginner Friendly' : 'Growing Hobbyist'}</span>
-              {guide.data.affiliateReady && <span>Affiliate Ready</span>}
             </div>
             <h1 class={`mt-5 font-bold tracking-tight text-primary ${heroTitleSize === 'compact' ? 'max-w-3xl' : 'max-w-4xl'}`}>
               {guide.data.title}
@@ -116,14 +115,7 @@ const guideSchema = canonical => ({
               class={`guide-hero-image ${heroLayout === 'balanced' ? 'guide-hero-image-balanced' : ''} ${heroImageFit === 'contain' ? 'object-contain' : 'object-cover'} ${heroImageAspect === 'square' ? 'guide-hero-square' : 'guide-hero-wide'}`}
               loading="eager"
             />
-          ) : (
-            <div class={`guide-hero-panel ${heroLayout === 'balanced' ? 'guide-hero-image-balanced' : ''} ${heroImageAspect === 'square' ? 'guide-hero-square' : 'guide-hero-wide'}`}>
-              <div class="guide-hero-panel-inner">
-                <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/80">Guide Image Coming Soon</div>
-                <p class="mt-3 text-slate-700 dark:text-slate-200">This guide already uses the standard split text-and-image header, and official artwork can drop in here later without changing the page layout.</p>
-              </div>
-            </div>
-          )}
+          ) : null}
         </div>
       </div>
     </section>
@@ -142,7 +134,7 @@ const guideSchema = canonical => ({
           <section class="mt-8 rounded-[2rem] border border-primary/10 bg-white px-6 py-6 shadow-[0_18px_55px_-45px_rgba(1,133,174,0.35)] dark:border-white/8 dark:bg-slate-900 md:px-8">
             <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Next Step</div>
             <h2 class="mt-3 font-semibold tracking-tight text-primary">Keep moving from reading to action.</h2>
-            <p class="mt-4 text-slate-700 dark:text-slate-300">Use the related guides to go deeper, check the shop if you need matching accessories, or join the email list if you want future guides and product updates.</p>
+            <p class="mt-4 text-slate-700 dark:text-slate-300">Use the related guides to go deeper, check the shop if you need matching accessories, or join the email list for new guides and product updates.</p>
             <div class="mt-6 flex flex-wrap gap-3">
               <a href="/guides" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="guide_next_step_click" data-track-location="guide-next-step" data-track-label="Browse More Guides" data-track-category="guides" data-track-destination="/guides">Browse More Guides</a>
               <a href="/shop" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="guide_next_step_click" data-track-location="guide-next-step" data-track-label="Shop Matching Accessories" data-track-category="shop" data-track-destination="/shop">Shop Matching Accessories</a>
@@ -356,35 +348,8 @@ const guideSchema = canonical => ({
     aspect-ratio: 5 / 4;
   }
 
-  .guide-hero-panel {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 2rem;
-    border: 1px solid rgba(1, 133, 174, 0.15);
-    background:
-      radial-gradient(circle at top left, rgba(13, 175, 188, 0.18), transparent 46%),
-      linear-gradient(135deg, rgba(243, 239, 238, 0.95), rgba(138, 201, 171, 0.46) 52%, rgba(1, 133, 174, 0.14));
-    box-shadow: 0 30px 80px -40px rgba(1, 133, 174, 0.35);
-  }
-
-  .guide-hero-panel-inner {
-    display: flex;
-    height: 100%;
-    min-height: 100%;
-    align-items: flex-end;
-    padding: 1.75rem;
-    backdrop-filter: blur(8px);
-  }
-
   :global(.dark) .guide-hero-image {
     background: rgba(15, 23, 42, 0.88);
-  }
-
-  :global(.dark) .guide-hero-panel {
-    border-color: rgba(255, 255, 255, 0.1);
-    background:
-      radial-gradient(circle at top left, rgba(138, 201, 171, 0.16), transparent 42%),
-      linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(13, 175, 188, 0.2), rgba(1, 133, 174, 0.16));
   }
 
   .guide-content :global(h1) {

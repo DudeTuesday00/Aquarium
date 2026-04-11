@@ -7,24 +7,6 @@ const guides = (await getCollection('guides')).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 
-const upcomingGuides = [
-  {
-    title: 'Low-Tech vs High-Tech Planted Tanks',
-    description: 'Compare CO2 systems and advanced lighting with simple methods that still deliver beautiful results.',
-    category: 'Specialty & Advanced Care'
-  },
-  {
-    title: 'Aquarium Automation for Busy Owners',
-    description: 'Smart timers, auto-feeders, and dosing pumps that make small-tank care almost hands-free.',
-    category: 'Automation, Sustainability & Upgrades'
-  },
-  {
-    title: 'Eco-Friendly Aquarium Practices',
-    description: 'Sustainable choices in equipment, decor, and fish sourcing that reduce your environmental footprint.',
-    category: 'Automation, Sustainability & Upgrades'
-  },
-];
-
 const topicSections = [
   {
     id: 'setup-planning',
@@ -68,11 +50,12 @@ const topicSections = [
   }
 ];
 
-const sections = topicSections.map((section) => ({
-  ...section,
-  liveGuides: guides.filter((guide) => section.categories.includes(guide.data.category)),
-  plannedGuides: upcomingGuides.filter((guide) => section.categories.includes(guide.category))
-}));
+const sections = topicSections
+  .map((section) => ({
+    ...section,
+    liveGuides: guides.filter((guide) => section.categories.includes(guide.data.category))
+  }))
+  .filter((section) => section.liveGuides.length > 0);
 
 const startHereIds = [
   'choosing-the-right-aquarium',
@@ -188,13 +171,11 @@ const guidesHubAdSlot = import.meta.env.PUBLIC_ADSENSE_GUIDES_HUB_SLOT;
               <h2 class="mt-3 font-semibold text-primary">{section.label}</h2>
             </div>
             <p class="max-w-2xl text-slate-600 dark:text-slate-300">
-              {section.liveGuides.length > 0
-                ? 'Published guides and planned topics grouped by the main subject area.'
-                : 'Planned topics grouped here now and ready for full guide buildouts later.'}
+              Published guides grouped by the main subject area so visitors can move directly into the topic they need.
             </p>
           </div>
 
-          {(section.liveGuides.length > 0 || section.plannedGuides.length > 0) && (
+          {section.liveGuides.length > 0 && (
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
               {section.liveGuides.map((guide) => (
                 <a
@@ -211,25 +192,6 @@ const guidesHubAdSlot = import.meta.env.PUBLIC_ADSENSE_GUIDES_HUB_SLOT;
                   <div class="mt-4 text-xs text-accent-2">{guide.data.audience === 'beginner' ? 'Beginner Friendly' : 'For Growing Hobbyists'}</div>
                   <div class="mt-6 text-sm text-accent-2">Read →</div>
                 </a>
-              ))}
-
-              {section.plannedGuides.map((guide) => (
-                <article
-                  class="guide-card rounded-[1.75rem] border border-dashed border-primary/15 bg-white/45 p-6 shadow-[0_18px_60px_-55px_rgba(1,133,174,0.28)] dark:border-primary/20 dark:bg-slate-900/55"
-                  data-title={guide.title.toLowerCase()}
-                  data-category={guide.category.toLowerCase()}
-                  data-description={guide.description.toLowerCase()}
-                  data-kind="planned"
-                >
-                  <div class="flex items-center justify-between gap-4">
-                    <div class="text-[0.68rem] uppercase tracking-[0.24em] text-accent-1">{guide.category}</div>
-                    <span class="rounded-full border border-primary/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary/80 dark:border-primary/25">
-                      Placeholder
-                    </span>
-                  </div>
-                  <h3 class="mt-4 font-semibold text-primary">{guide.title}</h3>
-                  <p class="mt-3 text-slate-600 dark:text-slate-300">{guide.description}</p>
-                </article>
               ))}
             </div>
           )}

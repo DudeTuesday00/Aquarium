@@ -361,4 +361,3 @@ The best invertebrate setup is not the one with the most creatures. It is the on
 - Read the safe acclimation guide before adding shrimp or snails to a new aquarium.
 - Read the water parameters guide if you want a clearer understanding of the stable conditions invertebrates depend on.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support shrimp-safe filters, test kits, mosses, snail foods, mineral-support products, and nano hardscape tools without crowding the educational flow.

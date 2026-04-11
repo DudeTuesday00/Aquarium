@@ -299,4 +299,3 @@ The healthiest tanks usually are not the ones with the most equipment. They are 
 - Read the weekly maintenance routine guide if you want seasonal care to fit into a practical ongoing schedule.
 - Read the emergency troubleshooting guide if your tank is already showing stress from temperature or maintenance drift.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support thermometers, timers, lids, heaters, intake guards, and maintenance accessories without crowding the educational flow.

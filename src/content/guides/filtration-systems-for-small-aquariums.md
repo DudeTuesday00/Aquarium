@@ -345,4 +345,3 @@ A small tank does not need the most powerful filter. It needs the filter that ke
 - Read the betta tank basics guide if you are filtering a low-flow setup.
 - Read the essential equipment guide if you are still building the complete shopping list for a first aquarium.
 
-Affiliate note: this guide is naturally suited for future affiliate placements covering sponge filters, air pumps, HOB filters, intake guards, pre-filters, and nano-safe maintenance tools, but the article should stay setup-first rather than product-first.

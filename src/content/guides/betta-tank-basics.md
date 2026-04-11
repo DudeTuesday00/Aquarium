@@ -384,4 +384,3 @@ The biggest betta-care mistake is underestimating what the fish actually needs. 
 - Read the aquarium filter types guide if you need help choosing a gentle filter for a betta.
 - Read the freshwater community fish guide if you are deciding whether you want a betta setup or a peaceful mixed community tank.
 
-Affiliate note: when affiliate links are added later, this guide should support low-flow filters, heaters, feeding rings, beginner plants, betta food, and safe decor recommendations without disrupting the educational flow.

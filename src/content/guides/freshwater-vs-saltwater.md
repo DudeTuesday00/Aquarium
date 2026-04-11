@@ -253,4 +253,3 @@ The best aquarium is not the one that looks most impressive on day one. It is th
 - Read the aquarium filter types guide if you still need help choosing equipment.
 - Read the freshwater community fish guide if you are leaning toward a peaceful freshwater setup.
 
-Affiliate note: once affiliate links are added, this guide can naturally support freshwater starter kits, salt mix, beginner filters, test kits, heaters, and comparison-based equipment recommendations without interrupting the article flow.

@@ -342,4 +342,3 @@ A good feeding routine should leave the fish healthy and the water stable. If it
 - Read the weekly maintenance routine guide if you want feeding to fit into a cleaner overall aquarium care plan.
 - Read the emergency troubleshooting guide if water quality or fish behavior already looks off.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support quality foods, feeding rings, target-feeding tools, bottom-feeder foods, and maintenance accessories without overpowering the educational content.

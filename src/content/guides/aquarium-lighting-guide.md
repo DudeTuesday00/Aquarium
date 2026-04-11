@@ -362,4 +362,3 @@ If you are unsure, start moderate. It is much easier to increase light carefully
 - Read the budget aquarium setup guide if you need to choose a light without overspending.
 - Read the common aquarium algae problems guide if your current light routine is already feeding algae issues.
 
-Affiliate note: this guide is naturally suited for future affiliate placements around beginner LED fixtures, timers, planted-capable lights, clip-on solutions, and low-profile office aquarium lighting, but the article should stay practical and maintenance-aware rather than sales-heavy.

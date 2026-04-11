@@ -334,4 +334,3 @@ The more disciplined your response, the better your odds of saving the fish and 
 - Read the weekly aquarium maintenance guide if recurring illness is linked to skipped care.
 - Read the emergency aquarium troubleshooting guide when a fish-health issue appears during a bigger tank problem.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support test kits, hospital-tank supplies, thermometers, water conditioners, and treatment tools without turning the article into a product page.

@@ -257,4 +257,3 @@ The healthiest goldfish are not the ones that “survive anything.” They are t
 - Read the water changes guide if you want a practical maintenance routine that matches a dirtier fish load.
 - Read the filtration systems for small aquariums guide if you are still thinking about whether your current equipment is strong enough for the job.
 
-Affiliate note: this guide is naturally suited for future affiliate placements around stronger filters, water conditioners, maintenance tools, thermometers, and larger beginner-friendly setup gear, but the article should remain myth-busting and care-first rather than product-led.

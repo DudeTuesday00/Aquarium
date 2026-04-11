@@ -377,4 +377,3 @@ The best nano aquarium is not the one with the most life packed into it. It is t
 - Read the low-maintenance planted aquarium guide if you want your nano setup to look lush without becoming difficult.
 - Read the invertebrate care guide if shrimp or snails will be part of the stocking plan.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support nano filters, heaters, feeding rings, shrimp-safe equipment, lids, and compact lights without overwhelming the educational flow.

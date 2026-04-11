@@ -347,4 +347,3 @@ If you plan the fish first and the equipment second, a cichlid tank can become a
 - Read the beginner tank setup guide if you still need a clearer order of operations before attempting a more territorial setup.
 - Read the freshwater community fish guide if you are still deciding whether you want personality-driven fish or a calmer mixed-species tank.
 
-Affiliate note: this guide is naturally suited for future affiliate placements around stronger filters, intake guards, rockwork-safe equipment, heaters, thermometers, and cichlid-appropriate feeding tools, but the article should stay planning-first rather than product-first.

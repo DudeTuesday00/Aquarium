@@ -328,4 +328,3 @@ The healthiest aquariums are usually not the ones with the most intervention. Th
 - Read the common algae problems guide if your water quality and light routine are feeding recurring nuisance growth.
 - Read the beginner tank setup guide if you want to build a setup that makes stable water easier from day one.
 
-Affiliate note: this guide is naturally suited for future affiliate placements around test kits, thermometers, heaters, filter accessories, and water-change tools, but the article should remain practical and measurement-first rather than sales-heavy.

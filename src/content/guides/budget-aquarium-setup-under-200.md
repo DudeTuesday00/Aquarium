@@ -371,4 +371,3 @@ The easiest way to fail on a budget is to chase appearance before stability. The
 - Read the beginner tank setup guide if you want to turn the shopping list into the right setup order.
 - Read the nitrogen cycle guide before stocking fish, especially if the budget is tight and you want to avoid expensive beginner mistakes.
 
-Affiliate note: this guide is naturally suited for future affiliate placements around starter kits, heaters, HOB filters, sponge filters, basic test kits, water conditioner, siphons, and beginner accessories, but the article should remain practical and price-conscious first.

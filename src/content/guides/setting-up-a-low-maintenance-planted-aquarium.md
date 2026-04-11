@@ -357,4 +357,3 @@ The goal is not to build the most advanced planted aquarium possible. The goal i
 - Read the live plants vs artificial plants guide if you are still deciding whether a planted tank fits your maintenance style.
 - Read the common aquarium algae problems guide if your first planted setup is already dealing with nuisance growth.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support beginner lights, root tabs, easy plants, plant clips, trimming tools, and simple hardscape accessories without losing its practical low-maintenance focus.

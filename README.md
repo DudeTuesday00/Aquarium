@@ -33,11 +33,11 @@ The current project includes:
 - A scalable guides hub organized by topic
 - Guides hub hero now uses a matching centered single-card, image-first Finpedia layout
 - Guides hub now includes beginner “Start Here” recommendations and client-side search/filtering
-- Multiple published long-form guides plus placeholder cards for planned guides
+- Guides hub now surfaces only published guides instead of public placeholder cards for unfinished topics
 - A reusable guide hero system with rounded artwork, per-guide layout controls, and support for image-specific display behavior
 - Standardized square guide artwork on multiple published guides
 - Guide pages now include built-in social sharing controls for X, Facebook, Pinterest, and Instagram-friendly link copying
-- Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page
+- Shared AdSense loader plus reusable inline ad blocks on the homepage, guides hub, guide pages, and wizard page, with no public fallback/setup text when slots are unset
 - A lightweight GA4-ready analytics layer with tracked newsletter submits, CTA clicks, shop-interest clicks, guide next-step clicks, email-link clicks, and wizard completion events
 - Analytics coverage now extends across onboarding, media outbound clicks, newsletter continuation, and direct-contact paths
 - Public trust/compliance pages for privacy, terms, affiliate disclosure, and advertising disclosure
@@ -50,12 +50,13 @@ The current project includes:
 - Guide pages and the shop page now use a shared newsletter signup card for cleaner conversion flow
 - The site now includes a dedicated newsletter landing page and confirmation page instead of relying only on scattered signup forms
 - Gallery, videos, podcasts, and contact now use clearer next-step and signup paths instead of passive dead-end layouts
-- Gallery page now supports live embedded YouTube video alongside a growing real-photo gallery structure
+- Gallery page now supports live embedded YouTube video without fake placeholder photo cards
 - Dedicated `Videos` and `Podcasts` sections now exist so media has its own site areas instead of living only inside the gallery
-- `Videos` and `Podcasts` are now linked in the main site header on both desktop and mobile navigation
+- `Videos` is linked in the main site header on both desktop and mobile navigation, while `Podcasts` is intentionally de-emphasized until real episodes exist
 - `Start Here` is now linked in the main site header, footer, homepage, and guides hub for beginner onboarding
 - Gallery, About, and Contact pages
 - Mobile navigation, light/dark mode support, and a shared editorial-style design system
+- Public-facing placeholder/future-language cleanup has been applied across the site to improve AdSense readiness and overall trust
 
 ## Product Direction
 
@@ -66,8 +67,8 @@ The long-term site structure is:
 - `Guides`: educational content library organized by topic and skill level
 - `Shop`: 3D-printed aquarium accessories made by the site owner, with Etsy as the public ordering path
 - `Gallery`: real tanks, accessories, and customer submissions
-- `Videos`: standalone pages for YouTube uploads and future video library growth
-- `Podcasts`: standalone section for future episode pages and audio publishing
+- `Videos`: tile-based YouTube library with direct outbound links
+- `Podcasts`: low-emphasis holding page kept out of search until real episodes exist
 - `Newsletter`: aquarium tips, new products, and affiliate/promotional content
 - `About` and `Contact`: trust-building pages for the brand
 
@@ -211,8 +212,6 @@ These pages are linked in the footer and surfaced where commercial context matte
 │   │   ├── podcasts.astro
 │   │   ├── guides/
 │   │   │   └── [slug].astro
-│   │   ├── videos/
-│   │   │   └── [slug].astro
 │   │   ├── shop.astro
 │   │   ├── gallery.astro
 │   │   ├── about.astro
@@ -256,7 +255,7 @@ The site now supports dedicated media sections beyond the gallery:
 
 - `src/content/videos/*.md` holds individual video entries
 - `src/pages/videos.astro` is the videos hub and now renders videos as tiles with thumbnails, titles, descriptions, and direct YouTube links
-- `src/pages/podcasts.astro` is the podcast hub and landing page for future episode publishing
+- `src/pages/podcasts.astro` is a low-emphasis podcast holding page that stays out of search until real episodes are published
 
 The gallery can still feature media, but videos no longer need to live only as gallery embeds. The current site model uses a simple video-library page rather than separate on-site video detail URLs.
 
@@ -268,6 +267,7 @@ Recent site-improvement work focused on:
 - stronger beginner onboarding for first-time visitors
 - stronger trust signaling for AdSense and affiliate readiness
 - less “placeholder” framing on production pages
+- removal of visible ad-setup fallbacks and “coming soon” style messaging on key public pages
 - better guide discovery with search and beginner entry points
 - stronger conversion paths from guides, shop, and wizard results into email signup and next actions
 
@@ -322,7 +322,7 @@ This phase improves how the site presents in search results, crawlers, and socia
 
 ## Current Gaps
 
-- Many planned guides still exist only as placeholder cards on the guides hub and need to be built one by one
+- Several planned guides still need to be built and published, even though unfinished topics are no longer exposed as placeholder cards on the guides hub
 - The shop now has the live Etsy storefront path, but it still needs a fuller set of real product listings, real product media, and tighter guide-to-product matching
 - Affiliate links and gallery media still need real assets and live destinations
 - AdSense loader and inline ad blocks are wired, but real ad delivery still requires live slot IDs in deployment environment variables

@@ -321,4 +321,3 @@ For many beginners, the smartest path is also the simplest one. Pick one clear s
 - Read the freshwater community fish guide if you want more detail on peaceful species combinations.
 - Read the water parameters guide if you want to understand how stocking choices affect long-term tank stability.
 
-Affiliate note: this guide naturally supports future affiliate placements around beginner aquarium kits, test kits, foods, small filters, heaters, and maintenance tools, but it should stay fish-selection-first rather than product-first.

@@ -3,24 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import NewsletterSignupCard from '../components/NewsletterSignupCard.astro';
 import { getCollection } from 'astro:content';
 
-const galleryItems = [
-  {
-    title: 'Freshwater Community Tank',
-    note: 'Filter guard in use on a beginner-friendly mixed community setup.',
-    accent: 'from-primary via-accent-1 to-accent-2'
-  },
-  {
-    title: 'Planted Freshwater Layout',
-    note: 'Plant clips and cleaner hardscape organization for a calmer display.',
-    accent: 'from-accent-1 via-accent-2 to-primary'
-  },
-  {
-    title: 'Saltwater Nano Tank',
-    note: 'Compact reef-style tank with conservative livestock and feeding control.',
-    accent: 'from-accent-2 via-primary to-accent-1'
-  }
-];
-
 const videos = (await getCollection('videos')).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
@@ -37,9 +19,9 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
       <div class="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:py-12 xl:grid-cols-[minmax(0,1fr)_22rem] xl:items-end">
         <div>
           <div class="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-primary/75">Gallery + Video</div>
-          <h1 class="mt-5 font-bold tracking-tight text-primary">Real tanks, real accessories, and a growing visual library for the site.</h1>
+          <h1 class="mt-5 font-bold tracking-tight text-primary">Real tanks, real accessories, and useful visual examples.</h1>
           <p class="mt-6 max-w-3xl text-slate-700 dark:text-slate-200">
-            This page already features live video and is designed to keep growing with more real tank photography, accessory examples, and customer-friendly visual proof across the site.
+            This page highlights Fin Sanctuary media that helps visitors see aquariums, accessories, and setup ideas in a more practical visual format.
           </p>
         </div>
         <div class="rounded-[2rem] border border-primary/10 bg-white/80 p-6 shadow-[0_28px_90px_-55px_rgba(1,133,174,0.45)] backdrop-blur dark:border-white/8 dark:bg-slate-900/82">
@@ -47,7 +29,7 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
           <ul class="mt-4 space-y-3 text-slate-700 dark:text-slate-300">
             <li>Feature live YouTube content from Fin Sanctuary.</li>
             <li>Show real aquariums and 3D-printed parts in context.</li>
-            <li>Support social proof for future product pages and user submissions.</li>
+            <li>Support trust with visual proof that ties back to guides and product use.</li>
           </ul>
         </div>
       </div>
@@ -105,29 +87,10 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
         </section>
       )}
 
-      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {galleryItems.map((item) => (
-          <article class="group overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-[0_24px_80px_-55px_rgba(1,133,174,0.42)] dark:border-white/8 dark:bg-slate-900">
-            <div class={`aspect-[4/3] bg-gradient-to-br ${item.accent} p-5`}>
-              <div class="flex h-full items-end rounded-[1.5rem] border border-white/20 bg-black/10 p-5 backdrop-blur-sm">
-                <div class="max-w-xs rounded-[1.25rem] bg-white/82 px-4 py-4 text-slate-700 shadow-lg dark:bg-slate-950/78 dark:text-slate-200">
-                  <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Photo Position</div>
-                  <p class="mt-2">This layout is reserved for real tank photography as the gallery grows.</p>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h2 class="font-semibold tracking-tight text-primary">{item.title}</h2>
-              <p class="mt-3 text-slate-700 dark:text-slate-300">{item.note}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-
       <div class="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
-        <section class="rounded-[2rem] border border-dashed border-primary/20 bg-white/70 px-7 py-6 text-slate-600 dark:border-primary/20 dark:bg-slate-900/75 dark:text-slate-300">
+        <section class="rounded-[2rem] border border-primary/10 bg-white/70 px-7 py-6 text-slate-600 dark:border-white/8 dark:bg-slate-900/75 dark:text-slate-300">
           <div class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-primary/75">Next Step</div>
-          <p class="mt-4">Want your tank featured here later? Use the <a href="/contact" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="media_next_step_click" data-track-location="gallery-next-step-copy" data-track-label="Contact for Submission" data-track-category="contact" data-track-destination="/contact">contact page</a> to reach out about future photo and video submissions, then use the guides and video library to keep exploring the educational side of the site.</p>
+          <p class="mt-4">Want to share a tank photo or ask about a featured setup? Use the <a href="/contact" class="font-semibold text-primary underline decoration-primary/35 underline-offset-4" data-track-click="media_next_step_click" data-track-location="gallery-next-step-copy" data-track-label="Contact for Submission" data-track-category="contact" data-track-destination="/contact">contact page</a>, then keep exploring with the guides and video library.</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="/videos" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-1" data-track-click="media_next_step_click" data-track-location="gallery-next-step" data-track-label="Browse Videos" data-track-category="video" data-track-destination="/videos">Browse Videos</a>
             <a href="/guides" class="inline-flex rounded-full border border-primary/20 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white" data-track-click="media_next_step_click" data-track-location="gallery-next-step" data-track-label="Browse Guides" data-track-category="guides" data-track-destination="/guides">Browse Guides</a>
@@ -136,8 +99,8 @@ const featuredVideo = videos.find((entry) => entry.data.featured) ?? videos[0];
         <NewsletterSignupCard
           interest="newsletter-gallery-page"
           location="gallery-next-step"
-          description="Join the email list for new videos, new tank photos, and practical site updates as the gallery grows."
-          note="This gives the gallery a clear follow path instead of leaving it as a passive media page."
+          description="Join the email list for new videos, new tank photos, and practical site updates."
+          note="This keeps the gallery connected to the rest of the site instead of leaving it as a passive media page."
         />
       </div>
     </section>

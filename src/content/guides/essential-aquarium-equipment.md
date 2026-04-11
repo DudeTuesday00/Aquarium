@@ -382,4 +382,3 @@ The smartest beginner setup is not the one with the most gear. It is the one wit
 - Read the nitrogen cycle guide if you want to understand why the filter and test kit matter so much.
 - Read the filter types guide if you are still deciding between sponge, HOB, and canister filtration.
 
-Affiliate note: this guide is naturally suited for future affiliate placements covering filters, heaters, thermometers, test kits, timers, siphons, lids, and maintenance tools, but the article should stay practical rather than sales-first.

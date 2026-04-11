@@ -325,4 +325,3 @@ The biggest beginner mistake is trying to finish everything at once. Build the t
 - Read the freshwater community fish guide if you want a peaceful mixed-species setup.
 - Read the freshwater vs saltwater guide if you are still deciding what type of aquarium to build.
 
-Affiliate note: when affiliate links are added later, this guide should support beginner tank kits, filters, test kits, siphons, heaters, water conditioner, filter guards, and feeding rings without disrupting the educational flow.

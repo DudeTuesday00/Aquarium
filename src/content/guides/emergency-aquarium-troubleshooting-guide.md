@@ -325,4 +325,3 @@ In an aquarium emergency, the goal is not to do the most things. It is to do the
 - Read the common fish diseases guide if one fish looks sick rather than the whole tank failing.
 - Read the weekly maintenance guide if recurring “emergencies” are really preventable care drift.
 
-Affiliate note: when affiliate links are added later, this guide should naturally support test kits, thermometers, siphons, conditioner, backup aeration tools, and other practical rescue basics without turning the article into a shopping list.
