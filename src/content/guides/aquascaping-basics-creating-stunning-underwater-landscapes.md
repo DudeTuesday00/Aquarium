@@ -1,12 +1,12 @@
 ---
-title: Aquascaping Basics: Creating Stunning Underwater Landscapes
-description: Learn practical beginner aquascaping rules for home and office tanks — focal points, negative space, hardscape, plant grouping, and layouts that look intentional instead of cluttered. Real lessons from tanks in Norman, Oklahoma.
+title: "Aquascaping Basics: Creating Stunning Underwater Landscapes"
+description: "Learn practical beginner aquascaping rules for home and office tanks — focal points, negative space, hardscape, plant grouping, and layouts that look intentional instead of cluttered. Real lessons from tanks in Norman, Oklahoma."
 category: Plants & Aquascaping
 audience: beginner
 publishDate: 2026-04-05
 updatedDate: 2026-05-08
 heroImage: /images/guides/aquascaping-basics.png
-heroImageAlt: Beautiful beginner aquascape with driftwood, rocks, and layered plants in a 20 gallon tank showing focal point and negative space
+heroImageAlt: "Beautiful beginner aquascape with driftwood, rocks, and layered plants in a 20 gallon tank showing focal point and negative space"
 heroImageFit: contain
 heroImageAspect: square
 heroLayout: balanced
