@@ -39,4 +39,18 @@ const videos = defineCollection({
   })
 });
 
-export const collections = { guides, videos };
+const newsletter = defineCollection({
+  loader: glob({ base: './src/content/newsletter', pattern: '**/*.md' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publishDate: z.coerce.date(),
+    tags: z.array(z.string()).default([]),
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
+    sourceName: z.string().optional(),
+    sourceUrl: z.string().optional()
+  })
+});
+
+export const collections = { guides, videos, newsletter };

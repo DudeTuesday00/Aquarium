@@ -158,24 +158,20 @@ Needs:
 - Contact form for questions and custom work
 - Newsletter signup for updates, new products, and guide drops
 
-## Newsletter Content Automation (Planned)
+## Newsletter Content Automation (Built, not yet deployed)
 
-Fin Sanctuary does not yet have an automated newsletter content pipeline — signups currently just capture into Formspree with no regular send. `drodge00`'s other properties (Planting Atlas, Sooner Smoker) already run a proven n8n-based pattern that Fin Sanctuary should adopt once signup volume justifies regular sends.
+Fin Sanctuary's newsletter pipeline is built following the same proven pattern as `drodge00`'s other properties (Planting Atlas, Sooner Smoker) — Discovery Worker → Newsletter Generator → Newsletter Export in n8n, backed by a dedicated review-app service. **Per current direction, this phase publishes issues as pages on the site (`/newsletter/[slug]`), not email sends** — email/ESP integration is intentionally deferred to a later phase.
 
-**Reference pattern (from the existing Planting Atlas / Sooner Smoker n8n workflows):**
+**What's built:**
 
-1. **Discovery Worker** — daily schedule trigger; reads an RSS source registry, pulls fresh articles, runs local Ollama topic analysis, and logs newsworthy topic opportunities to a shared topic queue.
-2. **Newsletter Generator** — daily schedule trigger; pulls the next queued topic against a maintained "series plan" and a brand "voice config" file, generates the newsletter draft copy, then generates a hero image plus per-section images through a local ComfyUI image pipeline, and upserts the finished draft.
-3. **Newsletter Export** — a lightweight workflow that takes the finished draft and pushes it to the actual send destination.
+- A new backend service, `fin-sanctuary-review-app` (separate repo at `D:\ClaudeProjects\fin-sanctuary-review-app` on this machine, not part of the Aquarium repo) — Node/Express + Postgres, exposing the same internal API surface as the other sites' review apps (source registry, topic-opportunity upsert/dedup, draft upsert, export-approved) plus a Basic-Auth-protected human review page to approve or reject each generated draft before it goes live.
+- A `newsletter` Astro content collection (`src/content.config.ts`) and `src/pages/newsletter/[slug].astro` detail page, mirroring the guides page pattern. The `/newsletter` hub page now lists published issues.
+- Three n8n workflows, created inactive pending deployment: **Fin Sanctuary Discovery Worker**, **Fin Sanctuary Newsletter Generator** (hero image only for v1 — no per-section images yet, unlike the other sites' generators), **Fin Sanctuary Newsletter Export** (publishes approved drafts straight to this repo via the GitHub Contents API).
+- A seeded starter RSS source registry (4 verified feeds), a Fin Sanctuary voice guide, and a starter series plan — all in the `fin-sanctuary-review-app` repo's `config/` folder.
 
-**What Fin Sanctuary needs before this can be built:**
+**Still needed before this goes live:** deploying `fin-sanctuary-review-app` alongside n8n on 192.168.1.123, wiring its env vars into n8n, mounting the voice/plan config into the n8n container, and a GitHub token scoped to this repo for the publish step. Full steps are in that repo's README.
 
-- An RSS/source registry of aquarium-hobby news and content sources to seed topic discovery
-- A Fin Sanctuary "voice config" capturing the site's established tone (first-person, Norman-Oklahoma-grounded, practical/no-fluff — matching the existing guide voice)
-- A series plan defining the newsletter's recurring themes/rotation (e.g., guide roundup, seasonal care reminder, new product/guide announcement, reader Q&A)
-- A real send destination: `PUBLIC_NEWSLETTER_ACTION` currently points at Formspree capture only, not a send platform — this needs an ESP integration before an Export step has anywhere to deliver to
-
-**Scheduling constraint:** the shared local resources (Ollama for text, ComfyUI for images) are already time-boxed by the existing per-site jobs. A Fin Sanctuary Newsletter Generator should land in an open daily slot to avoid resource contention.
+**Scheduling constraint:** the shared local resources (Ollama for text, ComfyUI for images) are already time-boxed by the existing per-site jobs. The Fin Sanctuary Newsletter Generator is scheduled at **07:30 CT** (open slot, avoids the 10:00/13:00 CT ComfyUI-heavy runs below); Discovery Worker at 07:00 CT; Export at 20:45 CT.
 
 ### Automation Schedule (snapshot, 2026-08-07, current n8n instance)
 
@@ -294,6 +290,5 @@ Content priorities:
 
 ### Phase 6
 
-- Stand up a Fin Sanctuary Discovery Worker + Newsletter Generator + Newsletter Export in n8n, following the Planting Atlas / Sooner Smoker pattern (see "Newsletter Content Automation" above)
-- Resolve the newsletter send destination (replace/extend the current Formspree capture-only flow with a real ESP)
-- Build the Fin Sanctuary voice config and series plan inputs the generator depends on
+- Discovery Worker + Newsletter Generator + Newsletter Export built in n8n, plus the `fin-sanctuary-review-app` backend and voice/plan config (see "Newsletter Content Automation" above) — deploy and activate
+- Resolve the newsletter send destination (replace/extend the current Formspree capture-only flow with a real ESP) — deferred, on-site publishing ships first
