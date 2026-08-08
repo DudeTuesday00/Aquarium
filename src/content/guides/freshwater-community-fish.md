@@ -4,7 +4,13 @@ description: Learn how to choose peaceful freshwater community fish that actuall
 category: Freshwater Fish
 audience: beginner
 publishDate: 2026-03-27
-updatedDate: 2026-03-27
+updatedDate: 2026-08-07
+heroImage: /images/guides/freshwater-community-fish.png
+heroImageAlt: "Vibrant freshwater community tank with schooling tetras, harlequin rasboras, and a corydoras group at the substrate"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - freshwater

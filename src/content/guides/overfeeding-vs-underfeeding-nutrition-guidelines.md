@@ -4,7 +4,13 @@ description: "Learn how much to feed aquarium fish, how often to feed them, and 
 category: Health & Troubleshooting
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/overfeeding-underfeeding-nutrition.png
+heroImageAlt: "Side-by-side photo comparison of correct fish feeding portions versus overfeeding with uneaten food on the substrate"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - feeding

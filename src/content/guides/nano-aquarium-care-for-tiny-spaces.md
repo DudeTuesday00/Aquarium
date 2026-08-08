@@ -4,7 +4,13 @@ description: Learn how to care for aquariums under 10 gallons, including stockin
 category: Specialty & Advanced Care
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/nano-aquarium-care-for-tiny-spaces.png
+heroImageAlt: "Small 5-gallon nano aquarium on a desk with compact equipment and lightly stocked shrimp or small fish"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - nano-aquarium

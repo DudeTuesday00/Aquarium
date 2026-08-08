@@ -4,7 +4,13 @@ description: Learn how to build a planted aquarium that looks lush without turni
 category: Plants & Aquascaping
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/low-maintenance-planted-aquarium.png
+heroImageAlt: "Low-tech planted aquarium with hardy broad-leaf plants on driftwood, simple substrate, and basic LED lighting"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - planted-aquarium

@@ -4,7 +4,13 @@ description: Learn whether live or artificial aquarium plants are the better fit
 category: Plants & Aquascaping
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/live-plants-vs-artificial-plants.png
+heroImageAlt: "Side-by-side photo comparison of a lush live-planted aquarium tank beside a sparser artificial-plant aquarium tank"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - plants

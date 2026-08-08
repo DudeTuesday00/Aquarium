@@ -4,7 +4,13 @@ description: Learn which aquarium invertebrates work best in small tanks, how to
 category: Fish & Invertebrate Care
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/invertebrate-care-snails-shrimp-crayfish.png
+heroImageAlt: "Macro photo of a planted nano tank with nerite snails, cherry shrimp, and a dwarf crayfish among moss and driftwood"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - invertebrates

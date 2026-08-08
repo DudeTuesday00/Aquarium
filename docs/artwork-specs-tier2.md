@@ -1,19 +1,19 @@
 # Guide Artwork Specs — Missing/Broken Hero Images
 
-Generated 2026-08-07. Covers every guide currently rendering with **no hero image or a broken one** — 14 total, more than the original "Tier 2" estimate of 8, because auditing `heroImage` frontmatter against the actual files in `public/images/guides/` turned up 5 guides referencing PNGs that don't exist anywhere on disk (broken `<img>` in production today), in addition to the 9 guides that never had a `heroImage` field at all. Three other mismatches (`best-beginner-fish`, `cichlid-tank-basics`, `water-parameters-101`) were simple filename typos and have already been fixed by renaming the existing file — no new art needed for those three.
+Generated 2026-08-07, style broadened same day. Covers every guide currently rendering with **no hero image or a broken one** — 14 total, more than the original "Tier 2" estimate of 8, because auditing `heroImage` frontmatter against the actual files in `public/images/guides/` turned up 5 guides referencing PNGs that don't exist anywhere on disk (broken `<img>` in production today), in addition to the 9 guides that never had a `heroImage` field at all. Three other mismatches (`best-beginner-fish`, `cichlid-tank-basics`, `water-parameters-101`) were simple filename typos and have already been fixed by renaming the existing file — no new art needed for those three.
 
-## House style (confirmed from existing hero images)
+## House style
 
-All published hero images share one consistent style — **not photorealistic**. Every reference image (`betta-tank-basics.png`, `aquarium-filter-types-explained.png`, `cichlid-tank-basics.png`, `best-beginner-fish.png`, `water-parameters-101.png`) is a hand-drawn colored-pencil illustration: warm cream paper background, a bold hand-lettered outlined title banner across the top, a detailed aquarium scene, and small labeled callout boxes with thin arrow pointers identifying key features. Match this exactly — a photoreal tank photo would look out of place next to the rest of the guides hub.
+The site's existing hero images are all hand-drawn colored-pencil infographics (warm cream background, hand-lettered title banner, labeled callouts). That's no longer the only option — photorealistic and other styles are approved per-guide, chosen for whatever best fits the content. This round:
 
-**Model recommendation:** use **Qwen-Image (best text, slower)** in the Local Image Generator, not the photoreal models (Z-Image/Flux/RealVis/BigASP) — these images live or die on legible embedded title text and callout labels, and Qwen-Image is the one model in the local lineup built for that. If a run comes out with garbled text, regenerate with a new seed before falling back to a different model.
+- **13 of 14 go photorealistic** — professional aquarium/product photography. No baked-in text or labels (diffusion models render embedded photo text poorly, and label boxes floating over a real photo look fake) — the guide's own heading and captions carry the labeling.
+- **1 stays illustrated** (#7, fish diseases) — a photoreal AI depiction of a "diseased fish" risks looking uncanny or medically misleading, and the non-graphic illustrated diagram style already matches the site's practical, non-alarming tone for a sensitive topic. Kept in the original colored-pencil diagram style with mild non-graphic callouts.
 
-**Standard generator settings for all 14 (fill into the "Local Image Generator" form):**
-- Model: `Qwen-Image (best text, slower)`
-- Width: `1024`, Height: `1024` (square — matches the site's `heroImageAspect: square` / 494×494 display convention)
-- Negative prompt (use for all): `photorealistic, photo, 3d render, blurry text, garbled text, illegible labels, misspelled words, watermark, signature smudge, extra fingers, deformed hands, cropped title, cluttered background`
+**Generator settings:**
+- Photorealistic images (#1–6, #8–14): Model `Z-Image (fast photoreal)`, Width `1024`, Height `1024`. Negative prompt: `cartoon, illustration, painting, drawing, anime, 3d render, text, caption, watermark, label, blurry, lowres, deformed, extra fingers, deformed hands, oversaturated, unrealistic colors, dirty glass, low quality`
+- Illustrated image (#7): Model `Qwen-Image (best text, slower)`, Width `1024`, Height `1024`. Negative prompt: `photorealistic, photo, 3d render, blurry text, garbled text, illegible labels, misspelled words, watermark, signature smudge, extra fingers, deformed hands, cropped title, cluttered background`
 
-**Standard frontmatter block** (only needed for the 9 guides below that have *no* `heroImage` field yet — paste into frontmatter after `updatedDate`, adjusting `heroImage`/`heroImageAlt`):
+**Standard frontmatter block** (only needed for the 9 Group B guides that have no `heroImage` field yet — paste into frontmatter after `updatedDate`, adjusting `heroImage`/`heroImageAlt`):
 ```yaml
 heroImage: /images/guides/<filename>.png
 heroImageAlt: "<alt text below>"
@@ -27,99 +27,114 @@ heroTitleSize: compact
 
 ## Group A — Broken reference (frontmatter already correct, just generate + save to the exact existing path)
 
-### 1. Aquascaping Basics
+### 1. Aquascaping Basics — photorealistic
 - File: `src/content/guides/aquascaping-basics-creating-stunning-underwater-landscapes.md`
-- Save generated image as: `public/images/guides/aquascaping-basics.png` (already referenced — no frontmatter edit needed)
-- Prompt: `Colored-pencil illustration in the style of a hand-drawn aquarium care infographic: warm cream paper background, bold hand-lettered outlined title banner reading "AQUASCAPING BASICS", a beautifully aquascaped freshwater tank with driftwood branching upward, layered rockwork, a carpet plant foreground, mid-ground stem plants, and a tall background plant creating depth, small labeled callout text boxes with thin arrow pointers reading "FOCAL POINT", "NEGATIVE SPACE", "HARDSCAPE LAYERING", "PLANT GROUPING", warm cozy educational poster style, soft visible pencil texture`
+- Save as: `public/images/guides/aquascaping-basics.png` (already referenced — no frontmatter edit needed)
+- Prompt: `photorealistic aquarium photography, a stunningly aquascaped freshwater planted tank in nature aquarium style, tall driftwood branching upward, layered rockwork creating depth, a lush foreground carpet plant, mid-ground stem plants, tall background plants, crystal clear water, soft natural lighting from above, macro lens, shallow depth of field, vibrant greens, professional aquarium photography, high detail`
 
-### 2. Breeding Easy Aquarium Fish at Home
+### 2. Breeding Easy Aquarium Fish at Home — photorealistic
 - File: `src/content/guides/breeding-easy-aquarium-fish-at-home.md`
 - Save as: `public/images/guides/breeding-easy-aquarium-fish.png`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "BREEDING EASY AQUARIUM FISH", a small breeding tank with guppies and cherry shrimp, a gentle sponge filter, floating plants and moss for fry cover, a small floating breeder box visible, labeled callout boxes with arrow pointers reading "SPONGE FILTER: FRY-SAFE", "FLOATING PLANTS", "BREEDER BOX", "FRY FOOD", warm cozy educational poster style`
+- Prompt: `photorealistic aquarium photography, a small breeding tank with a school of colorful guppies and cherry shrimp, dense floating plants and moss providing fry cover, a gentle sponge filter visible, soft overhead lighting, crystal clear water, macro detail on the fish, professional aquarium photography, high detail`
 
-### 3. Community Tank Compatibility Guide
+### 3. Community Tank Compatibility Guide — photorealistic
 - File: `src/content/guides/community-tank-compatibility-guide.md`
 - Save as: `public/images/guides/community-tank-compatibility.png`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "COMMUNITY TANK COMPATIBILITY", a peaceful mixed freshwater community tank with a school of tetras swimming mid-water, corydoras catfish on the substrate, a calm gourami near the surface, planted with driftwood and greenery, labeled callout boxes with arrow pointers reading "TOP LAYER", "MID LAYER", "BOTTOM LAYER", "SCHOOL SIZE: 6+", warm cozy educational poster style`
+- Prompt: `photorealistic aquarium photography, a thriving peaceful freshwater community tank with a school of neon tetras swimming together, corydoras catfish foraging on the substrate, a calm gourami near the surface, lush planting with driftwood, crystal clear water, soft natural lighting, professional aquarium photography, high detail`
 
-### 4. Emergency Aquarium Troubleshooting Guide
+### 4. Emergency Aquarium Troubleshooting Guide — photorealistic
 - File: `src/content/guides/emergency-aquarium-troubleshooting-guide.md`
 - Save as: `public/images/guides/emergency-aquarium-troubleshooting.png`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "EMERGENCY AQUARIUM TROUBLESHOOTING" with a subtle amber alert accent, an aquarium scene during a home power outage with a battery-powered air pump and a flashlight nearby, a thermometer being checked, labeled callout boxes with arrow pointers reading "BATTERY AIR PUMP", "CHECK HEATER", "WATCH FOR CLOUDY WATER", "STAY CALM, ACT FAST", calm reassuring educational poster style, not alarming`
+- Prompt: `photorealistic product photography, a home aquarium emergency kit flat lay on a wooden table beside a fish tank, a battery-powered air pump with airline tubing, a flashlight, a floating thermometer, a backup heater, soft warm indoor lighting, realistic textures, high detail, practical and reassuring mood`
 
-### 5. Saltwater Aquarium Basics for Beginners
+### 5. Saltwater Aquarium Basics for Beginners — photorealistic
 - File: `src/content/guides/saltwater-beginner-basics.md`
 - Save as: `public/images/guides/saltwater-aquarium-basics.png`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "SALTWATER AQUARIUM BASICS", a small beginner nano reef tank with live rock formations, a pair of ocellaris clownfish, a protein skimmer visible in the back corner, labeled callout boxes with arrow pointers reading "PROTEIN SKIMMER", "LIVE ROCK", "SALINITY 1.023-1.026", "RO/DI WATER ONLY", warm cozy educational poster style`
+- Prompt: `photorealistic aquarium photography, a small beginner saltwater nano reef tank with textured live rock formations, a pair of ocellaris clownfish swimming near a rock cave, a compact protein skimmer visible in the back corner, crystal clear blue-tinted water, soft aquarium lighting, professional aquarium photography, high detail`
 
 ---
 
 ## Group B — No `heroImage` field yet (needs the frontmatter block added too)
 
-### 6. Best Freshwater Community Fish for Home Tanks
+### 6. Best Freshwater Community Fish for Home Tanks — photorealistic
 - File: `src/content/guides/freshwater-community-fish.md`
 - Save as: `public/images/guides/freshwater-community-fish.png`
-- heroImageAlt: `"Peaceful freshwater community tank with schooling tetras, harlequin rasboras, and a corydoras group at the substrate"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "FRESHWATER COMMUNITY FISH", a vibrant peaceful community tank with neon and cardinal tetras schooling together, harlequin rasboras, and a group of corydoras catfish at the bottom, lush planting, labeled callout boxes with arrow pointers reading "SCHOOLING FISH", "BOTTOM DWELLERS", "PEACEFUL TEMPERAMENT", "STOCK IN GROUPS", warm cozy educational poster style`
+- heroImageAlt: `"Vibrant freshwater community tank with schooling tetras, harlequin rasboras, and a corydoras group at the substrate"`
+- Prompt: `photorealistic aquarium photography, a vibrant freshwater community tank with a large school of neon and cardinal tetras, harlequin rasboras, and a group of corydoras catfish at the substrate, lush green planting, driftwood, crystal clear water, soft natural lighting, professional aquarium photography, high detail`
 
-### 7. Identifying and Treating Common Fish Diseases
+### 7. Identifying and Treating Common Fish Diseases — illustrated (kept diagram style, see rationale above)
 - File: `src/content/guides/identifying-and-treating-common-fish-diseases.md`
 - Save as: `public/images/guides/identifying-and-treating-common-fish-diseases.png`
 - heroImageAlt: `"Educational diagram-style aquarium illustration showing early signs of common fish diseases with labeled callouts"`
 - Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "IDENTIFYING FISH DISEASES", a calm educational diagram-style aquarium with a few fish shown with mild, tasteful, non-graphic symptom indicators, a small quarantine tank in one corner, labeled callout boxes with arrow pointers reading "ICH: WHITE SPOTS", "FIN ROT: RAGGED FINS", "QUARANTINE TANK", "OBSERVE DAILY", friendly clinical-but-warm educational poster style, not disturbing or graphic`
 
-### 8. Invertebrate Care: Snails, Shrimp & Crayfish in Small Tanks
+### 8. Invertebrate Care: Snails, Shrimp & Crayfish in Small Tanks — photorealistic
 - File: `src/content/guides/invertebrate-care-snails-shrimp-crayfish-in-small-tanks.md`
 - Save as: `public/images/guides/invertebrate-care-snails-shrimp-crayfish.png`
-- heroImageAlt: `"Small planted nano tank with nerite snails, cherry shrimp, and a dwarf crayfish among moss and driftwood"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "INVERTEBRATE CARE", a small nano tank with moss-covered driftwood, nerite snails grazing on the glass, cherry shrimp among the plants, and a dwarf crayfish near a small cave, labeled callout boxes with arrow pointers reading "NERITE SNAILS: ALGAE CLEANUP", "CHERRY SHRIMP", "DWARF CRAYFISH: SOLO ONLY", "COPPER-FREE WATER", warm cozy educational poster style`
+- heroImageAlt: `"Macro photo of a planted nano tank with nerite snails, cherry shrimp, and a dwarf crayfish among moss and driftwood"`
+- Prompt: `photorealistic macro aquarium photography, a small planted nano tank with nerite snails grazing on the glass, cherry shrimp foraging among moss-covered driftwood, a dwarf crayfish near a small cave, crystal clear water, shallow depth of field, macro lens detail, soft natural lighting, professional aquarium photography, high detail`
 
-### 9. Live Plants vs Artificial Plants: Which Is Best for You?
+### 9. Live Plants vs Artificial Plants: Which Is Best for You? — photorealistic diptych
 - File: `src/content/guides/live-plants-vs-artificial-plants-which-is-best-for-you.md`
 - Save as: `public/images/guides/live-plants-vs-artificial-plants.png`
-- heroImageAlt: `"Split comparison illustration of a lush live-planted aquarium tank beside a clean artificial-plant aquarium tank"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "LIVE VS ARTIFICIAL PLANTS", a split-composition image with a lush live-planted aquascape on the left half and a clean artificial-plant tank on the right half, a thin dividing line down the center, labeled callout boxes with arrow pointers reading "LIVE: NATURAL FILTRATION", "LIVE: NEEDS LIGHT", "ARTIFICIAL: ZERO MAINTENANCE", "ARTIFICIAL: NO ALGAE RISK", warm cozy educational poster style`
+- heroImageAlt: `"Side-by-side photo comparison of a lush live-planted aquarium tank beside a clean artificial-plant aquarium tank"`
+- Prompt: `photorealistic aquarium photography diptych, left half shows a lush live-planted aquascape with real green stem plants and driftwood, right half shows a clean artificial-plant aquarium with silk plants, a thin vertical divider line down the center, crystal clear water on both sides, soft natural lighting, professional aquarium photography, high detail`
 
-### 10. Nano Aquarium Care for Tiny Spaces
+### 10. Nano Aquarium Care for Tiny Spaces — photorealistic
 - File: `src/content/guides/nano-aquarium-care-for-tiny-spaces.md`
 - Save as: `public/images/guides/nano-aquarium-care-for-tiny-spaces.png`
 - heroImageAlt: `"Small 5-gallon nano aquarium on a desk with compact equipment and lightly stocked shrimp or small fish"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "NANO AQUARIUM CARE", a small 5-gallon nano tank on a desk in a cozy home office setting, compact gentle filter, small heater, lightly planted with a few shrimp or nano fish, labeled callout boxes with arrow pointers reading "UNDER 10 GALLONS", "GENTLE FILTRATION", "LIGHT STOCKING ONLY", "STABLE TEMPERATURE", warm cozy educational poster style`
+- Prompt: `photorealistic aquarium photography, a small 5-gallon nano aquarium on a wooden desk in a cozy home office, compact filter and small heater, lightly planted with moss and a few shrimp, warm desk lamp lighting, crystal clear water, professional aquarium photography, high detail`
 
-### 11. Overfeeding vs Underfeeding: Nutrition Guidelines
+### 11. Overfeeding vs Underfeeding: Nutrition Guidelines — photorealistic diptych
 - File: `src/content/guides/overfeeding-vs-underfeeding-nutrition-guidelines.md`
 - Save as: `public/images/guides/overfeeding-underfeeding-nutrition.png`
-- heroImageAlt: `"Side-by-side comparison illustration of correct fish feeding portions versus overfeeding with uneaten food on the substrate"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "FEEDING: RIGHT AMOUNT VS TOO MUCH", a split comparison aquarium image showing fish actively eating a small pinch of food on one side and excess uneaten food sinking onto the substrate with slightly cloudy water on the other side, labeled callout boxes with arrow pointers reading "EATEN IN 2-3 MIN", "OVERFEEDING: LEFTOVER FOOD", "FEED 1-2X DAILY", "WATCH WATER CLARITY", warm cozy educational poster style`
+- heroImageAlt: `"Side-by-side photo comparison of correct fish feeding portions versus overfeeding with uneaten food on the substrate"`
+- Prompt: `photorealistic aquarium photography diptych, left half shows fish actively eating a small pinch of food at the water surface in clear water, right half shows excess uneaten food sinking onto the substrate with slightly hazy water, a thin vertical divider line down the center, soft natural lighting, professional aquarium photography, high detail`
 
-### 12. Safe Acclimation Techniques for New Fish and Shrimp
+### 12. Safe Acclimation Techniques for New Fish and Shrimp — photorealistic
 - File: `src/content/guides/safe-acclimation-techniques-for-new-fish-and-shrimp.md`
 - Save as: `public/images/guides/safe-acclimation-techniques.png`
-- heroImageAlt: `"Illustration of float and drip acclimation methods for safely introducing new fish and shrimp to a tank"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "SAFE ACCLIMATION TECHNIQUES", an aquarium scene showing a sealed fish bag floating on the water surface on one side and a drip-acclimation setup with airline tubing dripping into a small container of new fish on the other side, labeled callout boxes with arrow pointers reading "FLOAT METHOD: 15-20 MIN", "DRIP METHOD: SLOW DRIPS", "MATCH TEMPERATURE", "NEVER POUR BAG WATER IN", warm cozy educational poster style`
+- heroImageAlt: `"Photo of a sealed fish bag floating on the surface of a home aquarium during the float acclimation method"`
+- Prompt: `photorealistic aquarium photography, a sealed clear plastic fish bag floating on the surface of a home aquarium during the float acclimation method, soft ripples on the water surface, warm indoor lighting, shallow depth of field, professional aquarium photography, high detail, realistic`
 
-### 13. Seasonal Aquarium Care: Summer Heat & Winter Tips
+### 13. Seasonal Aquarium Care: Summer Heat & Winter Tips — photorealistic diptych
 - File: `src/content/guides/seasonal-aquarium-care-summer-heat-and-winter-tips.md`
 - Save as: `public/images/guides/seasonal-aquarium-care.png`
-- heroImageAlt: `"Split seasonal illustration of an aquarium with summer cooling measures on one side and winter heater checks on the other"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "SEASONAL AQUARIUM CARE", a split-composition image with a warm summer scene showing evaporation top-off and a small fan cooling the tank on one half, and a cold winter scene with snow visible through a window and someone checking the heater and thermometer on the other half, labeled callout boxes with arrow pointers reading "SUMMER: TOP OFF EVAPORATION", "SUMMER: FAN COOLING", "WINTER: CHECK HEATER", "WINTER: STABLE TEMP", warm cozy educational poster style`
+- heroImageAlt: `"Split seasonal photo of an aquarium with summer cooling measures on one side and winter heater checks on the other"`
+- Prompt: `photorealistic photography diptych, left half shows a warm summer scene with a small fan cooling an aquarium near a sunny window, right half shows a winter scene with snow visible through a window behind the tank and a hand checking a submersible heater, a thin vertical divider line down the center, professional photography, high detail, realistic`
 
-### 14. Setting Up a Low-Maintenance Planted Aquarium
+### 14. Setting Up a Low-Maintenance Planted Aquarium — photorealistic
 - File: `src/content/guides/setting-up-a-low-maintenance-planted-aquarium.md`
 - Save as: `public/images/guides/low-maintenance-planted-aquarium.png`
 - heroImageAlt: `"Low-tech planted aquarium with hardy Anubias and Java Fern on driftwood, simple substrate, and basic LED lighting"`
-- Prompt: `Colored-pencil illustration, hand-drawn aquarium care infographic style, warm cream paper background, bold hand-lettered outlined title banner reading "LOW-MAINTENANCE PLANTED TANK", a lush but simple planted freshwater tank with hardy Anubias and Java Fern mounted on driftwood, basic substrate, a simple LED light fixture, no CO2 equipment visible, labeled callout boxes with arrow pointers reading "EASY PLANTS: ANUBIAS & JAVA FERN", "NO CO2 NEEDED", "BASIC LED LIGHT", "LOW-TECH SUBSTRATE", warm cozy educational poster style`
+- Prompt: `photorealistic aquarium photography, a lush but simple low-tech planted freshwater tank with hardy Anubias and Java Fern mounted on driftwood, basic substrate, a simple LED light fixture overhead, no CO2 equipment visible, crystal clear water, soft natural lighting, professional aquarium photography, high detail`
 
 ---
 
-## Workflow to apply each one
+## Generation log
 
-1. Open the **Local Image Generator (Z-Image)** form in n8n.
-2. Paste the guide's Prompt, set Model to `Qwen-Image (best text, slower)`, paste the standard Negative prompt, Width/Height `1024`/`1024`, leave Seed blank.
-3. Submit, review the result — regenerate with a different seed if the title text or callout labels come out garbled (Qwen-Image is good but not perfect at long strings of small text).
-4. Save the output PNG to the exact path listed above under `public/images/guides/`.
-5. For Group A (5 guides): no frontmatter change needed — the path is already referenced.
-6. For Group B (9 guides): add the standard frontmatter block (`heroImage`, `heroImageAlt`, `heroImageFit: contain`, `heroImageAspect: square`, `heroLayout: balanced`, `heroTitleSize: compact`) to the guide's frontmatter using the `heroImageAlt` text given above.
-7. Run the dev server and open `/guides/<slug>` to confirm the image renders and isn't cropped oddly at 494×494 square display.
+All 14 generated 2026-08-07/08 via the workflow's new internal webhook trigger (see "Local generation pipeline note" below) using the local ComfyUI instance. All done and wired into guide frontmatter.
 
-**Scheduling reminder:** this Local Image Generator workflow shares the same local ComfyUI resource as the Planting Atlas (10:00 CT) and Sooner Smoker (13:00 CT) Newsletter Generators — see `docs/site-architecture.md` → "Automation Schedule" for the full picture. Running these 14 jobs outside those two windows avoids queueing behind the scheduled newsletter image batches.
+| # | Guide | Status |
+|---|---|---|
+| 1 | Aquascaping Basics | done |
+| 2 | Breeding Easy Aquarium Fish | done |
+| 3 | Community Tank Compatibility | done |
+| 4 | Emergency Aquarium Troubleshooting | done |
+| 5 | Saltwater Aquarium Basics | done |
+| 6 | Freshwater Community Fish | done |
+| 7 | Identifying and Treating Fish Diseases | done |
+| 8 | Invertebrate Care | done |
+| 9 | Live Plants vs Artificial Plants | done (regenerated once — first attempt ignored the split-comparison instruction and rendered a single tank) |
+| 10 | Nano Aquarium Care | done |
+| 11 | Overfeeding vs Underfeeding | done |
+| 12 | Safe Acclimation Techniques | done |
+| 13 | Seasonal Aquarium Care | done |
+| 14 | Low-Maintenance Planted Aquarium | done |
+
+## Local generation pipeline note
+
+The "Local Image Generator (Z-Image)" n8n workflow (`U5e3biect7HmUPit`) now has a second, no-auth trigger — an "Internal Webhook" at path `local-image-gen-internal` — alongside its original Basic-Auth-protected form trigger. It submits to ComfyUI and returns the `promptId` immediately (form-triggered runs are unaffected and still wait for the full result). This exists because the form's Basic Auth has no way to be driven programmatically, and ComfyUI's queue can run long enough (it was backed up ~40 jobs deep behind the other site generators when this batch ran) that waiting synchronously for a finished image isn't reliable — polling ComfyUI's own `/history/{promptId}` directly has no such time limit. Useful for future batch generation runs.
+
+**Scheduling reminder:** this Local Image Generator workflow shares the same local ComfyUI resource as the Planting Atlas (10:00 CT) and Sooner Smoker (13:00 CT) Newsletter Generators — see `docs/site-architecture.md` → "Automation Schedule" for the full picture.
