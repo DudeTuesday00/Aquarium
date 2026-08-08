@@ -158,6 +158,38 @@ Needs:
 - Contact form for questions and custom work
 - Newsletter signup for updates, new products, and guide drops
 
+## Newsletter Content Automation (Planned)
+
+Fin Sanctuary does not yet have an automated newsletter content pipeline — signups currently just capture into Formspree with no regular send. `drodge00`'s other properties (Planting Atlas, Sooner Smoker) already run a proven n8n-based pattern that Fin Sanctuary should adopt once signup volume justifies regular sends.
+
+**Reference pattern (from the existing Planting Atlas / Sooner Smoker n8n workflows):**
+
+1. **Discovery Worker** — daily schedule trigger; reads an RSS source registry, pulls fresh articles, runs local Ollama topic analysis, and logs newsworthy topic opportunities to a shared topic queue.
+2. **Newsletter Generator** — daily schedule trigger; pulls the next queued topic against a maintained "series plan" and a brand "voice config" file, generates the newsletter draft copy, then generates a hero image plus per-section images through a local ComfyUI image pipeline, and upserts the finished draft.
+3. **Newsletter Export** — a lightweight workflow that takes the finished draft and pushes it to the actual send destination.
+
+**What Fin Sanctuary needs before this can be built:**
+
+- An RSS/source registry of aquarium-hobby news and content sources to seed topic discovery
+- A Fin Sanctuary "voice config" capturing the site's established tone (first-person, Norman-Oklahoma-grounded, practical/no-fluff — matching the existing guide voice)
+- A series plan defining the newsletter's recurring themes/rotation (e.g., guide roundup, seasonal care reminder, new product/guide announcement, reader Q&A)
+- A real send destination: `PUBLIC_NEWSLETTER_ACTION` currently points at Formspree capture only, not a send platform — this needs an ESP integration before an Export step has anywhere to deliver to
+
+**Scheduling constraint:** the shared local resources (Ollama for text, ComfyUI for images) are already time-boxed by the existing per-site jobs. A Fin Sanctuary Newsletter Generator should land in an open daily slot to avoid resource contention.
+
+### Automation Schedule (snapshot, 2026-08-07, current n8n instance)
+
+| Workflow | Time (CT) | Uses ComfyUI (images)? |
+|---|---|---|
+| Sooner Smoker Discovery Worker | 05:00 daily | No |
+| Planting Atlas Discovery Worker | 06:30 daily | No |
+| AI Social System Orchestrator | 09:00, 12:30, 16:00, 19:30, 23:00 daily | No |
+| Planting Atlas Newsletter Generator | 10:00 daily | Yes (up to 4 jobs) |
+| Sooner Smoker Newsletter Generator | 13:00 daily | Yes (up to 6 jobs) |
+| Planting Atlas / Sooner Smoker Draft Revision Workers | On-demand (webhook) | Yes, when triggered |
+
+Recommended open slots for a Fin Sanctuary Newsletter Generator: **07:30 CT** (between the two discovery workers and before the AI Social orchestrator's first tick) or **15:00 CT** (after Sooner Smoker's image run has finished and before the 16:00 orchestrator tick). Confirm actual ComfyUI job duration before finalizing — this table reflects trigger times, not full run duration, and the on-demand Draft Revision Workers can still land unpredictably.
+
 ## Monetization Model
 
 ### AdSense
@@ -259,3 +291,9 @@ Content priorities:
 - Add analytics, search, and content update workflows
 - Improve gallery and customer submission flow
 - Add richer product merchandising
+
+### Phase 6
+
+- Stand up a Fin Sanctuary Discovery Worker + Newsletter Generator + Newsletter Export in n8n, following the Planting Atlas / Sooner Smoker pattern (see "Newsletter Content Automation" above)
+- Resolve the newsletter send destination (replace/extend the current Formspree capture-only flow with a real ESP)
+- Build the Fin Sanctuary voice config and series plan inputs the generator depends on
