@@ -127,4 +127,4 @@ The nitrogen cycle turns a fragile glass box of water into a stable, living ecos
 
 **Ready to cycle your tank?**  
 Use the [Aquarium Wizard](/wizard) for a personalized cycling timeline.  
-Next, read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026) or [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting).
+Next, read my [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup) or [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting-guide).
