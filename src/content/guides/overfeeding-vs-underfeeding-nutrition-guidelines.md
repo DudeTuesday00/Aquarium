@@ -336,7 +336,7 @@ That mindset helps you avoid both extremes:
 
 The healthiest tanks usually have owners who feed with consistency, not drama.
 
-## Final Verdict
+## Where This Leaves You
 
 Overfeeding is usually the bigger beginner mistake, but underfeeding can quietly damage fish health too. The best feeding routine is controlled, consistent, and matched to the actual fish in the tank. For most home aquariums, one small daily feeding is a strong starting point, with adjustments made based on fish condition, tank cleanliness, and how well food is actually being distributed.
 

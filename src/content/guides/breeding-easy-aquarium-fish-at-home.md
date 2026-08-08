@@ -129,14 +129,10 @@ Always ask before starting:
 - [ ] Monitor population growth weekly
 - [ ] Have a rehoming or grow-out plan ready
 
-## Final Verdict
+## Where This Leaves You
 
 The easiest aquarium breeding projects in 2026 are **guppies, endlers, platies, and cherry shrimp**. They let you experience the excitement of new life with minimal technical barriers. Focus on stability, cover, gentle filtration, and — most importantly — a realistic plan for the young. When done thoughtfully, breeding becomes one of the most rewarding parts of the hobby.
 
 **Ready to start?**  
 Use the [Aquarium Wizard](/wizard) for personalized breeding setup ideas.  
 Next, check my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Invertebrate Care Guide](/guides/invertebrate-care-snails-shrimp-crayfish-in-small-tanks).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always match breeding projects to your available space and long-term goals.*

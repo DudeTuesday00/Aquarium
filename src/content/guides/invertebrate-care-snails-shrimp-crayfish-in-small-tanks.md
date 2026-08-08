@@ -355,7 +355,7 @@ Do not assume all “community fish” are shrimp-safe.
 
 This is especially important for shrimp and many snails.
 
-## Final Verdict
+## My Take
 
 For most small home and office aquariums, snails and shrimp are the best invertebrate choices, while crayfish are better treated as specialty animals. If you want the safest beginner path, start with a nerite snail or a carefully chosen shrimp colony in a planted, stable tank. If you want a bolder oddball pet, choose dwarf crayfish only after accepting that they are not the same kind of peaceful cleanup crew.
 

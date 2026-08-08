@@ -121,14 +121,10 @@ Cycling is the foundation, not the finish line. Continue with:
 - Proper feeding
 - Gentle filter maintenance
 
-## Final Verdict
+## Putting It All Together
 
 The nitrogen cycle turns a fragile glass box of water into a stable, living ecosystem. Skipping or rushing it is the #1 reason new aquarists lose fish and get discouraged. Take the time to cycle properly — especially on your first tank — and you’ll set yourself up for years of success and enjoyment instead of repeated frustration.
 
 **Ready to cycle your tank?**  
 Use the [Aquarium Wizard](/wizard) for a personalized cycling timeline.  
 Next, read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026) or [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always test your water and prioritize fish health over speed.*

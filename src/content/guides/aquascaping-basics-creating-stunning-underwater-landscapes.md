@@ -127,7 +127,7 @@ Repeat 3–5 key plants rather than using 12 different ones in tiny numbers.
 - Ignoring maintenance access.  
 - Adding “just one more piece.”
 
-## Final Verdict
+## Putting It All Together
 
 Great beginner aquascaping is about restraint and intention. Choose one clear focal point, protect negative space, group plants thoughtfully, and always design with your fish and weekly maintenance in mind. A simpler, well-executed layout almost always looks more impressive than a complicated one.
 
@@ -135,7 +135,3 @@ Great beginner aquascaping is about restraint and intention. Choose one clear fo
 Use the [Aquarium Wizard](/wizard) for personalized layout ideas.  
 Check my shop for plant clips, feeding rings, and other aquascaping helpers.  
 Or read the [Aquarium Lighting Guide](/guides/aquarium-lighting) and [Low-Maintenance Planted Tank Guide] next.
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always match your aquascape to your lifestyle and enjoy the creative process.*

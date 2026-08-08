@@ -129,14 +129,10 @@ It creates consistency for fish, plants, and algae control — especially valuab
 - Changing settings too frequently
 - Over-lighting a low-maintenance setup
 
-## Final Verdict
+## The Bottom Line
 
 For most home and office aquariums in 2026, the best lighting is a **moderate, timer-controlled LED** matched to your actual plants and lifestyle. Start conservative, keep the schedule consistent, and let the tank tell you when (or if) it needs more.
 
 **Ready to choose?**  
 Use the [Aquarium Wizard](/wizard) for personalized lighting suggestions based on your tank size and goals.  
 Or read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026) next.
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always match lighting to your specific setup and enjoy the process.*

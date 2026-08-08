@@ -169,14 +169,10 @@ Feed measured amounts 2–3 times daily and remove uneaten food quickly. Consist
 - [ ] Water parameters match species needs
 - [ ] Backup plan for aggression or overpopulation
 
-## Final Verdict
+## My Take
 
 A well-planned cichlid tank can be one of the most engaging displays in the hobby. The secret is treating them as **territorial, intelligent fish** rather than colorful community additions. Match your water chemistry to your chosen region, choose your path deliberately, give them enough space and structure, and maintain strong water quality. When done right, you'll enjoy years of fascinating behavior instead of constant drama.
 
 **Ready to plan yours?**
 Use the [Aquarium Wizard](/wizard) for personalized cichlid recommendations.
 Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Aquarium Filter Types Explained](/guides/aquarium-filter-types).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always research specific species compatibility for your local water and do gradual introductions.*

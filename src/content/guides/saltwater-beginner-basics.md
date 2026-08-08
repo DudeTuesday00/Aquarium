@@ -175,7 +175,7 @@ Not for a nano tank — an all-in-one system works fine. Sumps become more valua
 **Can I reuse freshwater equipment for a saltwater tank?**
 No. Salt residue is difficult to fully remove and can throw off saltwater parameters. Keep freshwater and saltwater gear separate.
 
-## Final Verdict
+## My Take
 
 Saltwater aquariums can be incredibly rewarding, but they are **not** a beginner hobby in 2026. The higher cost, stricter parameters, longer cycle, and faster consequences for mistakes make them best suited for aquarists who already have freshwater experience and a larger budget.
 
@@ -184,7 +184,3 @@ If you're still excited after reading this, start small, go slow, stock in order
 **Ready to decide?**
 Use the [Aquarium Wizard](/wizard) for a personalized freshwater vs saltwater recommendation.
 Next, read my [Freshwater vs Saltwater](/guides/freshwater-vs-saltwater) guide or [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Saltwater success comes from patience and stability, not rushing beauty.*

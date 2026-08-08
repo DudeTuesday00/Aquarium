@@ -117,7 +117,7 @@ Hardy livebearers with good color.
 - [ ] Will they stay comfortable in my tank size when fully grown?  
 - [ ] Do I have appropriate food and hiding spots ready?
 
-## Final Verdict
+## My Take
 
 For small home and office tanks in 2026, the **safest and most rewarding beginner fish** are:  
 **Bettas** for solo displays, **Ember Tetras + Pygmy Corydoras** for nano communities, and **Harlequin Rasboras + Platies** once you reach 15–20 gallons.
@@ -127,7 +127,3 @@ Start small, stock lightly, and let the tank mature. You’ll enjoy it far more 
 **Ready for personalized recommendations?**  
 Open the [Aquarium Wizard](/wizard) and answer a few questions for a custom fish list.  
 Next, read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always research local availability and do gradual acclimation.*

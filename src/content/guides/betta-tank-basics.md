@@ -171,7 +171,3 @@ A thriving betta in 2026 comes from treating it like a real tropical fish instea
 **Ready to build one?**
 Use the [Aquarium Wizard](/wizard) for a personalized betta setup recommendation.
 Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always observe your individual fish and adjust as needed.*

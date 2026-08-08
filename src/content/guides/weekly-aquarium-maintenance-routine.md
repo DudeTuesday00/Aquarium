@@ -122,7 +122,7 @@ If you see any of these, jump to my [Emergency Aquarium Troubleshooting Guide](/
 - Ignoring small problems until they become big ones
 - Doing everything in one long session instead of consistent short ones
 
-## Final Verdict
+## My Take
 
 Consistent, short weekly maintenance beats occasional marathon cleaning sessions. A 15–30 minute routine done reliably every week will keep most home and office aquariums healthy and beautiful with minimal stress — even if you have a packed schedule.
 
@@ -131,7 +131,3 @@ The key is **routine over perfection**. Build the habit, keep it simple, and you
 **Ready to simplify your routine?**  
 Use the [Aquarium Wizard](/wizard) for a custom maintenance schedule based on your tank size.  
 Next, read my [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting) or [Nitrogen Cycle Explained](/guides/nitrogen-cycle-explained).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Consistency matters more than perfection.*

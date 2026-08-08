@@ -333,7 +333,7 @@ For most small beginner freshwater tanks:
 
 The best filter for a small aquarium is the one that fits the fish, the space, and the maintenance reality of the owner.
 
-## Final Verdict
+## Putting It All Together
 
 For small aquariums, filtration should be gentle, reliable, and easy to live with. Sponge filters are often the best answer for bettas, shrimp, and simple nano setups. HOB filters are usually the strongest all-around choice for small community tanks. Internal filters work well when space is limited, and small canisters are better treated as premium upgrades than beginner defaults.
 

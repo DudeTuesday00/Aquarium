@@ -351,7 +351,7 @@ Only trim what is actually affecting the layout or plant health.
 
 Do not assume every planted tank problem requires stronger light, richer substrate, or extra equipment.
 
-## Final Verdict
+## Final Thoughts
 
 A low-maintenance planted aquarium works best when it is built around restraint. Choose a sensible tank size, a moderate light, easy plants, and a layout you can clean without frustration. Skip the urge to make it high-tech too early, and the tank will usually become more beautiful and easier to live with over time.
 

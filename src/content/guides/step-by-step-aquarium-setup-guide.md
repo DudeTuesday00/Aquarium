@@ -125,7 +125,7 @@ Even after cycling:
 - Overcrowding hardscape
 - Not testing equipment before cycling
 
-## Final Verdict
+## Putting It All Together
 
 A successful first aquarium comes from **order and patience**, not speed. When you set up the tank in the right sequence — location, dry work, equipment, water, cycling, then fish — everything becomes easier and more stable long-term.
 
@@ -134,7 +134,3 @@ The tank isn’t “finished” when the fish go in. It’s just beginning. Cons
 **Ready to start?**  
 Use the [Aquarium Wizard](/wizard) for personalized recommendations.  
 Next, read my [Choosing the Right Aquarium](/guides/choosing-the-right-aquarium) or [Essential Aquarium Equipment](/guides/essential-aquarium-equipment).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always prioritize stability over speed and enjoy the process.*

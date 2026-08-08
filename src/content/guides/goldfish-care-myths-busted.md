@@ -245,7 +245,7 @@ Ease when planned correctly | Reasonable | Often easier for first-time owners
 
 If a beginner wants the least frustrating first aquarium, a tropical community tank is often easier than a myth-based goldfish setup.
 
-## Final Verdict
+## The Bottom Line
 
 The biggest goldfish care myths all revolve around the same bad idea: that goldfish can thrive in undersized, under-filtered, low-maintenance systems. In reality, goldfish need more space, more filtration, and more consistent water care than many beginners are led to believe. They can be hardy, long-lived, rewarding fish, but only when their setup is built around real needs instead of old marketing myths.
 

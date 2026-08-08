@@ -157,14 +157,10 @@ Always acclimate new fish carefully.
 - [ ] Stocking plan written down
 - [ ] Maintenance tools ready
 
-## Final Verdict
+## Final Thoughts
 
 A successful first aquarium in 2026 comes down to patience and order: choose the right size, set it up properly, cycle it fully, stock lightly, and maintain consistently. When you do this, the tank becomes a relaxing part of your home or office instead of a source of stress.
 
 **Ready to begin?**  
 Open the [Aquarium Wizard](/wizard) for a personalized recommendation.  
 Then check my [Choosing the Right Aquarium](/guides/choosing-the-right-aquarium) guide if you haven’t already.
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always do your own research and enjoy the journey.*
