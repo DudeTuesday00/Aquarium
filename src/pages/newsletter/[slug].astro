@@ -1,0 +1,142 @@
+---
+import NewsletterSignupCard from '../../components/NewsletterSignupCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const issues = await getCollection('newsletter');
+
+  return issues.map((issue) => ({
+    params: { slug: issue.id },
+    props: { issue }
+  }));
+}
+
+const { issue } = Astro.props;
+const { Content } = await render(issue);
+const publishedLabel = issue.data.publishDate.toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
+const shareImage = issue.data.heroImage && Astro.site ? new URL(issue.data.heroImage, Astro.site).toString() : undefined;
+const issueSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: issue.data.title,
+  description: issue.data.description,
+  datePublished: issue.data.publishDate.toISOString(),
+  author: { '@type': 'Person', name: 'Diamond Dave' },
+  publisher: { '@type': 'Organization', name: 'Fin Sanctuary' },
+  keywords: issue.data.tags,
+  image: shareImage ? [shareImage] : undefined,
+  mainEntityOfPage: canonicalUrl
+};
+---
+
+<Layout
+  title={`${issue.data.title} • Fin Sanctuary Newsletter`}
+  description={issue.data.description}
+  ogType="article"
+  ogImage={shareImage}
+  publishedTime={issue.data.publishDate.toISOString()}
+  keywords={issue.data.tags}
+  jsonLd={issueSchema}
+>
+  <main class="bg-light-bg/65 dark:bg-slate-950">
+    <section class="border-b border-primary/10 bg-[linear-gradient(180deg,rgba(1,133,174,0.09),rgba(243,239,238,0.4))] dark:bg-[linear-gradient(180deg,rgba(13,175,188,0.16),rgba(2,6,23,0.96))]">
+      <div class="mx-auto max-w-4xl px-6 py-8 md:py-10">
+        <a href="/newsletter" class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-primary/80 transition-colors hover:text-primary">
+          <span aria-hidden="true">←</span>
+          Back to Newsletter
+        </a>
+
+        <div class="mt-6 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-primary/70">Newsletter</div>
+        <h1 class="mt-5 font-bold tracking-tight text-primary">{issue.data.title}</h1>
+        <p class="mt-5 text-slate-700 dark:text-slate-200">{issue.data.description}</p>
+        <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600 dark:text-slate-300">
+          <span>Published {publishedLabel}</span>
+        </div>
+
+        {issue.data.heroImage && (
+          <img
+            src={issue.data.heroImage}
+            alt={issue.data.heroImageAlt || issue.data.title}
+            class="mt-8 w-full rounded-[2rem] object-cover"
+            loading="eager"
+          />
+        )}
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-6 py-8 md:py-10">
+      <div class="rounded-[2rem] border border-primary/10 bg-white px-6 py-6 shadow-[0_24px_80px_-50px_rgba(1,133,174,0.35)] dark:border-white/8 dark:bg-slate-900 md:px-8 md:py-8">
+        <div class="guide-content">
+          <Content />
+        </div>
+      </div>
+
+      {issue.data.sourceName && (
+        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
+          Source: {issue.data.sourceUrl ? <a href={issue.data.sourceUrl} class="underline">{issue.data.sourceName}</a> : issue.data.sourceName}
+        </p>
+      )}
+
+      <NewsletterSignupCard
+        className="mt-8"
+        interest={`newsletter-issue-${issue.id}`}
+        location="newsletter-issue-page"
+        description="Get new newsletter issues, guides, and product updates by email."
+      />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .guide-content :global(h2) {
+    margin-top: 2.2rem;
+    margin-bottom: 1rem;
+    font-size: 28px;
+    line-height: 1.6;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .guide-content :global(h3) {
+    margin-top: 1.8rem;
+    margin-bottom: 0.7rem;
+    font-size: 22px;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .guide-content :global(p),
+  .guide-content :global(li) {
+    color: rgb(51 65 85);
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  :global(.dark) .guide-content :global(p),
+  :global(.dark) .guide-content :global(li) {
+    color: rgb(226 232 240);
+  }
+
+  .guide-content :global(table) {
+    width: 100%;
+    margin: 1.6rem 0 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid rgba(1, 133, 174, 0.12);
+    border-radius: 1.25rem;
+  }
+
+  .guide-content :global(th),
+  .guide-content :global(td) {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(1, 133, 174, 0.08);
+  }
+</style>
