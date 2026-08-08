@@ -239,7 +239,7 @@ Ongoing cost matters too. Livestock losses, consumables, specialty tools, and up
 - you accept a higher cost and more deliberate maintenance approach
 - you are willing to go slower and be more technical from the start
 
-## Final Verdict
+## Final Thoughts
 
 If you want the highest chance of success in your first aquarium, choose freshwater. It is usually less expensive, more forgiving, easier to stock, and a better fit for home and small-office tanks.
 

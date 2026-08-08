@@ -145,15 +145,11 @@ That usually means:
 - Proper quarantine and acclimation
 - Never ignore small problems
 
-## Final Verdict
+## The Bottom Line
 
 In almost every aquarium emergency, **calm stabilization beats dramatic action**. Focus first on oxygen, temperature, and water quality. Most tanks recover well when you avoid panic and follow the right order.
 
 **Ready when trouble hits?**  
 Bookmark this guide and build your emergency kit today.  
 Use the [Aquarium Wizard](/wizard) for ongoing setup advice.  
-Next, read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026) or [Betta Fish Care](/guides/betta-fish-care-solo-tanks-feeding-enrichment).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always prioritize fish safety and stable parameters over quick fixes.*
+Next, read my [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup) or [Betta Fish Care](/guides/betta-tank-basics).

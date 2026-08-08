@@ -285,7 +285,7 @@ This is one of the easiest ways to turn a smooth upgrade into a water-quality pr
 
 Too many changes at once create avoidable instability.
 
-## Final Verdict
+## Where This Leaves You
 
 The right time to upgrade an aquarium is when the current tank no longer gives the fish, the equipment, or the owner enough room to succeed comfortably. A larger tank can improve stability, layout flexibility, and fish behavior, but only if the move is handled with a real transition plan. The smartest upgrade keeps the mature biological support, moves fish calmly, and avoids turning one good system into a rushed reset.
 

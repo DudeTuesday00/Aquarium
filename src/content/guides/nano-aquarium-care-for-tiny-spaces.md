@@ -4,7 +4,13 @@ description: Learn how to care for aquariums under 10 gallons, including stockin
 category: Specialty & Advanced Care
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/nano-aquarium-care-for-tiny-spaces.png
+heroImageAlt: "Small 5-gallon nano aquarium on a desk with compact equipment and lightly stocked shrimp or small fish"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - nano-aquarium
@@ -365,7 +371,7 @@ Planted tiny-space display | Shrimp or one calm focal fish with easy plants | Be
 Office desk aquarium | Lightly stocked calm setup | Good viewing without excessive management
 Hobbyist looking for detail | Shrimp-focused planted nano | Makes the small scale an advantage
 
-## Final Verdict
+## Final Thoughts
 
 Nano aquariums can be excellent for tiny spaces, but they are not “easy mode” aquariums. They work best when the owner accepts the tradeoff: less space means less margin for error. Keep the concept simple, the stocking restrained, the equipment real, and the maintenance routine consistent. When that happens, a nano tank can feel elegant, calming, and surprisingly impressive without taking over the room.
 

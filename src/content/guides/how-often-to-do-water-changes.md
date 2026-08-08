@@ -261,7 +261,7 @@ If you want the simplest reliable answer:
 
 This is easier and safer than waiting until something goes wrong.
 
-## Final Verdict
+## Where This Leaves You
 
 For most home aquariums, water changes should happen weekly unless the tank has clearly proven it can stay stable on a slightly lighter schedule. They matter because they dilute nitrate, remove dissolved waste, support cleaner conditions, and make the aquarium more forgiving over time.
 

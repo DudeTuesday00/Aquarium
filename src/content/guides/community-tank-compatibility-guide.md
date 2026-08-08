@@ -114,14 +114,10 @@ Peaceful tanks still need:
 - [ ] Hiding spots and open swimming space both provided
 - [ ] Backup plan if aggression appears
 
-## Final Verdict
+## Where This Leaves You
 
 A great community tank in 2026 is built on **compatibility and restraint**, not maximum fish count. Choose peaceful species, stock in proper schools and layers, and always leave breathing room. When done right, you’ll have a relaxing, colorful tank that brings daily joy instead of daily stress.
 
 **Ready to build your perfect community?**  
 Use the [Aquarium Wizard](/wizard) for a personalized compatibility list based on your tank size.  
-Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always research local water parameters and introduce new fish gradually.*
+Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup).

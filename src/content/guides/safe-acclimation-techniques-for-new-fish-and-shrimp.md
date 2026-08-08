@@ -4,7 +4,13 @@ description: Learn how to acclimate new aquarium fish and shrimp safely with flo
 category: Fish & Invertebrate Care
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/safe-acclimation-techniques.png
+heroImageAlt: "Photo of a sealed fish bag floating on the surface of a home aquarium during the float acclimation method"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - acclimation

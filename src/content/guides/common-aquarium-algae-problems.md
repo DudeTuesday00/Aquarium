@@ -281,7 +281,7 @@ Heavily stocked community tank | Green water or surface algae growth | Feed less
 Tank with dead zones and dirty corners | Cyanobacteria or black beard algae | Improve circulation and remove trapped waste
 Tank beside a window | Green water or persistent surface growth | Remove direct sunlight and reset lighting duration
 
-## Final Verdict
+## Where This Leaves You
 
 Most aquarium algae problems are manageable without extreme interventions. The key is to identify the type correctly, then respond with better light control, better maintenance, better flow, and better feeding discipline.
 

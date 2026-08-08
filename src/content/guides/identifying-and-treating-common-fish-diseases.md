@@ -4,7 +4,13 @@ description: Learn how to spot common aquarium fish diseases early, separate str
 category: Health & Troubleshooting
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/identifying-and-treating-common-fish-diseases.png
+heroImageAlt: "Educational diagram-style aquarium illustration showing early signs of common fish diseases with labeled callouts"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - fish-disease

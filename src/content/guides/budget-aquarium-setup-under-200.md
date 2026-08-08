@@ -130,14 +130,10 @@ A good budget tank is:
 - [ ] Stocking plan written down
 - [ ] Weekly maintenance routine scheduled
 
-## Final Verdict
+## The Bottom Line
 
 You **can** build a genuinely good aquarium under $200 in 2026. The secret is ruthless prioritization: invest in the equipment that keeps water stable and fish healthy, then add beauty within the remaining budget. For most people, a well-planned 10-gallon freshwater setup (or a solid 5-gallon betta tank) gives the best balance of cost, stability, and enjoyment.
 
 **Ready to shop?**  
 Use the [Aquarium Wizard](/wizard) for a personalized budget recommendation.  
-Next, read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026) or [Betta Fish Care](/guides/betta-fish-care-solo-tanks-feeding-enrichment).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Prices are current as of May 2026 and may vary by location.*
+Next, read my [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup) or [Betta Fish Care](/guides/betta-tank-basics).

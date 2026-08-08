@@ -122,8 +122,4 @@ Once you build the habit of quick weekly checks, your tank becomes far more forg
 
 **Ready to get control of your water?**  
 Use the [Aquarium Wizard](/wizard) for personalized parameter targets.  
-Next, read my [Nitrogen Cycle Explained](/guides/nitrogen-cycle-explained) or [Weekly Aquarium Maintenance Routine](/guides/weekly-aquarium-maintenance-routine-for-busy-owners).
-
----
-
-*Written from real tanks in Norman, Oklahoma. Test regularly, change water consistently, and always prioritize stability.*
+Next, read my [Nitrogen Cycle Explained](/guides/nitrogen-cycle-explained) or [Weekly Aquarium Maintenance Routine](/guides/weekly-aquarium-maintenance-routine).

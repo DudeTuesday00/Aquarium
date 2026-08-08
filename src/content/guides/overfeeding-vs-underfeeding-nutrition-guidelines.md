@@ -4,7 +4,13 @@ description: "Learn how much to feed aquarium fish, how often to feed them, and 
 category: Health & Troubleshooting
 audience: beginner
 publishDate: 2026-04-05
-updatedDate: 2026-04-05
+updatedDate: 2026-08-07
+heroImage: /images/guides/overfeeding-underfeeding-nutrition.png
+heroImageAlt: "Side-by-side photo comparison of correct fish feeding portions versus overfeeding with uneaten food on the substrate"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - feeding
@@ -330,7 +336,7 @@ That mindset helps you avoid both extremes:
 
 The healthiest tanks usually have owners who feed with consistency, not drama.
 
-## Final Verdict
+## Where This Leaves You
 
 Overfeeding is usually the bigger beginner mistake, but underfeeding can quietly damage fish health too. The best feeding routine is controlled, consistent, and matched to the actual fish in the tank. For most home aquariums, one small daily feeding is a strong starting point, with adjustments made based on fish condition, tank cleanliness, and how well food is actually being distributed.
 

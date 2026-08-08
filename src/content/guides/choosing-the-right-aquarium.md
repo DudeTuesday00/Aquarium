@@ -181,7 +181,7 @@ If you answer “no” to any, reconsider.
 2. **Aqueon 10 or 20 Gallon LED Kit** — Reliable and affordable.
 3. **20 Gallon Long glass tank + separate good filter/heater** — Best long-term value.
 
-## Final Verdict
+## Final Thoughts
 
 For most people in a home or small office, the **sweet spot is a 15–20 gallon long freshwater tank** on a proper stand, lightly stocked, and well-planted. It’s stable enough to forgive mistakes, beautiful enough to enjoy daily, and manageable when life gets busy.
 
@@ -193,10 +193,6 @@ The right aquarium doesn’t just hold water — it sets you up for years of suc
 Use the [Aquarium Wizard](/wizard) to get personalized recommendations based on your space and goals.  
 Check the shop for 3D-printed accessories and stands.  
 Or dive into these next guides:
-- [Aquarium Filter Types Explained](/guides/aquarium-filters)
-- [Aquarium Lighting Guide](/guides/aquarium-lighting)
-- [Cycling Your Tank Properly](/guides/tank-cycling)
-
----
-
-*Written from real tanks in Norman, Oklahoma. Always do your own research and enjoy the journey.*
+- [Aquarium Filter Types Explained](/guides/aquarium-filter-types)
+- [Aquarium Lighting Guide](/guides/aquarium-lighting-guide)
+- [Cycling Your Tank Properly](/guides/nitrogen-cycle-explained)

@@ -4,7 +4,13 @@ description: Learn how to choose peaceful freshwater community fish that actuall
 category: Freshwater Fish
 audience: beginner
 publishDate: 2026-03-27
-updatedDate: 2026-03-27
+updatedDate: 2026-08-07
+heroImage: /images/guides/freshwater-community-fish.png
+heroImageAlt: "Vibrant freshwater community tank with schooling tetras, harlequin rasboras, and a corydoras group at the substrate"
+heroImageFit: contain
+heroImageAspect: square
+heroLayout: balanced
+heroTitleSize: compact
 featured: true
 tags:
   - freshwater
@@ -280,7 +286,7 @@ Community tanks usually do best with a reliable HOB filter or other easy-mainten
 
 Make sure mid-water fish and bottom fish both get food. One of the easiest beginner mistakes is assuming leftovers are enough for bottom dwellers.
 
-## Final Verdict
+## My Take
 
 The best freshwater community fish for most home aquariums are rasboras, peaceful tetras, corydoras, platies, and carefully chosen guppies. For many beginners, the safest and most attractive path is simple: choose one schooling fish, choose one bottom group, and resist the urge to over-mix species.
 
