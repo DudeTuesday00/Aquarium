@@ -135,7 +135,7 @@ For most home and office aquariums in 2026, the best lighting is a **moderate, t
 
 **Ready to choose?**  
 Use the [Aquarium Wizard](/wizard) for personalized lighting suggestions based on your tank size and goals.  
-Or read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026) next.
+Or read my [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup) next.
 
 ---
 

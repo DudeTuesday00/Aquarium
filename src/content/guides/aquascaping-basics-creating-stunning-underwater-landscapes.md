@@ -134,7 +134,7 @@ Great beginner aquascaping is about restraint and intention. Choose one clear fo
 **Ready to start?**  
 Use the [Aquarium Wizard](/wizard) for personalized layout ideas.  
 Check my shop for plant clips, feeding rings, and other aquascaping helpers.  
-Or read the [Aquarium Lighting Guide](/guides/aquarium-lighting) and [Low-Maintenance Planted Tank Guide] next.
+Or read the [Aquarium Lighting Guide](/guides/aquarium-lighting-guide) and [Low-Maintenance Planted Tank Guide] next.
 
 ---
 

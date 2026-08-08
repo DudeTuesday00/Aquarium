@@ -179,7 +179,7 @@ For most home and office aquariums in 2026, a good **Hang-on-Back filter** or **
 
 **Ready to choose?**  
 Use the [Aquarium Wizard](/wizard) for a personalized filter recommendation based on your tank size and goals.  
-Or check my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026).
+Or check my [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup).
 
 ---
 

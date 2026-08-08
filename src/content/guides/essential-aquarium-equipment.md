@@ -120,7 +120,7 @@ A successful aquarium in 2026 depends on a surprisingly short list of equipment 
 
 **Ready to build?**  
 Use the [Aquarium Wizard](/wizard) for a personalized equipment list based on your tank size and goals.  
-Next, read my [Budget Aquarium Setup Under $200](/guides/budget-aquarium-setup-under-200) or [Aquarium Filter Types Explained](/guides/aquarium-filter-types-explained).
+Next, read my [Budget Aquarium Setup Under $200](/guides/budget-aquarium-setup-under-200) or [Aquarium Filter Types Explained](/guides/aquarium-filter-types).
 
 ---
 

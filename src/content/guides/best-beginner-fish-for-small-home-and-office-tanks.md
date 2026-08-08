@@ -126,7 +126,7 @@ Start small, stock lightly, and let the tank mature. You’ll enjoy it far more 
 
 **Ready for personalized recommendations?**  
 Open the [Aquarium Wizard](/wizard) and answer a few questions for a custom fish list.  
-Next, read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026).
+Next, read my [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup).
 
 ---
 

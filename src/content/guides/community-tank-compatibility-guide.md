@@ -120,7 +120,7 @@ A great community tank in 2026 is built on **compatibility and restraint**, not 
 
 **Ready to build your perfect community?**  
 Use the [Aquarium Wizard](/wizard) for a personalized compatibility list based on your tank size.  
-Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026).
+Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup).
 
 ---
 

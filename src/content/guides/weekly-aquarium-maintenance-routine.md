@@ -101,7 +101,7 @@ This 2026-updated guide gives you a realistic, low-effort maintenance plan desig
 - Sudden color loss or clamped fins
 - Algae explosion
 
-If you see any of these, jump to my [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting).
+If you see any of these, jump to my [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting-guide).
 
 ## Full Maintenance Checklist (Print & Laminate)
 
@@ -130,7 +130,7 @@ The key is **routine over perfection**. Build the habit, keep it simple, and you
 
 **Ready to simplify your routine?**  
 Use the [Aquarium Wizard](/wizard) for a custom maintenance schedule based on your tank size.  
-Next, read my [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting) or [Nitrogen Cycle Explained](/guides/nitrogen-cycle-explained).
+Next, read my [Emergency Aquarium Troubleshooting Guide](/guides/emergency-aquarium-troubleshooting-guide) or [Nitrogen Cycle Explained](/guides/nitrogen-cycle-explained).
 
 ---
 

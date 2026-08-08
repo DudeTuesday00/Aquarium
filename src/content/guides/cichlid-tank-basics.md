@@ -132,7 +132,7 @@ A well-planned cichlid tank can be one of the most engaging displays in the hobb
 
 **Ready to plan yours?**  
 Use the [Aquarium Wizard](/wizard) for personalized cichlid recommendations.  
-Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Aquarium Filter Types Explained](/guides/aquarium-filter-types-explained).
+Next, read my [Best Beginner Fish for Small Tanks](/guides/best-beginner-fish-for-small-home-and-office-tanks) or [Aquarium Filter Types Explained](/guides/aquarium-filter-types).
 
 ---
 

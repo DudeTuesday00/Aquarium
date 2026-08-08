@@ -136,7 +136,7 @@ You **can** build a genuinely good aquarium under $200 in 2026. The secret is ru
 
 **Ready to shop?**  
 Use the [Aquarium Wizard](/wizard) for a personalized budget recommendation.  
-Next, read my [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026) or [Betta Fish Care](/guides/betta-fish-care-solo-tanks-feeding-enrichment).
+Next, read my [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup) or [Betta Fish Care](/guides/betta-tank-basics).
 
 ---
 

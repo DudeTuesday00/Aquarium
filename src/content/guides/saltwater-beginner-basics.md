@@ -108,7 +108,7 @@ If you’re still excited after reading this, start small, go slow, and over-fil
 
 **Ready to decide?**  
 Use the [Aquarium Wizard](/wizard) for a personalized freshwater vs saltwater recommendation.  
-Next, read my [Freshwater vs Saltwater](/guides/freshwater-vs-saltwater) guide or [Complete Beginner Tank Setup Guide](/guides/complete-beginner-tank-setup-2026).
+Next, read my [Freshwater vs Saltwater](/guides/freshwater-vs-saltwater) guide or [Complete Beginner Tank Setup Guide](/guides/beginner-tank-setup).
 
 ---
 
