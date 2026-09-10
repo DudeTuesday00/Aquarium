@@ -44,6 +44,7 @@ const newsletter = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    kicker: z.string().optional(),
     publishDate: z.coerce.date(),
     tags: z.array(z.string()).default([]),
     heroImage: z.string().optional(),
