@@ -1,7 +1,7 @@
 ---
 title: "Protein Skimmers Explained: Do You Need One, and How to Size It"
 description: "What a protein skimmer actually does, which saltwater tanks genuinely need one, and how to size one correctly instead of guessing from the box label. Real lessons from tanks in Norman, Oklahoma."
-category: Equipment & Technology
+category: Saltwater
 audience: beginner
 publishDate: 2026-09-12
 heroImage: /images/guides/protein-skimmers-explained-do-you-need-one.png

@@ -1,7 +1,7 @@
 ---
 title: "Reef Tank Water Parameters: Calcium, Alkalinity, and Salinity Explained"
 description: "The freshwater test kit numbers don't apply here. A practical guide to the four parameters that actually determine whether a reef tank thrives or slowly falls apart — calcium, alkalinity, magnesium, and salinity."
-category: Water Quality & Maintenance
+category: Saltwater
 audience: beginner
 publishDate: 2026-09-12
 heroImage: /images/guides/reef-tank-water-parameters-calcium-alkalinity-and-salinity.png

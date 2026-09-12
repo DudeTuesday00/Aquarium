@@ -1,7 +1,7 @@
 ---
 title: "Reef Tank Algae Control: Identifying and Beating Nuisance Algae"
 description: "The six most common types of nuisance algae in reef tanks, what actually causes each one, and how to fix the root cause instead of just scrubbing rocks every week. Real lessons from tanks in Norman, Oklahoma."
-category: Health & Troubleshooting
+category: Saltwater
 audience: beginner
 publishDate: 2026-09-12
 heroImage: /images/guides/reef-tank-algae-control-identifying-and-beating-nuisance-algae.png
