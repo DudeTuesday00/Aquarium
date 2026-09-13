@@ -467,6 +467,13 @@ const guideSchema = canonical => ({
     color: var(--color-primary);
   }
 
+  .guide-content :global(img) {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 1.5rem;
+    object-fit: cover;
+  }
+
   .guide-content :global(blockquote) {
     margin: 2rem 0;
     border-left: 4px solid rgba(13, 175, 188, 0.55);
