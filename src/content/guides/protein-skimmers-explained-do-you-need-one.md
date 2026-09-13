@@ -5,7 +5,7 @@ category: Saltwater
 audience: beginner
 publishDate: 2026-09-12
 heroImage: /images/guides/protein-skimmers-explained-do-you-need-one.png
-heroImageAlt: "Protein skimmer collecting dark skimmate in its collection cup beside a saltwater reef aquarium"
+heroImageAlt: "Home reef aquarium on a stand with the sump and equipment cabinet open below it"
 heroImageFit: contain
 heroImageAspect: square
 heroLayout: balanced
@@ -32,7 +32,7 @@ I skipped a skimmer on my first nano reef because the tank "looked clean." It wa
 
 Inside the skimmer body, a pump injects a stream of fine air bubbles into the water. Dissolved proteins and organic compounds are naturally attracted to the surface of those bubbles (the same property that makes bubbles cling together on the surface of any protein-rich liquid). The bubbles rise, foam up in the neck of the skimmer, and get pushed into a collection cup as thick, dark, genuinely nasty-smelling "skimmate." You dump that cup a couple times a week. It never re-enters your tank, and none of it ever gets the chance to break down into nitrate or phosphate in the first place — which is exactly what makes a skimmer more effective, gallon for gallon, than trying to out-filter the same waste after the fact.
 
-![Close-up of a protein skimmer's air intake and venturi valve mechanism](/images/guides/protein-skimmers-explained-do-you-need-one-venturi.png)
+![Aquarium stand cabinet open showing the sump and plumbing setup below a reef tank](/images/guides/protein-skimmers-explained-do-you-need-one-venturi.png)
 
 ## Do You Actually Need One?
 
@@ -55,7 +55,7 @@ This is where most beginners get burned by marketing copy. Skimmer boxes love to
 - **Bigger is not automatically better.** An oversized skimmer can strip out too much, including some of the beneficial trace elements and plankton your corals actually want. Match it to your actual waste load, not the largest one you can afford.
 - **In-sump beats hang-on-back** for anything past a small nano — it's quieter, easier to adjust, and doesn't compete for space on the back glass.
 
-![A protein skimmer sized appropriately for a moderately stocked reef tank](/images/guides/protein-skimmers-explained-do-you-need-one-sizing.png)
+![A moderately stocked reef aquarium on a stand in a home living room](/images/guides/protein-skimmers-explained-do-you-need-one-sizing.png)
 
 ## Dialing One In Once It's Running
 
@@ -63,7 +63,7 @@ This is where most beginners get burned by marketing copy. Skimmer boxes love to
 - Adjust the water level or air intake gradually until you're producing a **dark, dense skimmate** roughly every 2-4 days. Watery, light-colored skimmate usually means the water level is set too high.
 - Clean the collection cup and neck **weekly** — dried skimmate buildup on the neck walls will choke off performance over time even when everything else is dialed in correctly.
 
-![Adjusting the water level dial on a protein skimmer body](/images/guides/protein-skimmers-explained-do-you-need-one-dialing-in.png)
+![Reef keeper crouched at an open aquarium stand cabinet adjusting sump equipment](/images/guides/protein-skimmers-explained-do-you-need-one-dialing-in.png)
 
 ## Common Mistakes I've Made
 
